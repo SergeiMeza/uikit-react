@@ -13,6 +13,7 @@ import { FullWidthSecondaryColumnRight } from '../components/multi-column-layout
 import Button from '../components/Elements/Button/Button'
 import Notification from '../components/Elements/Notification/Notification'
 import { useState } from 'react'
+import TabGroup from '../components/Elements/TabGroup/TabGroup'
 
 const StackedLayouts = () => {
   return (
@@ -77,8 +78,7 @@ export const Home = () => {
   const [show, setShow] = useState(true)
   return (
     <div>
-      <Button onClick={() => setShow(true)}>Show</Button>
-      <Notification show={show} setShow={setShow} />
+      <TabGroup />
     </div>
   )
 }

@@ -70,7 +70,7 @@ const NotificationComponent: React.FC<NotificationProps> = ({
         onClose()
       }, dismissDelay)
     }
-  }, [autoDismiss, show, dismissDelay])
+  }, [autoDismiss, show, dismissDelay, onClose, setShow])
 
   return (
     <>
