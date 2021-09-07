@@ -10,7 +10,7 @@ import {
   UserGroupIcon,
   XIcon,
 } from '@heroicons/react/outline'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },

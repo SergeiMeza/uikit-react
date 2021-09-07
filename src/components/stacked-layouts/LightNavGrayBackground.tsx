@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 // MODEL
 const user = {
@@ -23,9 +23,9 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 
-export const LightNavBottomBorder = () => {
+export const LightNavGrayBackground = () => {
   return (
-    <div className="flex-1 min-h-1/4 bg-white">
+    <div className="min-h-1/4 bg-gray-100">
       <Disclosure as="nav" className="bg-white border-b border-gray-200">
         {({ open }) => (
           <>

@@ -1,28 +1,28 @@
-import { Fragment } from "react";
-import { Popover, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { SearchIcon } from "@heroicons/react/solid";
-import { classNames } from "../../../helpers/methods";
+import { Fragment } from 'react'
+import { Popover, Menu, Transition } from '@headlessui/react'
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { SearchIcon } from '@heroicons/react/solid'
+import { classNames } from '../../helpers/methods'
 
 // MODEL
 const user = {
-  name: "Sergei Meza",
-  email: "contact@sergeimeza.com",
+  name: 'Sergei Meza',
+  email: 'contact@sergeimeza.com',
   imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
+    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+}
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-];
+  { name: 'Dashboard', href: '#', current: true },
+  { name: 'Team', href: '#', current: false },
+  { name: 'Projects', href: '#', current: false },
+  { name: 'Calendar', href: '#', current: false },
+]
 const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
-];
+  { name: 'Your Profile', href: '#' },
+  { name: 'Settings', href: '#' },
+  { name: 'Sign out', href: '#' },
+]
 
 export const TwoRowNavOverlap = () => {
   return (
@@ -82,8 +82,8 @@ export const TwoRowNavOverlap = () => {
                               <a
                                 href={item.href}
                                 className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-700"
+                                  active ? 'bg-gray-100' : '',
+                                  'block px-4 py-2 text-sm text-gray-700',
                                 )}
                               >
                                 {item.name}
@@ -140,10 +140,10 @@ export const TwoRowNavOverlap = () => {
                           key={item.name}
                           href={item.href}
                           className={classNames(
-                            item.current ? "text-white" : "text-indigo-100",
-                            "text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"
+                            item.current ? 'text-white' : 'text-indigo-100',
+                            'text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10',
                           )}
-                          aria-current={item.current ? "page" : undefined}
+                          aria-current={item.current ? 'page' : undefined}
                         >
                           {item.name}
                         </a>
@@ -330,11 +330,11 @@ export const TwoRowNavOverlap = () => {
       <footer>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
           <div className="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left">
-            <span className="block sm:inline">&copy; 2021 Sergei Meza.</span>{" "}
+            <span className="block sm:inline">&copy; 2021 Sergei Meza.</span>{' '}
             <span className="block sm:inline">All rights reserved.</span>
           </div>
         </div>
       </footer>
     </div>
-  );
-};
+  )
+}

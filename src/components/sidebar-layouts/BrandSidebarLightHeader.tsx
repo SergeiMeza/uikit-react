@@ -13,7 +13,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 // MODEL
 const user = {
@@ -37,7 +37,7 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 
-export const DarkSidebarLightHeader = () => {
+export const BrandSidebarLightHeader = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -68,7 +68,7 @@ export const DarkSidebarLightHeader = () => {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 bg-gray-800">
+            <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 bg-indigo-700">
               <Transition.Child
                 as={Fragment}
                 enter="ease-in-out duration-300"
@@ -81,7 +81,7 @@ export const DarkSidebarLightHeader = () => {
                 <div className="absolute top-0 right-0 -mr-12 pt-2">
                   <button
                     type="button"
-                    className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    className="ml-1 flex items-center justify-center h-10 w-10 rounded-full"
                     onClick={() => setSidebarOpen(false)}
                   >
                     <span className="sr-only">Close sidebar</span>
@@ -91,9 +91,9 @@ export const DarkSidebarLightHeader = () => {
               </Transition.Child>
               <div className="flex-shrink-0 flex items-center px-4">
                 <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                  src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
                   alt="Workflow"
+                  className="h-8 w-auto"
                 />
               </div>
               <div className="mt-5 flex-1 h-0 overflow-y-auto">
@@ -104,18 +104,13 @@ export const DarkSidebarLightHeader = () => {
                       href={item.href}
                       className={classNames(
                         item.current
-                          ? 'bg-gray-900 text-white'
-                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          ? 'bg-indigo-800 text-white'
+                          : 'text-indigo-100 hover:bg-indigo-600',
                         'group flex items-center px-2 py-2 text-base font-medium rounded-md',
                       )}
                     >
                       <item.icon
-                        className={classNames(
-                          item.current
-                            ? 'text-gray-300'
-                            : 'text-gray-400 group-hover:text-gray-300',
-                          'mr-4 flex-shrink-0 h-6 w-6',
-                        )}
+                        className="mr-4 flex-shrink-0 h-6 w-6 text-indigo-300"
                         aria-hidden="true"
                       />
                       {item.name}
@@ -123,7 +118,7 @@ export const DarkSidebarLightHeader = () => {
                   ))}
                 </nav>
               </div>
-              <div className="flex-shrink-0 flex bg-gray-700 p-4">
+              <div className="flex-shrink-0 flex border-t border-indigo-800 p-4">
                 <a href="#" className="flex-shrink-0 group block">
                   <div className="flex items-center">
                     <div>
@@ -137,7 +132,7 @@ export const DarkSidebarLightHeader = () => {
                       <p className="text-base font-medium text-white">
                         Tom Cook
                       </p>
-                      <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300">
+                      <p className="text-sm font-medium text-indigo-200 group-hover:text-white">
                         View profile
                       </p>
                     </div>
@@ -147,49 +142,63 @@ export const DarkSidebarLightHeader = () => {
             </div>
           </Transition.Child>
           <div className="flex-shrink-0 w-14" aria-hidden="true">
-            {/* Dummy element to force sidebar to shrink to fit close icon */}
+            {/* Dummmy element to force sidebar to shrink to fit close icon */}
           </div>
         </Dialog>
       </Transition.Root>
 
       {/* Static sidebar for desktop */}
-      <div className="hidden md:flex md:flex-shrink-0">
+      <div className="hidden bg-indigo-700 md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex-1 flex flex-col min-h-0">
-            <div className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
+          <div className="flex flex-col flex-grow pt-5 overflow-y-auto">
+            <div className="flex items-center flex-shrink-0 px-4">
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
                 alt="Workflow"
+                className="h-8 w-auto"
               />
             </div>
-            <div className="flex-1 flex flex-col overflow-y-auto">
-              <nav className="flex-1 px-2 py-4 bg-gray-800 space-y-1">
+            <div className="mt-5 flex-1 flex flex-col">
+              <nav className="flex-1 px-2 space-y-1">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? 'bg-gray-900 text-white'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        ? 'bg-indigo-800 text-white'
+                        : 'text-indigo-100 hover:bg-indigo-600',
                       'group flex items-center px-2 py-2 text-sm font-medium rounded-md',
                     )}
                   >
                     <item.icon
-                      className={classNames(
-                        item.current
-                          ? 'text-gray-300'
-                          : 'text-gray-400 group-hover:text-gray-300',
-                        'mr-3 flex-shrink-0 h-6 w-6',
-                      )}
+                      className="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300"
                       aria-hidden="true"
                     />
                     {item.name}
                   </a>
                 ))}
               </nav>
+            </div>
+            <div className="flex-shrink-0 flex border-t border-indigo-800 p-4">
+              <a href="#" className="flex-shrink-0 w-full group block">
+                <div className="flex items-center">
+                  <div>
+                    <img
+                      className="inline-block h-9 w-9 rounded-full"
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      alt=""
+                    />
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm font-medium text-white">Tom Cook</p>
+                    <p className="text-xs font-medium text-indigo-200 group-hover:text-white">
+                      View profile
+                    </p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -233,7 +242,6 @@ export const DarkSidebarLightHeader = () => {
                 <BellIcon aria-hidden="true" className="h-6 w-6" />
               </button>
 
-              {/* Profile dropdown */}
               {/* Profile dropdown */}
               <Menu as="div" className="ml-3 relative">
                 <div>
