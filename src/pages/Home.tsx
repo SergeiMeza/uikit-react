@@ -9,10 +9,10 @@ import { LightNavGrayBackground } from '../components/stacked-layouts/LightNavGr
 import { TwoRowNavOverlap } from '../components/stacked-layouts/TwoRowNavOverlap'
 import { FullWidthThreeColumn } from '../components/multi-column-layouts/FullWidthThreeColumn'
 import { FullWidthSecondaryColumnRight } from '../components/multi-column-layouts/FullWidthSecondaryColumnRight'
-import ButtonGroup from '../components/Elements/ButtonGroup/ButtonGroup'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
+
 import Button from '../components/Elements/Button/Button'
-import Dropdown from '../components/Elements/Dropdown/Dropdown'
+import Notification from '../components/Elements/Notification/Notification'
+import { useState } from 'react'
 
 const StackedLayouts = () => {
   return (
@@ -74,16 +74,11 @@ const Test = () => {
 }
 
 export const Home = () => {
+  const [show, setShow] = useState(true)
   return (
-    <>
-      <div className="flex flex-col items-end p-12 space-y-48">
-        <div>
-          <Dropdown type={Dropdown.type.button} />
-        </div>
-        <div>
-          <Dropdown type={Dropdown.type.minimal} />
-        </div>
-      </div>
-    </>
+    <div>
+      <Button onClick={() => setShow(true)}>Show</Button>
+      <Notification show={show} setShow={setShow} />
+    </div>
   )
 }

@@ -17,7 +17,6 @@ const Template: ComponentStory<typeof Modal> = (args) => (
 )
 
 export const ThemeModal = Template.bind({})
-
 ThemeModal.args = {
   show: true,
   setShow: (_) => {},

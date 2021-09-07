@@ -25,7 +25,7 @@ import Button, { ButtonProps } from '../Button/Button'
 
 export type ModalProps = {
   show: boolean
-  setShow: (boolean) => void
+  setShow: (show: boolean) => void
 }
 
 export type ModalIconProps = {
@@ -392,7 +392,7 @@ const ModalTrendingDownIcon: React.FC<ModalIconProps> = ({
 type ModalCardProps = {
   title?: string | JSX.Element
   body?: string | JSX.Element
-  setShow: (boolean) => void
+  setShow: (show: boolean) => void
   cta?: JSX.Element
 }
 
