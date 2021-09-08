@@ -34,7 +34,6 @@ const CheckboxGroupComponent: React.FC<CheckboxGroupProps> = ({
     console.log(data)
   },
 }) => {
-  const [debug, setDebug] = useState<any>(null)
   const [checkItems, setCheckItems] = useState(items.slice())
 
   function handleItemChange(element: ChangeEvent<HTMLInputElement>) {
