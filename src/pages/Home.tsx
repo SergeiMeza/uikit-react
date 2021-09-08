@@ -12,6 +12,7 @@ import { FullWidthSecondaryColumnRight } from '../components/multi-column-layout
 
 import { useState } from 'react'
 import VerticalNavigation from '../components/Elements/Navigation/VerticalNavigation/VerticalNavigation'
+import CheckboxGroup from '../components/Elements/CheckboxGroup/CheckboxGroup'
 
 const StackedLayouts = () => {
   return (
@@ -75,8 +76,8 @@ const Test = () => {
 export const Home = () => {
   const [show, setShow] = useState(true)
   return (
-    <div>
-      <VerticalNavigation />
+    <div className="p-8">
+      <CheckboxGroup />
     </div>
   )
 }
