@@ -10,10 +10,8 @@ import { TwoRowNavOverlap } from '../components/stacked-layouts/TwoRowNavOverlap
 import { FullWidthThreeColumn } from '../components/multi-column-layouts/FullWidthThreeColumn'
 import { FullWidthSecondaryColumnRight } from '../components/multi-column-layouts/FullWidthSecondaryColumnRight'
 
-import Button from '../components/Elements/Button/Button'
-import Notification from '../components/Elements/Notification/Notification'
 import { useState } from 'react'
-import TabGroup from '../components/Elements/TabGroup/TabGroup'
+import VerticalNavigation from '../components/Elements/Navigation/VerticalNavigation/VerticalNavigation'
 
 const StackedLayouts = () => {
   return (
@@ -78,7 +76,7 @@ export const Home = () => {
   const [show, setShow] = useState(true)
   return (
     <div>
-      <TabGroup />
+      <VerticalNavigation />
     </div>
   )
 }

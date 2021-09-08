@@ -1,25 +1,20 @@
-import {
-  CreditCardIcon,
-  OfficeBuildingIcon,
-  UserIcon,
-  UsersIcon,
-} from '@heroicons/react/solid'
 import React, { ChangeEvent, useState } from 'react'
-import { classNames } from '../../../helpers/methods'
 
-export type TabItem = {
-  name: string
-  href: string
-  icon?: (props: React.ComponentProps<'svg'>) => JSX.Element
-  count?: number
-  current: boolean
-} & any
+// import {
+//   CreditCardIcon,
+//   OfficeBuildingIcon,
+//   UserIcon,
+//   UsersIcon,
+// } from '@heroicons/react/solid'
 
-export type TabGroupProps = {
-  tabs?: TabItem[]
-  type?: TabGroupType
+import { classNames } from '../../../../helpers/methods'
+import { NavigationItem } from '../NavigationItem'
+
+export type TabNavigationProps = {
+  tabs?: NavigationItem[]
+  type?: TabNavigationType
   showIcons?: boolean
-  onTabSelected?: (tab: TabItem) => void
+  onTabSelected?: (tab: NavigationItem) => void
 }
 
 // const sampleTabs = [
@@ -37,20 +32,20 @@ const sampleTabs2 = [
   { name: 'Disqualified', href: '#', current: false },
 ]
 
-enum TabGroupType {
+enum TabNavigationType {
   default = 'default',
   pills = 'pills',
 }
 
-const TabGroupComponent: React.FC<TabGroupProps> = ({
+const TabNavigationComponent: React.FC<TabNavigationProps> = ({
   tabs = sampleTabs2,
-  type = TabGroupType.default,
+  type = TabNavigationType.default,
   showIcons = false,
   onTabSelected = (tab) => {
     console.log('tab selected:', tab.name)
   },
 }) => {
-  const [tabItems, setTabItems] = useState(tabs.slice())
+  const [tabItems, setTabItems] = useState<any[]>(tabs.slice())
 
   function handleChange(e: ChangeEvent<HTMLSelectElement>) {
     handleItemChange(e.target.value)
@@ -86,12 +81,14 @@ const TabGroupComponent: React.FC<TabGroupProps> = ({
       <div className="hidden sm:block">
         <div
           className={classNames(
-            type === TabGroupType.default ? 'border-b border-gray-200' : '',
+            type === TabNavigationType.default
+              ? 'border-b border-gray-200'
+              : '',
           )}
         >
           <nav
             className={classNames(
-              type === TabGroupType.default
+              type === TabNavigationType.default
                 ? '-mb-px flex space-x-8'
                 : 'flex space-x-4',
             )}
@@ -102,7 +99,7 @@ const TabGroupComponent: React.FC<TabGroupProps> = ({
                 type="button"
                 key={tab.name}
                 className={
-                  type === TabGroupType.default
+                  type === TabNavigationType.default
                     ? classNames(
                         tab.current
                           ? 'border-indigo-500 text-indigo-600'
@@ -156,6 +153,6 @@ const TabGroupComponent: React.FC<TabGroupProps> = ({
   )
 }
 
-export const TabGroup = Object.assign(TabGroupComponent, {})
+export const TabNavigation = Object.assign(TabNavigationComponent, {})
 
-export default TabGroup
+export default TabNavigation
