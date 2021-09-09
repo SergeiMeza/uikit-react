@@ -1,11 +1,13 @@
 import { PlusIcon } from '@heroicons/react/outline'
-import React from 'react'
+import React, { useState } from 'react'
+import { classNames } from '../../../helpers/methods'
 import Button from '../Button/Button'
 
 export type EmptyStateProps = {
+  className?: string
   type?: EmptyStateType
   icon?: JSX.Element
-  title?: string
+  title?: string | JSX.Element
   description?: string
   button?: JSX.Element
   onClick?: () => void
@@ -17,6 +19,7 @@ enum EmptyStateType {
 }
 
 const EmptyStateComponent: React.FC<EmptyStateProps> = ({
+  className = '',
   type = EmptyStateType.dashedBorder,
   icon = (
     <svg
@@ -45,27 +48,73 @@ const EmptyStateComponent: React.FC<EmptyStateProps> = ({
   ),
   onClick = () => console.log('on call to action'),
 }) => {
+  const [droppedFiles, setDroppedFiles] = useState<File[]>([])
+
   const dashedBorderView = (
-    <button
-      type="button"
-      className="relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-      onClick={(e) => {
-        e.preventDefault()
-        onClick()
-      }}
-    >
-      <>
-        {icon}
-        {title && (
-          <span className="mt-2 block text-sm font-medium text-gray-900">
-            {title}
-          </span>
+    <div>
+      <button
+        type="button"
+        className={classNames(
+          className,
+          'relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
         )}
-        {description && (
-          <p className="mt-1 text-sm text-gray-500">{description}</p>
-        )}
-      </>
-    </button>
+        onClick={(e) => {
+          e.preventDefault()
+          onClick()
+        }}
+        onDragOver={(e) => {
+          e.preventDefault()
+        }}
+        onDrop={(e) => {
+          console.log(e)
+          console.log(e.dataTransfer.files)
+          setDroppedFiles(Array.from(e.dataTransfer.files))
+          e.preventDefault()
+        }}
+      >
+        <>
+          {icon}
+          {title && typeof title === 'string' ? (
+            <span className="mt-2 block text-sm font-medium text-gray-900">
+              {title}
+            </span>
+          ) : (
+            title
+          )}
+          {description && (
+            <p className="mt-1 text-sm text-gray-500">{description}</p>
+          )}
+        </>
+      </button>
+      <div>
+        {droppedFiles.map((file, index) => {
+          let reader = new FileReader()
+          reader.readAsDataURL(file)
+          reader.onload = (e) => {
+            document
+              .getElementById(file.name)
+              ?.setAttribute('src', String(e?.target?.result ?? ''))
+          }
+
+          return (
+            <div
+              className="flex justify-between items-center my-1"
+              key={`file-${index}`}
+            >
+              <span>{file.name}</span>
+              {file.type.includes('image') && (
+                <img
+                  className="w-auto h-10"
+                  src=""
+                  alt={file.name}
+                  id={file.name}
+                />
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </div>
   )
 
   const simpleView = (

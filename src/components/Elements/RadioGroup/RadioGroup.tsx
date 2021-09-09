@@ -151,7 +151,7 @@ const RadioGroupComponent: React.FC<RadioGroupProps> = ({
 
   const listGroupClassNames = 'bg-white rounded-md -space-y-px'
 
-  return (
+  let cardOrListRadioGroup = (
     <HeadlessRadioGroup
       value={selected}
       onChange={(item) => {
@@ -185,6 +185,8 @@ const RadioGroupComponent: React.FC<RadioGroupProps> = ({
       </div>
     </HeadlessRadioGroup>
   )
+
+  return cardOrListRadioGroup
 }
 
 export const RadioGroup = Object.assign(RadioGroupComponent, {

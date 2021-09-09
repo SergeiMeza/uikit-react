@@ -1,6 +1,6 @@
-import Button from '../Button/Button'
-import Divider from '../Divider/Divider'
-import Input from '../Input/Input'
+import Button from '../../Elements/Button/Button'
+import Divider from '../../Elements/Divider/Divider'
+import Input from '../../Elements/Input/Input'
 
 export const SignInLayout: React.FC<any> = ({}) => {
   let SignInForm = (

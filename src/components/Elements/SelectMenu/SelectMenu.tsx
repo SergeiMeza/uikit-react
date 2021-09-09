@@ -29,13 +29,16 @@ enum SelectMenuType {
   custom = 'custom',
 }
 
-const SelectMenuComponent: React.FC<SelectMenuProps> = ({
+const SelectMenuComponent: React.FC<
+  SelectMenuProps & React.SelectHTMLAttributes<HTMLSelectElement>
+> = ({
   type = SelectMenuType.native,
   name = 'location',
   label = 'Location',
   options = sampleOptions,
   selectedItem = options[0],
   onItemSelected = (item: any) => console.log('item selected', item.name),
+  ...props
 }) => {
   const [selected, setSelected] = useState(selectedItem)
 
@@ -63,6 +66,7 @@ const SelectMenuComponent: React.FC<SelectMenuProps> = ({
         className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         defaultValue={selectedItem?.value}
         onChange={handleNativeChange}
+        {...props}
       >
         {options.map((item) => (
           <option key={item.name} value={item.value}>

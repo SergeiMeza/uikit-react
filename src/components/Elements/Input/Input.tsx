@@ -1,5 +1,6 @@
 import { ExclamationCircleIcon } from '@heroicons/react/solid'
 import React, { ChangeEvent, useRef, useState } from 'react'
+import CheckboxGroup from '../CheckboxGroup/CheckboxGroup'
 
 export type InputProps = {
   inputType?: string
@@ -199,10 +200,108 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({
   )
 }
 
+export type TextAreaInputProps = {
+  name?: string
+  label?: string
+  description?: string
+  rows?: number
+  defaultValue?: string
+}
+
+const TextAreaInput: React.FC<
+  TextAreaInputProps & React.TextareaHTMLAttributes<HTMLTextAreaElement>
+> = ({
+  name = 'about',
+  label = 'About',
+  description = 'Write a few sentences about yourself.',
+  rows = 3,
+  defaultValue = '',
+  ...props
+}) => {
+  return (
+    <div>
+      <label htmlFor={name} className="block text-sm font-medium text-gray-700">
+        {label}
+      </label>
+      <div className="mt-1">
+        <textarea
+          id={name}
+          name={name}
+          rows={rows}
+          className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"
+          defaultValue={defaultValue}
+          {...props}
+        />
+      </div>
+      <p className="mt-2 text-sm text-gray-500">{description}</p>
+    </div>
+  )
+}
+
+export type RadioGroupInputProps = {
+  label?: string
+  description?: string
+  hiddenLabel?: boolean
+  items?: any[]
+}
+
+const RadioGroupInput: React.FC<any> = ({
+  label = 'Push Notifications',
+  description = 'These are delivered via SMS to your mobile phone.',
+  hiddenLabel = false,
+  items = [
+    { name: 'pushNotifications', value: 'pushEverything', label: 'Everything' },
+    { name: 'pushNotifications', value: 'pushEmail', label: 'Same as email' },
+    {
+      name: 'pushNotifications',
+      value: 'pushNothing',
+      label: 'No push notifications',
+    },
+  ],
+}) => {
+  let formRadioGroup = (
+    <fieldset className="mt-6">
+      <div>
+        {hiddenLabel ? (
+          <legend className="sr-only">{label}</legend>
+        ) : (
+          <legend className="text-base font-medium text-gray-900">
+            {label}
+          </legend>
+        )}
+        <p className="text-sm text-gray-500">{description}</p>
+      </div>
+      <div className="mt-4 space-y-4">
+        {items.map((item) => (
+          <div className="flex items-center">
+            <input
+              id={item.value}
+              name={item.name}
+              type="radio"
+              className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
+            />
+            <label
+              htmlFor={item.value}
+              className="ml-3 block text-sm font-medium text-gray-700"
+            >
+              {item.label}
+            </label>
+          </div>
+        ))}
+      </div>
+    </fieldset>
+  )
+
+  return formRadioGroup
+}
+
 export const Input = Object.assign(InputComponent, {
   type: InputType,
   Secure: SecureInput,
   Checkbox: CheckboxInput,
+  TextArea: TextAreaInput,
+  RadioGroup: RadioGroupInput,
+  CheckboxGroup: CheckboxGroup,
 })
 
 export default Input

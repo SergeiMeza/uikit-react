@@ -22,13 +22,15 @@ let sampleData = [
 ]
 
 export type CheckboxGroupProps = {
-  name?: string
+  label?: string
+  hiddenLabel?: boolean
   items?: any[]
   onItemsChange?: (data: any[]) => void
 }
 
 const CheckboxGroupComponent: React.FC<CheckboxGroupProps> = ({
-  name = 'Notifications',
+  label = 'Notifications',
+  hiddenLabel = false,
   items = sampleData,
   onItemsChange = (data) => {
     console.log(data)
@@ -48,9 +50,13 @@ const CheckboxGroupComponent: React.FC<CheckboxGroupProps> = ({
 
   return (
     <fieldset className="space-y-5">
-      <legend className="sr-only">{name}</legend>
+      {hiddenLabel ? (
+        <legend className="sr-only">{label}</legend>
+      ) : (
+        <legend className="text-base font-medium text-gray-900">{label}</legend>
+      )}
       {checkItems.map((item) => (
-        <div className="relative flex items-start">
+        <div key={item.name} className="relative flex items-start">
           <div className="flex items-center h-5">
             <input
               id={item.name}
