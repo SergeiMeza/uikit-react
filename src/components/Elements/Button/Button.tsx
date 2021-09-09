@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import { PlusIcon as PlusIconSolid } from '@heroicons/react/solid'
 
 import { classNames } from '../../../helpers/methods'
@@ -8,7 +8,7 @@ export type ButtonProps = {
   title?: string
   size?: ButtonSize
   shape?: ButtonShape
-  type?: ButtonType
+  buttonType?: ButtonType
   onClick?: () => void
   onMouseEnter?: () => void
   onMouseLeave?: () => void
@@ -40,12 +40,24 @@ const focus =
 const defaultFocus =
   ' focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
 
-const ButtonComponent: React.FC<ButtonProps> = ({
+const InlineButton: React.FC<any> = ({
+  title = 'start your 14-day free trial',
+  href = '#',
+  children,
+}) => (
+  <a href={href} className="font-medium text-indigo-600 hover:text-indigo-500">
+    {children ?? title}
+  </a>
+)
+
+const ButtonComponent: React.FC<
+  ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
+> = ({
   className = '',
   title,
   size = ButtonSize.medium,
   shape = ButtonShape.default,
-  type = ButtonType.primary,
+  buttonType = ButtonType.primary,
   children,
   onClick = () => {
     console.log('item clicked')
@@ -56,36 +68,34 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   onMouseLeave = () => {
     console.log('mouse leaved item')
   },
+  ...props
 }) => {
-  const baseStyle = 'inline-flex items-center font-medium'
+  const baseStyle = 'flex justify-center font-medium'
 
   const names =
-    type === ButtonType.transparent
-      ? [type, focus, baseStyle, className]
+    buttonType === ButtonType.transparent
+      ? [buttonType, focus, baseStyle, className]
       : [
           ...(shape !== ButtonShape.circular
-            ? [size, shape, type]
-            : [shape, type]),
+            ? [size, shape, buttonType]
+            : [shape, buttonType]),
           defaultFocus,
           baseStyle,
           className,
         ]
   return (
     <button
-      type="button"
       className={classNames(...names)}
-      onClick={(e) => {
-        e.preventDefault()
+      onClick={() => {
         onClick()
       }}
-      onMouseEnter={(e) => {
-        e.preventDefault()
+      onMouseEnter={() => {
         onMouseEnter()
       }}
-      onMouseLeave={(e) => {
-        e.preventDefault()
+      onMouseLeave={() => {
         onMouseLeave()
       }}
+      {...props}
     >
       {title ?? children}
     </button>
@@ -94,9 +104,10 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 
 export const Button = Object.assign(ButtonComponent, {
   size: ButtonSize,
-  type: ButtonType,
+  buttonType: ButtonType,
   shape: ButtonShape,
   focus,
+  Inline: InlineButton,
 })
 
 export const Buttons = () => {
@@ -116,19 +127,34 @@ export const Buttons = () => {
       <div className="mb-12 space-y-4">
         <h3 className="text-2xl font-bold">Secondary buttons</h3>
         <div className="space-x-2">
-          <Button type={Button.type.secondary} size={Button.size.small}>
+          <Button
+            buttonType={Button.buttonType.secondary}
+            size={Button.size.small}
+          >
             Button
           </Button>
-          <Button type={Button.type.secondary} size={Button.size.medium}>
+          <Button
+            buttonType={Button.buttonType.secondary}
+            size={Button.size.medium}
+          >
             Button
           </Button>
-          <Button type={Button.type.secondary} size={Button.size.large}>
+          <Button
+            buttonType={Button.buttonType.secondary}
+            size={Button.size.large}
+          >
             Button
           </Button>
-          <Button type={Button.type.secondary} size={Button.size.xl}>
+          <Button
+            buttonType={Button.buttonType.secondary}
+            size={Button.size.xl}
+          >
             Button
           </Button>
-          <Button type={Button.type.secondary} size={Button.size.xxl}>
+          <Button
+            buttonType={Button.buttonType.secondary}
+            size={Button.size.xxl}
+          >
             Button
           </Button>
         </div>
@@ -136,19 +162,28 @@ export const Buttons = () => {
       <div className="mb-12 space-y-4">
         <h3 className="text-2xl font-bold">White buttons</h3>
         <div className="space-x-2">
-          <Button type={Button.type.outline} size={Button.size.small}>
+          <Button
+            buttonType={Button.buttonType.outline}
+            size={Button.size.small}
+          >
             Button
           </Button>
-          <Button type={Button.type.outline} size={Button.size.medium}>
+          <Button
+            buttonType={Button.buttonType.outline}
+            size={Button.size.medium}
+          >
             Button
           </Button>
-          <Button type={Button.type.outline} size={Button.size.large}>
+          <Button
+            buttonType={Button.buttonType.outline}
+            size={Button.size.large}
+          >
             Button
           </Button>
-          <Button type={Button.type.outline} size={Button.size.xl}>
+          <Button buttonType={Button.buttonType.outline} size={Button.size.xl}>
             Button
           </Button>
-          <Button type={Button.type.outline} size={Button.size.xxl}>
+          <Button buttonType={Button.buttonType.outline} size={Button.size.xxl}>
             Button
           </Button>
         </div>
@@ -185,22 +220,40 @@ export const Buttons = () => {
           <Button shape={Button.shape.circular}>
             <PlusIconSolid className="h-6 w-6" aria-hidden="true" />
           </Button>
-          <Button shape={Button.shape.circular} type={Button.type.secondary}>
+          <Button
+            shape={Button.shape.circular}
+            buttonType={Button.buttonType.secondary}
+          >
             <PlusIconSolid className="h-4 w-4" aria-hidden="true" />
           </Button>
-          <Button shape={Button.shape.circular} type={Button.type.secondary}>
+          <Button
+            shape={Button.shape.circular}
+            buttonType={Button.buttonType.secondary}
+          >
             <PlusIconSolid className="h-5 w-5" aria-hidden="true" />
           </Button>
-          <Button shape={Button.shape.circular} type={Button.type.secondary}>
+          <Button
+            shape={Button.shape.circular}
+            buttonType={Button.buttonType.secondary}
+          >
             <PlusIconSolid className="h-6 w-6" aria-hidden="true" />
           </Button>
-          <Button shape={Button.shape.circular} type={Button.type.outline}>
+          <Button
+            shape={Button.shape.circular}
+            buttonType={Button.buttonType.outline}
+          >
             <PlusIconSolid className="h-4 w-4" aria-hidden="true" />
           </Button>
-          <Button shape={Button.shape.circular} type={Button.type.outline}>
+          <Button
+            shape={Button.shape.circular}
+            buttonType={Button.buttonType.outline}
+          >
             <PlusIconSolid className="h-5 w-5" aria-hidden="true" />
           </Button>
-          <Button shape={Button.shape.circular} type={Button.type.outline}>
+          <Button
+            shape={Button.shape.circular}
+            buttonType={Button.buttonType.outline}
+          >
             <PlusIconSolid className="h-6 w-6" aria-hidden="true" />
           </Button>
         </div>

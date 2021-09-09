@@ -437,7 +437,7 @@ const ModalCard: React.FC<ModalCardProps> = ({
         {cta ?? (
           <>
             <ModalCardButton
-              type={Button.type.outline}
+              buttonType={Button.buttonType.outline}
               onClick={() => setShow(false)}
             />
             <ModalCardButton title="Promote" onClick={() => setShow(false)} />

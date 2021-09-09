@@ -41,7 +41,7 @@ const CheckboxGroupComponent: React.FC<CheckboxGroupProps> = ({
     let itemIndex = _checkItems.findIndex(
       (item) => item.name == element.target.name,
     )
-    _checkItems[itemIndex].checked = !_checkItems[itemIndex].checked
+    _checkItems[itemIndex].checked = element.target.checked
     setCheckItems(_checkItems)
     onItemsChange(_checkItems)
   }
@@ -58,7 +58,7 @@ const CheckboxGroupComponent: React.FC<CheckboxGroupProps> = ({
               name={item.name}
               type="checkbox"
               className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-              checked={item.checked}
+              defaultChecked={item.checked}
               onChange={handleItemChange}
             />
           </div>
@@ -66,11 +66,9 @@ const CheckboxGroupComponent: React.FC<CheckboxGroupProps> = ({
             <label htmlFor="comments" className="font-medium text-gray-700">
               {item.title}
             </label>
-            {
-              <p id="comments-description" className="text-gray-500">
-                {item.description}
-              </p>
-            }
+            <p id={`${item.name}-description`} className="text-gray-500">
+              {item.description}
+            </p>
           </div>
         </div>
       ))}

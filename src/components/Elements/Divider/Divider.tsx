@@ -6,7 +6,7 @@ import Button, { ButtonProps } from '../Button/Button'
 export type DividerProps = {
   title?: string
   titleSize?: DividerTitleSize
-  contentPosition: DividerContentPosition
+  contentPosition?: DividerContentPosition
 }
 
 enum DividerContentPosition {
@@ -29,7 +29,7 @@ const DividerButton: React.FC<ButtonProps> = ({ children, ...props }) => {
   return (
     <Button
       className="inline-flex items-center py-1.5 shadow-sm"
-      type={Button.type.outline}
+      buttonType={Button.buttonType.outline}
       shape={Button.shape.round}
       size={Button.size.medium}
       {...props}

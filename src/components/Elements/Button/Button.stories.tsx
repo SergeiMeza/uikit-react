@@ -19,6 +19,6 @@ ThemeButtons.args = {}
 
 export const ThemeButton = Template.bind({})
 ThemeButton.args = {
-  type: Button.type.primary,
+  buttonType: Button.buttonType.primary,
   title: 'Button',
 }

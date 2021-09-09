@@ -101,7 +101,7 @@ const SlideOverStickyFooter: React.FC<SlideOverStickyFooterProps> = ({
         <>
           <Button
             className="py-2 px-4"
-            type={Button.type.outline}
+            buttonType={Button.buttonType.outline}
             onClick={() => setShow(false)}
           >
             Cancel

@@ -1,69 +1,8 @@
-import { BrandSidebarLightHeader } from '../components/sidebar-layouts/BrandSidebarLightHeader'
-import { DarkSidebarLightHeader } from '../components/sidebar-layouts/DarkSidebarLightHeader'
-import { BrandedNavCompactWhitePageHeader } from '../components/stacked-layouts/BrandedNavCompactWhitePageHeader'
-import { DarkNavOverlap } from '../components/stacked-layouts/DarkNavOverlap'
-import { DarkNavWhitePageHeader } from '../components/stacked-layouts/DarkNavWhitePageHeader'
-import { LightNavBottomBorder } from '../components/stacked-layouts/LightNavBottomBorder'
-import { LightNavGrayBackground } from '../components/stacked-layouts/LightNavGrayBackground'
-import { TwoRowNavOverlap } from '../components/stacked-layouts/TwoRowNavOverlap'
-import { FullWidthThreeColumn } from '../components/multi-column-layouts/FullWidthThreeColumn'
-import { FullWidthSecondaryColumnRight } from '../components/multi-column-layouts/FullWidthSecondaryColumnRight'
-import Divider from '../components/Elements/Divider/Divider'
-import Button from '../components/Elements/Button/Button'
-import Input from '../components/Elements/Input/Input'
+import Button from '../Button/Button'
+import Divider from '../Divider/Divider'
+import Input from '../Input/Input'
 
-const StackedLayouts = () => {
-  return (
-    <div>
-      <div className="border-b border-gray-400">
-        <LightNavBottomBorder />
-      </div>
-      <div className="border-b border-gray-400">
-        <LightNavGrayBackground />
-      </div>
-      <div className="border-b border-gray-400">
-        <DarkNavWhitePageHeader />
-      </div>
-      <div className="border-b border-gray-400">
-        <BrandedNavCompactWhitePageHeader />
-      </div>
-      <div className="border-b border-gray-400">
-        <DarkNavOverlap />
-      </div>
-      <div className="border-b border-gray-400">
-        <TwoRowNavOverlap />
-      </div>
-    </div>
-  )
-}
-
-const SidebarLayouts = () => {
-  return (
-    <div>
-      <div className="border-b border-gray-400">
-        <BrandSidebarLightHeader />
-      </div>
-      <div className="border-b border-gray-400">
-        <DarkSidebarLightHeader />
-      </div>
-    </div>
-  )
-}
-
-const MultiColumnLayouts = () => {
-  return (
-    <div>
-      <div className="border-b border-gray-400">
-        <FullWidthThreeColumn />
-      </div>
-      <div className="border-b border-gray-400">
-        <FullWidthSecondaryColumnRight />
-      </div>
-    </div>
-  )
-}
-
-export const Home = () => {
+export const SignInLayout: React.FC<any> = ({}) => {
   let SignInForm = (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -180,3 +119,5 @@ export const Home = () => {
 
   return SignInForm
 }
+
+export default SignInLayout

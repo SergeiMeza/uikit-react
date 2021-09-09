@@ -4,6 +4,16 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
+if (process.env.NODE_ENV === 'production') {
+  console.table = function () {}
+  console.log = function () {}
+  console.error = function () {}
+  console.debug = function () {}
+  console.info = function () {}
+  console.time = function () {}
+  console.timeEnd = function () {}
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

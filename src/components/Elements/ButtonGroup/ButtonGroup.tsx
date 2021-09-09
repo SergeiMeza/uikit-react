@@ -50,7 +50,7 @@ const LeftButton: React.FC<ButtonProps> = ({
         className,
         'relative px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm text-gray-700 hover:bg-gray-50 focus:z-10',
       )}
-      type={Button.type.transparent}
+      buttonType={Button.buttonType.transparent}
       {...props}
     >
       {children ?? 'Years'}
@@ -69,7 +69,7 @@ const MiddleButton: React.FC<ButtonProps> = ({
         className,
         '-ml-px relative px-2 py-2 border border-gray-300 bg-white text-sm text-gray-700 hover:bg-gray-50 focus:z-10',
       )}
-      type={Button.type.transparent}
+      buttonType={Button.buttonType.transparent}
       {...props}
     >
       {children ?? 'Months'}
@@ -88,7 +88,7 @@ const RightButton: React.FC<ButtonProps> = ({
         className,
         '-ml-px relative px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm text-gray-700 hover:bg-gray-50 focus:z-10',
       )}
-      type={Button.type.transparent}
+      buttonType={Button.buttonType.transparent}
       {...props}
     >
       {children ?? 'Days'}
