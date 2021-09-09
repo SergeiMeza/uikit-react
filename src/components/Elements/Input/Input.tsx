@@ -1,6 +1,17 @@
 import { ExclamationCircleIcon } from '@heroicons/react/solid'
-import React, { ChangeEvent, useRef, useState } from 'react'
+import React, {
+  ButtonHTMLAttributes,
+  ChangeEvent,
+  HTMLAttributes,
+  useRef,
+  useState,
+} from 'react'
+import { classNames } from '../../../helpers/methods'
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup'
+import EmptyState, {
+  EmptyStateProps,
+  FilePreview,
+} from '../EmptyState/EmptyState'
 
 export type InputProps = {
   inputType?: string
@@ -11,6 +22,7 @@ export type InputProps = {
   description?: string
   value?: string
   trimmed?: boolean
+  prefix?: string
   cornerHint?: string | JSX.Element
   onChange?: (value: string) => void
   onFocus?: () => void
@@ -35,6 +47,7 @@ const InputComponent: React.FC<
   placeholder = 'you@example.com',
   description = "We'll only use this for spam.",
   value = '',
+  prefix = '',
   trimmed = false,
   cornerHint = null,
   onChange = (value: any) => console.log(`${name}: ${value}`),
@@ -44,7 +57,7 @@ const InputComponent: React.FC<
 }) => {
   const inputRef = useRef<any>(null)
   const [currentValue, setCurrentValue] = useState<string>(value)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>('')
 
   function handleChange(element: ChangeEvent<HTMLInputElement>) {
     if (trimmed) {
@@ -66,14 +79,29 @@ const InputComponent: React.FC<
     }
   }
 
-  const themeInputWrapperClassName = 'mt-1'
-  const errorInputWrapperClassName = 'mt-1 relative rounded-md shadow-sm'
+  const themeInputComponentWrapperClassNames = classNames(
+    error ? 'mt-1 relative rounded-md shadow-sm' : 'mt-1',
+  )
 
-  const themeInputClassName =
-    'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+  const themeInputWrapperClassNames = classNames(
+    error ? '' : ' shadow-sm',
+    'flex rounded-md',
+  )
 
-  const errorInputClassName =
-    'block w-full pr-10 border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md'
+  const themeInputClassNames = classNames(
+    error
+      ? 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none pr-10 focus:ring-red-500 focus:border-red-500'
+      : 'focus:ring-indigo-500 focus:border-indigo-500',
+    prefix ? 'rounded-r-md' : 'rounded-md',
+    ' block w-full sm:text-sm border-gray-300',
+  )
+
+  const prefixInputClassNames = classNames(
+    error
+      ? 'border-red-300 bg-red-50 text-red-500'
+      : 'border-gray-300 bg-gray-50 text-gray-500',
+    'inline-flex items-center px-3 rounded-l-md border border-r-0  text-sm',
+  )
 
   let inputItem = (
     <div>
@@ -94,26 +122,26 @@ const InputComponent: React.FC<
           cornerHint
         )}
       </div>
-      <div
-        className={
-          error ? errorInputWrapperClassName : themeInputWrapperClassName
-        }
-      >
-        <input
-          ref={inputRef}
-          type={String(inputType)}
-          name={name}
-          id={name}
-          className={error ? errorInputClassName : themeInputClassName}
-          placeholder={placeholder}
-          aria-describedby={error ? `${name}-error` : `${name}-description`}
-          value={currentValue}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          autoComplete={error ? undefined : props.autoComplete}
-          {...props}
-        />
+      <div className={themeInputComponentWrapperClassNames}>
+        <div className={themeInputWrapperClassNames}>
+          {prefix && <span className={prefixInputClassNames}>{prefix}</span>}
+          <input
+            ref={inputRef}
+            type={String(inputType)}
+            name={name}
+            id={name}
+            className={themeInputClassNames}
+            placeholder={placeholder}
+            aria-describedby={error ? `${name}-error` : `${name}-description`}
+            value={currentValue}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            autoComplete={error ? undefined : props.autoComplete}
+            {...props}
+          />
+        </div>
+
         {error && (
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
             <ExclamationCircleIcon
@@ -295,6 +323,118 @@ const RadioGroupInput: React.FC<any> = ({
   return formRadioGroup
 }
 
+export type FileInputProps = {
+  label?: string
+  name?: string
+  hiddenLabel?: boolean
+  multiple?: boolean
+  renderFiles?: (file: File) => JSX.Element
+}
+
+export const FileInput: React.FC<
+  FileInputProps & EmptyStateProps & React.DOMAttributes<HTMLDivElement>
+> = ({
+  label = '',
+  hiddenLabel = false,
+  name = '',
+  multiple = false,
+  ...props
+}) => {
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([])
+
+  const fileInputRef = useRef<HTMLInputElement | null>(null)
+
+  function handleFileInputChange(e: ChangeEvent<HTMLInputElement>) {
+    let files = Array.from(e.target.files ?? [])
+    if (files.length) {
+      setSelectedFiles(files ?? selectedFiles)
+    }
+  }
+
+  return (
+    <div>
+      {hiddenLabel ? (
+        <label htmlFor={name} className="sr-only">
+          {label}
+        </label>
+      ) : (
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium text-gray-700"
+        >
+          {label}
+        </label>
+      )}
+      <EmptyState
+        className="mt-1"
+        icon={
+          props.icon ?? (
+            <svg
+              className="mx-auto h-12 w-12 text-gray-400"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 48 48"
+              aria-hidden="true"
+            >
+              <path
+                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )
+        }
+        title={
+          props.title ?? (
+            <span>
+              <span className="text-indigo-600 hover:text-indigo-500">
+                Upload a file
+              </span>{' '}
+              or drag and drop
+            </span>
+          )
+        }
+        description={props.description ?? 'PNG, JPG, GIF up to 10MB'}
+        onClick={() => {
+          fileInputRef?.current?.click()
+        }}
+        onDragOver={(e) => {
+          e.preventDefault()
+        }}
+        onDrop={(e) => {
+          if (multiple) {
+            setSelectedFiles(Array.from(e.dataTransfer.files))
+          } else {
+            setSelectedFiles([Array.from(e.dataTransfer.files)[0]])
+          }
+          e.preventDefault()
+        }}
+      >
+        {selectedFiles.length > 0 ? (
+          <div
+            className={classNames(
+              multiple ? 'grid grid-cols-3 gap-x-4' : 'flex',
+            )}
+          >
+            {selectedFiles.map((file) => (
+              <FilePreview key={file.name} file={file} />
+            ))}
+          </div>
+        ) : null}
+      </EmptyState>
+      <input
+        ref={fileInputRef}
+        type="file"
+        name={name}
+        multiple={multiple}
+        onChange={handleFileInputChange}
+        hidden
+      />
+    </div>
+  )
+}
+
 export const Input = Object.assign(InputComponent, {
   type: InputType,
   Secure: SecureInput,
@@ -302,6 +442,7 @@ export const Input = Object.assign(InputComponent, {
   TextArea: TextAreaInput,
   RadioGroup: RadioGroupInput,
   CheckboxGroup: CheckboxGroup,
+  File: FileInput,
 })
 
 export default Input

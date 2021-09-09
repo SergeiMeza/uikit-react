@@ -1,5 +1,5 @@
 import { PlusIcon } from '@heroicons/react/outline'
-import React, { useState } from 'react'
+import React, { DragEventHandler, useEffect, useState } from 'react'
 import { classNames } from '../../../helpers/methods'
 import Button from '../Button/Button'
 
@@ -10,6 +10,8 @@ export type EmptyStateProps = {
   title?: string | JSX.Element
   description?: string
   button?: JSX.Element
+  onDragOver?: DragEventHandler<HTMLButtonElement>
+  onDrop?: DragEventHandler<HTMLButtonElement>
   onClick?: () => void
 }
 
@@ -47,9 +49,10 @@ const EmptyStateComponent: React.FC<EmptyStateProps> = ({
     </Button>
   ),
   onClick = () => console.log('on call to action'),
+  onDragOver = undefined,
+  onDrop = undefined,
+  children,
 }) => {
-  const [droppedFiles, setDroppedFiles] = useState<File[]>([])
-
   const dashedBorderView = (
     <div>
       <button
@@ -62,58 +65,25 @@ const EmptyStateComponent: React.FC<EmptyStateProps> = ({
           e.preventDefault()
           onClick()
         }}
-        onDragOver={(e) => {
-          e.preventDefault()
-        }}
-        onDrop={(e) => {
-          console.log(e)
-          console.log(e.dataTransfer.files)
-          setDroppedFiles(Array.from(e.dataTransfer.files))
-          e.preventDefault()
-        }}
+        onDragOver={onDragOver}
+        onDrop={onDrop}
       >
-        <>
-          {icon}
-          {title && typeof title === 'string' ? (
-            <span className="mt-2 block text-sm font-medium text-gray-900">
-              {title}
-            </span>
-          ) : (
-            title
-          )}
-          {description && (
-            <p className="mt-1 text-sm text-gray-500">{description}</p>
-          )}
-        </>
+        {children ?? (
+          <>
+            {icon}
+            {title && typeof title === 'string' ? (
+              <span className="mt-2 block text-sm font-medium text-gray-900">
+                {title}
+              </span>
+            ) : (
+              title
+            )}
+            {description && (
+              <p className="mt-1 text-sm text-gray-500">{description}</p>
+            )}
+          </>
+        )}
       </button>
-      <div>
-        {droppedFiles.map((file, index) => {
-          let reader = new FileReader()
-          reader.readAsDataURL(file)
-          reader.onload = (e) => {
-            document
-              .getElementById(file.name)
-              ?.setAttribute('src', String(e?.target?.result ?? ''))
-          }
-
-          return (
-            <div
-              className="flex justify-between items-center my-1"
-              key={`file-${index}`}
-            >
-              <span>{file.name}</span>
-              {file.type.includes('image') && (
-                <img
-                  className="w-auto h-10"
-                  src=""
-                  alt={file.name}
-                  id={file.name}
-                />
-              )}
-            </div>
-          )
-        })}
-      </div>
     </div>
   )
 
@@ -131,6 +101,32 @@ const EmptyStateComponent: React.FC<EmptyStateProps> = ({
   )
 
   return type === EmptyStateType.dashedBorder ? dashedBorderView : simpleView
+}
+
+export type FilePreviewProps = {
+  file: File
+}
+
+export const FilePreview: React.FC<FilePreviewProps> = ({ file }) => {
+  useEffect(() => {
+    let reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = (e) => {
+      document
+        .getElementById(file.name)
+        ?.setAttribute('src', String(e?.target?.result ?? ''))
+    }
+  }, [file])
+
+  return (
+    <div className="border border-gray-300 rounded">
+      {file.type.includes('image') && (
+        <img className="w-auto rounded" src="" alt={file.name} id={file.name} />
+      )}
+      {file.type.includes('video') && <div></div>}
+      {<div></div>}
+    </div>
+  )
 }
 
 export const EmptyState = Object.assign(EmptyStateComponent, {})
