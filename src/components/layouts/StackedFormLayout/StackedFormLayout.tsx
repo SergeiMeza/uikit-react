@@ -69,7 +69,11 @@ export const StackedFormLayout: React.FC<any> = ({}) => {
             </div>
 
             <div className="sm:col-span-6">
-              <Input.File label="Cover photo" name="coverPhoto" />
+              <Input.File
+                label="Cover photo"
+                name="coverPhoto"
+                accept="image/*,.jpeg,.jpg,.png,.gif"
+              />
             </div>
           </div>
         </div>
@@ -170,7 +174,7 @@ export const StackedFormLayout: React.FC<any> = ({}) => {
                 type="text"
                 autoComplete="postal-code"
                 name="zip"
-                label="Zip / Postal"
+                label="ZIP / Postal"
                 placeholder=""
                 description=""
               />

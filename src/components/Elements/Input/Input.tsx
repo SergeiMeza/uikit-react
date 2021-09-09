@@ -8,10 +8,8 @@ import React, {
 } from 'react'
 import { classNames } from '../../../helpers/methods'
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup'
-import EmptyState, {
-  EmptyStateProps,
-  FilePreview,
-} from '../EmptyState/EmptyState'
+import EmptyState, { EmptyStateProps } from '../EmptyState/EmptyState'
+import { FilePreview } from '../FIlePreview/FilePreview'
 
 export type InputProps = {
   inputType?: string
@@ -151,15 +149,20 @@ const InputComponent: React.FC<
           </div>
         )}
       </div>
-      {error ? (
-        <p className="mt-2 text-sm text-red-600" id="email-error">
-          {error}
-        </p>
-      ) : (
-        <p className="mt-2 text-sm text-gray-500" id={`${name}-description`}>
-          {description}
-        </p>
-      )}
+      {error
+        ? error && (
+            <p className="mt-2 text-sm text-red-600" id="email-error">
+              {error}
+            </p>
+          )
+        : description && (
+            <p
+              className="mt-2 text-sm text-gray-500"
+              id={`${name}-description`}
+            >
+              {description}
+            </p>
+          )}
     </div>
   )
 
@@ -301,7 +304,7 @@ const RadioGroupInput: React.FC<any> = ({
       </div>
       <div className="mt-4 space-y-4">
         {items.map((item) => (
-          <div className="flex items-center">
+          <div key={item.value} className="flex items-center">
             <input
               id={item.value}
               name={item.name}
@@ -328,6 +331,7 @@ export type FileInputProps = {
   name?: string
   hiddenLabel?: boolean
   multiple?: boolean
+  accept?: string
   renderFiles?: (file: File) => JSX.Element
 }
 
@@ -338,6 +342,7 @@ export const FileInput: React.FC<
   hiddenLabel = false,
   name = '',
   multiple = false,
+  accept = undefined,
   ...props
 }) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
@@ -429,6 +434,7 @@ export const FileInput: React.FC<
         name={name}
         multiple={multiple}
         onChange={handleFileInputChange}
+        accept={accept}
         hidden
       />
     </div>

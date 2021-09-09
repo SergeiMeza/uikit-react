@@ -1,7 +1,5 @@
-import { PlusIcon } from '@heroicons/react/outline'
-import React, { DragEventHandler, useEffect, useState } from 'react'
+import React, { DragEventHandler } from 'react'
 import { classNames } from '../../../helpers/methods'
-import Button from '../Button/Button'
 
 export type EmptyStateProps = {
   className?: string
@@ -9,7 +7,7 @@ export type EmptyStateProps = {
   icon?: JSX.Element
   title?: string | JSX.Element
   description?: string
-  button?: JSX.Element
+  button?: JSX.Element | null
   onDragOver?: DragEventHandler<HTMLButtonElement>
   onDrop?: DragEventHandler<HTMLButtonElement>
   onClick?: () => void
@@ -42,12 +40,7 @@ const EmptyStateComponent: React.FC<EmptyStateProps> = ({
   ),
   title = 'Create a new database',
   description = 'Get started by creating a new database',
-  button = (
-    <Button onClick={() => console.log('on call to action')}>
-      <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
-      New Project
-    </Button>
-  ),
+  button = undefined,
   onClick = () => console.log('on call to action'),
   onDragOver = undefined,
   onDrop = undefined,
@@ -101,32 +94,6 @@ const EmptyStateComponent: React.FC<EmptyStateProps> = ({
   )
 
   return type === EmptyStateType.dashedBorder ? dashedBorderView : simpleView
-}
-
-export type FilePreviewProps = {
-  file: File
-}
-
-export const FilePreview: React.FC<FilePreviewProps> = ({ file }) => {
-  useEffect(() => {
-    let reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onload = (e) => {
-      document
-        .getElementById(file.name)
-        ?.setAttribute('src', String(e?.target?.result ?? ''))
-    }
-  }, [file])
-
-  return (
-    <div className="border border-gray-300 rounded">
-      {file.type.includes('image') && (
-        <img className="w-auto rounded" src="" alt={file.name} id={file.name} />
-      )}
-      {file.type.includes('video') && <div></div>}
-      {<div></div>}
-    </div>
-  )
 }
 
 export const EmptyState = Object.assign(EmptyStateComponent, {})

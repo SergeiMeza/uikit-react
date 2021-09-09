@@ -41,7 +41,7 @@ const CheckboxGroupComponent: React.FC<CheckboxGroupProps> = ({
   function handleItemChange(element: ChangeEvent<HTMLInputElement>) {
     let _checkItems = checkItems.slice()
     let itemIndex = _checkItems.findIndex(
-      (item) => item.name == element.target.name,
+      (item) => item.name === element.target.name,
     )
     _checkItems[itemIndex].checked = element.target.checked
     setCheckItems(_checkItems)

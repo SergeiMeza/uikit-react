@@ -12,6 +12,7 @@ import Divider from '../components/Elements/Divider/Divider'
 import Button from '../components/Elements/Button/Button'
 import Input from '../components/Elements/Input/Input'
 import StackedFormLayout from '../components/layouts/StackedFormLayout/StackedFormLayout'
+import TwoColumnsCardsFormLayout from '../components/layouts/TwoColumnsCardsFormLayout/TwoColumnsCardsFormLayout'
 
 const StackedLayouts = () => {
   return (
@@ -66,9 +67,11 @@ const MultiColumnLayouts = () => {
 
 export const Home = () => {
   let preview = (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto py-20">
-        <StackedFormLayout />
+    <div className="bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto py-20">
+          <TwoColumnsCardsFormLayout />
+        </div>
       </div>
     </div>
   )
