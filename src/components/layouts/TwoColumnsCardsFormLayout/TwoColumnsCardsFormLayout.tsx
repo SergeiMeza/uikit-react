@@ -96,7 +96,7 @@ export const TwoColumnsCardsFormLayout: React.FC<any> = ({}) => {
                       }
                       title={
                         <span>
-                          <span className="text-indigo-600 hover:text-indigo-500">
+                          <span className="text-primary-600 hover:text-primary-500">
                             Upload a file
                           </span>{' '}
                           or drag and drop

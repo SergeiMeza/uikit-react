@@ -63,7 +63,7 @@ const CheckboxGroupComponent: React.FC<CheckboxGroupProps> = ({
               aria-describedby={`${item.name}-description`}
               name={item.name}
               type="checkbox"
-              className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+              className="focus:ring-primary-500 h-4 w-4 text-primary-600 border-gray-300 rounded"
               defaultChecked={item.checked}
               onChange={handleItemChange}
             />

@@ -45,7 +45,7 @@ const sampleColumns: TableColumnData[] = [
     labelHidden: true,
     render: (_, item) => (
       <Table.Cell className="text-right font-medium">
-        <a href="#" className="text-indigo-600 hover:text-indigo-900">
+        <a href="#" className="text-primary-600 hover:text-primary-900">
           Edit
         </a>
       </Table.Cell>

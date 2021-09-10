@@ -46,6 +46,7 @@ enum NotificationBadgeColor {
   indigo = 'bg-indigo-300',
   purple = 'bg-purple-300',
   pink = 'bg-pink-300',
+  primary = 'bg-primary-300',
 }
 
 enum NotificationBadgePosition {
@@ -58,7 +59,7 @@ const AvatarComponent: React.FC<AvatarProps> = ({
   shape = AvatarShape.rounded,
   notificationBadge = false,
   notificationBadgeSize = NotificationBadgeSize.medium,
-  notificationBadgeColor = NotificationBadgeColor.green,
+  notificationBadgeColor = NotificationBadgeColor.primary,
   notificationBadgePosition = NotificationBadgePosition.top,
   src,
   onClick = () => {},

@@ -404,7 +404,7 @@ const ModalCardButton: React.FC<ButtonProps> = ({
   <Button
     className={classNames(
       className,
-      'inline-flex justify-center w-full px-4 py-2 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm',
+      'inline-flex justify-center w-full px-4 py-2 focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:text-sm',
     )}
     title={title}
     {...props}

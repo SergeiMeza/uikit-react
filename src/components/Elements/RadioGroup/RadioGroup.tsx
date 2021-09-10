@@ -85,7 +85,7 @@ const RadioGroupComponent: React.FC<RadioGroupProps> = ({
     //     </HeadlessRadioGroup.Description>
     //     <div
     //       className={classNames(
-    //         selected ? 'border-indigo-500' : 'border-transparent',
+    //         selected ? 'border-primary-500' : 'border-transparent',
     //         'absolute -inset-px rounded-lg border-2 pointer-events-none',
     //       )}
     //       aria-hidden="true"
@@ -98,9 +98,9 @@ const RadioGroupComponent: React.FC<RadioGroupProps> = ({
         <span
           className={classNames(
             selected
-              ? 'bg-indigo-600 border-transparent'
+              ? 'bg-primary-600 border-transparent'
               : 'bg-white border-gray-300',
-            active ? 'ring-2 ring-offset-2 ring-indigo-500' : '',
+            active ? 'ring-2 ring-offset-2 ring-primary-500' : '',
             'h-4 w-4 mt-0.5 cursor-pointer rounded-full border flex items-center justify-center',
           )}
           aria-hidden="true"
@@ -111,7 +111,7 @@ const RadioGroupComponent: React.FC<RadioGroupProps> = ({
           <HeadlessRadioGroup.Label
             as="span"
             className={classNames(
-              selected ? 'text-indigo-900' : 'text-gray-900',
+              selected ? 'text-primary-900' : 'text-gray-900',
               'block text-sm font-medium',
             )}
           >
@@ -120,7 +120,7 @@ const RadioGroupComponent: React.FC<RadioGroupProps> = ({
           <HeadlessRadioGroup.Description
             as="span"
             className={classNames(
-              selected ? 'text-indigo-700' : 'text-gray-500',
+              selected ? 'text-primary-700' : 'text-gray-500',
               'block text-sm',
             )}
           >
@@ -135,7 +135,7 @@ const RadioGroupComponent: React.FC<RadioGroupProps> = ({
 
   const cardWrapperClassNames = (active: boolean) =>
     classNames(
-      active ? 'ring-1 ring-offset-2 ring-indigo-500' : '',
+      active ? 'ring-1 ring-offset-2 ring-primary-500' : '',
       'relative block rounded-lg border border-gray-300 bg-white shadow-sm px-6 py-4 cursor-pointer hover:border-gray-400 sm:flex sm:justify-between focus:outline-none',
     )
 
@@ -143,7 +143,7 @@ const RadioGroupComponent: React.FC<RadioGroupProps> = ({
     classNames(
       index === 0 ? 'rounded-tl-md rounded-tr-md' : '',
       index === items.length - 1 ? 'rounded-bl-md rounded-br-md' : '',
-      active ? 'bg-indigo-50 border-indigo-200 z-10' : 'border-gray-200',
+      active ? 'bg-primary-50 border-primary-200 z-10' : 'border-gray-200',
       'relative border p-4 flex cursor-pointer focus:outline-none',
     )
 

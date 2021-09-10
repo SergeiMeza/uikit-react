@@ -69,7 +69,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
         <select
           id="tabs"
           name="tabs"
-          className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md"
           defaultValue={tabs.find((tab) => tab.current)?.name}
           onChange={handleChange}
         >
@@ -102,14 +102,14 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                   type === TabNavigationType.default
                     ? classNames(
                         tab.current
-                          ? 'border-indigo-500 text-indigo-600'
+                          ? 'border-primary-500 text-primary-600'
                           : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
                         'group inline-flex items-center',
                         'py-4 px-1 border-b-2 font-medium text-sm',
                       )
                     : classNames(
                         tab.current
-                          ? 'bg-indigo-100 text-indigo-700'
+                          ? 'bg-primary-100 text-primary-700'
                           : 'text-gray-500 hover:text-gray-700',
                         'px-3 py-2 font-medium text-sm rounded-md',
                       )
@@ -124,7 +124,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                   <tab.icon
                     className={classNames(
                       tab.current
-                        ? 'text-indigo-500'
+                        ? 'text-primary-500'
                         : 'text-gray-400 group-hover:text-gray-500',
                       '-ml-0.5 mr-2 h-5 w-5',
                     )}
@@ -136,7 +136,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                   <span
                     className={classNames(
                       tab.current
-                        ? 'bg-indigo-100 text-indigo-600'
+                        ? 'bg-primary-100 text-primary-600'
                         : 'bg-gray-100 text-gray-900',
                       'hidden ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block',
                     )}

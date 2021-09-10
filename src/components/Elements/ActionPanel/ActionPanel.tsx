@@ -39,7 +39,7 @@ const ActionPanelComponent: React.FC<ActionPanelProps> = ({ children }) => {
       <div className="mt-3 text-sm">
         <a
           href="#"
-          className="font-medium text-indigo-600 hover:text-indigo-500"
+          className="font-medium text-primary-600 hover:text-primary-500"
         >
           {' '}
           Learn more about our CI features{' '}
@@ -64,7 +64,7 @@ const ActionPanelComponent: React.FC<ActionPanelProps> = ({ children }) => {
         <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
           <button
             type="button"
-            className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+            className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:text-sm"
           >
             Change plan
           </button>
@@ -90,13 +90,13 @@ const ActionPanelComponent: React.FC<ActionPanelProps> = ({ children }) => {
             type="text"
             name="email"
             id="email"
-            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
             placeholder="you@example.com"
           />
         </div>
         <button
           type="submit"
-          className="mt-3 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+          className="mt-3 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
         >
           Save
         </button>
@@ -139,7 +139,7 @@ const ActionPanelComponent: React.FC<ActionPanelProps> = ({ children }) => {
           <div className="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
             <button
               type="button"
-              className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+              className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:text-sm"
             >
               Edit
             </button>

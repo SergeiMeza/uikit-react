@@ -48,7 +48,7 @@ export const SignInLayout: React.FC<any> = ({}) => {
               <Input.Checkbox name="rememberMe" label="Remember me" />
 
               <Button
-                className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                className="text-sm font-medium text-primary-600 hover:text-primary-500"
                 title="Forgot your password?"
                 type="button"
                 buttonType={Button.buttonType.transparent}

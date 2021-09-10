@@ -32,6 +32,7 @@ enum BadgeColor {
   indigo = 'bg-indigo-100 text-indigo-800',
   purple = 'bg-purple-100 text-purple-800',
   pink = 'bg-pink-100 text-pink-800',
+  primary = 'bg-primary-100 text-primary-800',
 }
 
 enum DotColor {
@@ -43,6 +44,7 @@ enum DotColor {
   indigo = 'text-indigo-400',
   purple = 'text-purple-400',
   pink = 'text-pink-400',
+  primary = 'text-primary-400',
 }
 
 enum RemoveButtonColor {
@@ -54,6 +56,7 @@ enum RemoveButtonColor {
   indigo = 'text-indigo-400 hover:bg-indigo-200 hover:text-indigo-500 focus:bg-indigo-500',
   purple = 'text-purple-400 hover:bg-purple-200 hover:text-purple-500 focus:bg-purple-500',
   pink = 'text-pink-400 hover:bg-pink-200 hover:text-pink-500 focus:bg-pink-500',
+  primary = 'text-primary-400 hover:bg-primary-200 hover:text-primary-500 focus:bg-primary-500',
 }
 
 type BadgeRemoveButtonProps = {
@@ -98,11 +101,11 @@ const BadgeComponent: React.FC<BadgeProps> = ({
   title = 'Badge',
   size = BadgeSize.large,
   shape = BadgeShape.rounded,
-  color = BadgeColor.green,
+  color = BadgeColor.primary,
   dot = false,
-  dotColor = DotColor.green,
+  dotColor = DotColor.primary,
   removeButton = false,
-  removeButtonColor = RemoveButtonColor.green,
+  removeButtonColor = RemoveButtonColor.primary,
   onRemoveButtonClick = () => {
     console.log('remove item')
   },

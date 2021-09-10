@@ -89,7 +89,7 @@ const InputComponent: React.FC<
   const themeInputClassNames = classNames(
     error
       ? 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none pr-10 focus:ring-red-500 focus:border-red-500'
-      : 'focus:ring-indigo-500 focus:border-indigo-500',
+      : 'focus:ring-primary-500 focus:border-primary-500',
     prefix ? 'rounded-r-md' : 'rounded-md',
     ' block w-full sm:text-sm border-gray-300',
   )
@@ -215,7 +215,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({
         aria-describedby={`${name}-description`}
         name={name}
         type="checkbox"
-        className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+        className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
         defaultChecked={value}
         onChange={handleItemChange}
         onFocus={onFocus}
@@ -259,7 +259,7 @@ const TextAreaInput: React.FC<
           id={name}
           name={name}
           rows={rows}
-          className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"
+          className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border border-gray-300 rounded-md"
           defaultValue={defaultValue}
           {...props}
         />
@@ -309,7 +309,7 @@ const RadioGroupInput: React.FC<any> = ({
               id={item.value}
               name={item.name}
               type="radio"
-              className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
+              className="focus:ring-primary-500 h-4 w-4 text-primary-600 border-gray-300"
             />
             <label
               htmlFor={item.value}
@@ -393,7 +393,7 @@ export const FileInput: React.FC<
         title={
           props.title ?? (
             <span>
-              <span className="text-indigo-600 hover:text-indigo-500">
+              <span className="text-primary-600 hover:text-primary-500">
                 Upload a file
               </span>{' '}
               or drag and drop
