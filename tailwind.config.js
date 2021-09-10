@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         ...colors,
-        primary: colors.rose,
+        primary: colors.emerald,
         secondary: colors.red,
       },
       minHeight: {
