@@ -1,5 +1,5 @@
 import React, { DragEventHandler } from 'react'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 export type EmptyStateProps = {
   className?: string

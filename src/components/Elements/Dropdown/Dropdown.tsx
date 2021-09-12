@@ -6,7 +6,7 @@ import {
   DotsVerticalIcon,
   PencilAltIcon,
 } from '@heroicons/react/solid'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 export type DropdownProps = {
   className?: string

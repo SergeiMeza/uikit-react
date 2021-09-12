@@ -7,7 +7,7 @@ import React, {
   useEffect,
   useState,
 } from 'react'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 const sampleOptions = [
   { name: 'USA', value: 'usa' },

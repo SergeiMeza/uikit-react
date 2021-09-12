@@ -15,7 +15,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 import { CheckIcon, ChevronDownIcon, MinusIcon } from '@heroicons/react/solid'
-import { classNames } from '../helpers/methods'
+import { classNames } from '../components/helpers/methods'
 
 const solutions = [
   {

@@ -14,7 +14,7 @@ function App() {
         <Route path="/application-ui">
           <ApplicationUIRoutes />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <LandingPage />
         </Route>
       </Switch>

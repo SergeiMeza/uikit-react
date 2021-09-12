@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Popover, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
-import { classNames } from '../../helpers/methods'
+import { classNames } from '../helpers/methods'
 
 // MODEL
 const user = {

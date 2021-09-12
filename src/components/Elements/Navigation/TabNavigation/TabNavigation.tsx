@@ -7,7 +7,7 @@ import React, { ChangeEvent, useState } from 'react'
 //   UsersIcon,
 // } from '@heroicons/react/solid'
 
-import { classNames } from '../../../../helpers/methods'
+import { classNames } from '../../../helpers/methods'
 import { NavigationItem } from '../NavigationItem'
 
 export type TabNavigationProps = {

@@ -1,6 +1,6 @@
 import { Switch } from '@headlessui/react'
 import React from 'react'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 export type ToggleProps = {
   enabled: boolean

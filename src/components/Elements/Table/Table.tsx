@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 const sampleData = [
   {

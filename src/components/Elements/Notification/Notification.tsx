@@ -2,9 +2,7 @@ import { Transition } from '@headlessui/react'
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/outline'
 import { XIcon } from '@heroicons/react/solid'
 import React, { Fragment, useEffect } from 'react'
-import { classNames } from '../../../helpers/methods'
-import Avatar from '../Avatar/Avatar'
-import Button from '../Button/Button'
+import { classNames } from '../../helpers/methods'
 
 export type NotificationProps = {
   show: boolean
@@ -144,8 +142,8 @@ const NotificationComponent: React.FC<NotificationProps> = ({
 export const Notification = Object.assign(NotificationComponent, {
   SuccessIcon: NotificationSuccessIcon,
   FailureIcon: NotificationFailureIcon,
-  Button: Button,
-  Avatar: Avatar,
+  // Button: Button,
+  // Avatar: Avatar,
   alignment: NotificationContentAlignment,
 })
 

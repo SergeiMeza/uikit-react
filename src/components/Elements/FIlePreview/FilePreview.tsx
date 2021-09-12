@@ -1,6 +1,6 @@
 import { DocumentIcon } from '@heroicons/react/outline'
 import React, { useEffect } from 'react'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 export type FilePreviewProps = {
   file: File

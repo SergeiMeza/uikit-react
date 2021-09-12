@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup'
 import EmptyState, { EmptyStateProps } from '../EmptyState/EmptyState'
 import { FilePreview } from '../FIlePreview/FilePreview'

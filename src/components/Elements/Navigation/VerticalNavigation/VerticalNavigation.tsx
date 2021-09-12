@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/outline'
 
 import { NavigationItem } from '../NavigationItem'
-import { classNames } from '../../../../helpers/methods'
+import { classNames } from '../../../helpers/methods'
 
 export type VerticalNavigationProps = {
   items?: NavigationItem[]

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 import Button from '../Button/Button'
 
 export type SlideOverProps = {

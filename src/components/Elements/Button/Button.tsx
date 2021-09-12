@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes } from 'react'
 import { PlusIcon as PlusIconSolid } from '@heroicons/react/solid'
 
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 
 export type ButtonProps = {
   className?: string

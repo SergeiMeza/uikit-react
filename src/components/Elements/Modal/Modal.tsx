@@ -20,7 +20,7 @@ import {
   TrendingUpIcon,
   XIcon,
 } from '@heroicons/react/outline'
-import { classNames } from '../../../helpers/methods'
+import { classNames } from '../../helpers/methods'
 import Button, { ButtonProps } from '../Button/Button'
 
 export type ModalProps = {
