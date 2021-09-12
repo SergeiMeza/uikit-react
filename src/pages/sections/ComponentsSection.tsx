@@ -1,135 +1,138 @@
 import { classNames } from '../../components'
 import { Link } from 'react-router-dom'
 
+let colors = [
+  'bg-rose-600',
+  'bg-pink-600',
+  'bg-fuchsia-500',
+  'bg-purple-500',
+  'bg-violet-500',
+  'bg-indigo-500',
+  'bg-blue-500',
+  'bg-lightBlue-500',
+  'bg-sky-500',
+  'bg-cyan-500',
+  'bg-teal-500',
+  'bg-emerald-500',
+  'bg-green-500',
+  'bg-lime-500',
+  'bg-yellow-500',
+  'bg-amber-500',
+  'bg-orange-500',
+  'bg-red-500',
+  // 'bg-warmGray-500',
+  // 'bg-trueGray-500',
+]
+
 const components = [
   {
     name: 'Action Panel',
     initials: 'AP',
     href: '/components/action-panel',
-    bgColor: 'bg-red-600',
   },
   {
     name: 'Anchor',
     initials: 'A',
     href: '/components/avatar',
-    bgColor: 'bg-rose-600',
   },
   {
     name: 'Avatar',
     initials: 'A',
     href: '/components/avatar',
-    bgColor: 'bg-pink-600',
   },
   {
     name: 'Badge',
     initials: 'B',
     href: '/components/badge',
     members: 16,
-    bgColor: 'bg-fuchsia-500',
   },
   {
     name: 'Breadcrumb',
     initials: 'B',
     href: '/components/breadcrumb',
-    bgColor: 'bg-purple-500',
   },
   {
     name: 'Button',
     initials: 'B',
     href: '/components/button',
-    bgColor: 'bg-violet-500',
   },
   {
     name: 'ButtonGroup',
     initials: 'BG',
     href: '/components/button-group',
-    bgColor: 'bg-indigo-500',
   },
   {
     name: 'CheckboxGroup',
     initials: 'CG',
     href: '/components/checkbox-group',
-    bgColor: 'bg-blue-500',
   },
   {
     name: 'Divider',
     initials: 'D',
     href: '/components/divider',
-    bgColor: 'bg-lightBlue-500',
   },
   {
     name: 'Dropdown',
     initials: 'D',
     href: '/components/dropdown',
-    bgColor: 'bg-sky-500',
   },
   {
     name: 'EmptyState',
     initials: 'ES',
     href: '/components/empty-state',
-    bgColor: 'bg-cyan-500',
   },
   {
     name: 'FilePreview',
     initials: 'FP',
     href: '/components/file-preview',
-    bgColor: 'bg-teal-500',
   },
   {
     name: 'Input',
     initials: 'I',
     href: '/components/input',
-    bgColor: 'bg-emerald-500',
   },
   {
     name: 'Modal',
     initials: 'M',
     href: '/components/modal',
-    bgColor: 'bg-green-500',
   },
   {
     name: 'Navigation',
     initials: 'N',
     href: '/components/navigation',
-    bgColor: 'bg-lime-500',
   },
   {
     name: 'Notification',
     initials: 'N',
     href: '/components/notification',
-    bgColor: 'bg-yellow-500',
   },
   {
     name: 'RadioGroup',
     initials: 'RG',
     href: '/components/radio-group',
-    bgColor: 'bg-amber-500',
   },
   {
     name: 'SelectMenu',
     initials: 'SM',
     href: '/components/select-menu',
-    bgColor: 'bg-orange-500',
   },
   {
     name: 'SlideOver',
     initials: 'SO',
     href: '/components/slide-over',
-    bgColor: 'bg-red-500',
   },
   {
     name: 'Table',
     initials: 'T',
     href: '/components/table',
-    bgColor: 'bg-warmGray-500',
   },
   {
     name: 'Toggle',
     initials: 'T',
     href: '/components/toggle',
-    bgColor: 'bg-trueGray-500',
   },
-]
+].map((item, index) => ({ ...item, bgColor: colors[index % colors.length] }))
+
 export const ComponentsSection = () => {
   return (
     <div>
