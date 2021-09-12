@@ -18,9 +18,10 @@ import VerticalNavigation from './Elements/Navigation/VerticalNavigation/Vertica
 import Notification from './Elements/Notification/Notification';
 import PageHeading from './Elements/PageHeading/PageHeading';
 import RadioGroup from './Elements/RadioGroup/RadioGroup';
+import SectionHeading from './Elements/SectionHeading/SectionHeading';
 import SelectMenu from './Elements/SelectMenu/SelectMenu';
 import SlideOver from './Elements/SlideOver/SlideOver';
 import Table from './Elements/Table/Table';
 import Toggle from './Elements/Toggle/Toggle';
 import { classNames } from './helpers/methods';
-export { ActionPanel, Anchor, Avatar, Badge, Breadcrumb, Button, CheckboxGroup, Container, Divider, Dropdown, EmptyState, FilePreview, Input, Modal, TabNavigation, VerticalNavigation, Notification, PageHeading, RadioGroup, SelectMenu, SlideOver, Table, Toggle, classNames, };
+export { ActionPanel, Anchor, Avatar, Badge, Breadcrumb, Button, CheckboxGroup, Container, Divider, Dropdown, EmptyState, FilePreview, Input, Modal, TabNavigation, VerticalNavigation, Notification, PageHeading, RadioGroup, SectionHeading, SelectMenu, SlideOver, Table, Toggle, classNames, };
