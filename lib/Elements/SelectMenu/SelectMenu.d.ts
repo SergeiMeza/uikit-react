@@ -1,4 +1,5 @@
 import React from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 export declare type SelectMenuProps = {
     type?: SelectMenuType;
     name?: string;
@@ -6,6 +7,7 @@ export declare type SelectMenuProps = {
     options?: any[];
     selectedItem?: any;
     onItemSelected?: (item: any) => void;
+    register?: UseFormRegisterReturn;
 };
 declare enum SelectMenuType {
     native = "native",

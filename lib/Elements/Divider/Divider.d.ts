@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonProps } from '../Button/Button';
 export declare type DividerProps = {
+    className?: string;
     title?: string;
     titleSize?: DividerTitleSize;
     contentPosition?: DividerContentPosition;

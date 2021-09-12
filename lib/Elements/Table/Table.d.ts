@@ -7,8 +7,8 @@ export declare type TableColumnData = {
     value?: string[];
 };
 export declare type TableProps = {
-    data: any[];
-    columns: TableColumnData[];
+    data?: any[];
+    columns?: TableColumnData[];
 };
 export declare type TableColumnProps = {
     label: string;
