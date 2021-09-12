@@ -1,10 +1,13 @@
 {
   "name": "@sergeimeza/uikit-react",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.3",
+  "private": false,
   "scripts": {
     "start": "craco start",
+    "build:clean": "rimraf lib",
     "build:css": "postcss src/index.css -o src/components/styles.css",
+    "build:copy-css": "cp src/components/styles.css lib/styles.css",
+    "compile": "yarn build:clean && yarn build:css && tsc --project tsconfig.compile.json && yarn build:copy-css",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
@@ -77,5 +80,10 @@
     "singleQuote": true,
     "trailingComma": "all",
     "semi": false
-  }
+  },
+  "description": "Personal react components library",
+  "main": "lib/index.js",
+  "repository": "https://github.com/SergeiMeza/uikit-react.git",
+  "author": "SergeiMeza <sergeimeza@gmail.com>",
+  "license": "MIT"
 }
