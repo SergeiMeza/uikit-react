@@ -9,7 +9,6 @@ let colors = [
   'bg-violet-500',
   'bg-indigo-500',
   'bg-blue-500',
-  'bg-lightBlue-500',
   'bg-sky-500',
   'bg-cyan-500',
   'bg-teal-500',
@@ -62,6 +61,11 @@ const components = [
     href: '/components/button-group',
   },
   {
+    name: 'CardHeading',
+    initials: 'CH',
+    href: '/components/card-heading',
+  },
+  {
     name: 'CheckboxGroup',
     initials: 'CG',
     href: '/components/checkbox-group',
@@ -95,6 +99,11 @@ const components = [
     name: 'Modal',
     initials: 'M',
     href: '/components/modal',
+  },
+  {
+    name: 'NavBar',
+    initials: 'NB',
+    href: '/components/nav-bar',
   },
   {
     name: 'Navigation',

@@ -10,7 +10,6 @@ let colors = [
   'bg-violet-500',
   'bg-indigo-500',
   'bg-blue-500',
-  'bg-lightBlue-500',
   'bg-sky-500',
   'bg-cyan-500',
   'bg-teal-500',

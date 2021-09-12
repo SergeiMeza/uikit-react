@@ -9,7 +9,7 @@ import {
   Avatar,
   Badge,
   Breadcrumb,
-  Button,
+  ButtonGroup,
   CheckboxGroup,
   Divider,
   Dropdown,
@@ -21,7 +21,7 @@ import {
   TabNavigation,
   VerticalNavigation,
 } from './components'
-import ButtonGroup from './components/Elements/ButtonGroup/ButtonGroup'
+
 import { ComponentWrapper } from './pages/components/wrappers/ComponentWrapper'
 import { LayoutWrapper } from './pages/components/wrappers/LayoutWrapper'
 
@@ -41,6 +41,8 @@ import TwoColumnsCardsFormLayout from './pages/layouts/TwoColumnsCardsFormLayout
 
 import PageHeadingPreview from './pages/components/previews/PageHeadingPreview'
 import SectionHeadingPreview from './pages/components/previews/SectionHeadingPreview'
+import CardHeadingPreview from './pages/components/previews/CardHeadingPreview'
+import NavBarPreview from './pages/components/previews/NavBarPreview'
 
 const App = () => {
   return (
@@ -158,6 +160,9 @@ const App = () => {
                   <ButtonGroup />
                 </ComponentWrapper>
               </Route>
+              <Route path="/components/card-heading">
+                <CardHeadingPreview />
+              </Route>
               <Route path="/components/checkbox-group">
                 <ComponentWrapper
                   component={{
@@ -218,6 +223,9 @@ const App = () => {
               </Route>
               <Route path="/components/modal">
                 <ModalPreview />
+              </Route>
+              <Route path="/components/nav-bar">
+                <NavBarPreview />
               </Route>
               <Route path="/components/navigation">
                 <ComponentWrapper

@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react'
+import { Anchor } from '../../..'
 
 // import {
 //   CreditCardIcon,
@@ -13,7 +14,9 @@ import { NavigationItem } from '../NavigationItem'
 export type TabNavigationProps = {
   tabs?: NavigationItem[]
   type?: TabNavigationType
+  showBadge?: boolean
   showIcons?: boolean
+  isNavBar?: boolean
   onTabSelected?: (tab: NavigationItem) => void
 }
 
@@ -40,7 +43,9 @@ enum TabNavigationType {
 const TabNavigationComponent: React.FC<TabNavigationProps> = ({
   tabs = sampleTabs2,
   type = TabNavigationType.default,
+  isNavBar = false,
   showIcons = false,
+  showBadge = true,
   onTabSelected = (tab) => {
     console.log('tab selected:', tab.name)
   },
@@ -60,7 +65,26 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
     onTabSelected(_tabItems[index])
   }
 
-  return (
+  let navBarTabNavigation = (
+    <>
+      {tabs.map((tab) => (
+        <Anchor
+          key={tab.name}
+          to={tab.to}
+          href={tab.href}
+          className={classNames(
+            tab.current
+              ? 'border-primary-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
+              : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
+          )}
+        >
+          {tab.name}
+        </Anchor>
+      ))}
+    </>
+  )
+
+  let standardTabNavigation = (
     <div>
       <div className="sm:hidden">
         <label htmlFor="tabs" className="sr-only">
@@ -132,7 +156,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                   />
                 )}
                 <span>{tab.name}</span>
-                {tab.count ? (
+                {showBadge && tab.count ? (
                   <span
                     className={classNames(
                       tab.current
@@ -151,8 +175,12 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
       </div>
     </div>
   )
+
+  return isNavBar ? navBarTabNavigation : standardTabNavigation
 }
 
-export const TabNavigation = Object.assign(TabNavigationComponent, {})
+export const TabNavigation = Object.assign(TabNavigationComponent, {
+  type: TabNavigationType,
+})
 
 export default TabNavigation
