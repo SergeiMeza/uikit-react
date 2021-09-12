@@ -58,7 +58,7 @@ const ButtonComponent: React.FC<
 > = ({
   className = 'flex justify-center font-medium',
   title,
-  size = ButtonSize.medium,
+  size = ButtonSize.large,
   shape = ButtonShape.default,
   buttonType = ButtonType.primary,
   children,

@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom'
+
 import { ChevronRightIcon, HomeIcon } from '@heroicons/react/solid'
 import React from 'react'
+import { classNames } from '../..'
 
 const samplePages = [
   { name: 'Projects', href: '#', current: false },
@@ -37,7 +40,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
       >
         <li className="flex">
           <div className="flex items-center">
-            <a href={homeRef} className="text-gray-400 hover:text-gray-500">
+            <Link to={homeRef} className="text-gray-400 hover:text-gray-500">
               {homeIcon ? (
                 <>
                   {homeIcon}
@@ -50,7 +53,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                   </span>
                 </>
               )}
-            </a>
+            </Link>
           </div>
         </li>
         {pages.map((page) => (
@@ -66,13 +69,18 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
               >
                 <path d="M.293 0l22 22-22 22h1.414l22-22-22-22H.293z" />
               </svg>
-              <a
-                href={page.href}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+              <Link
+                to={page.href}
+                className={classNames(
+                  page.current
+                    ? 'text-primary-500 hover:text-primary-700'
+                    : 'text-gray-500 hover:text-gray-700',
+                  'ml-4 text-sm font-medium',
+                )}
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </a>
+              </Link>
             </div>
           </li>
         ))}
@@ -91,7 +99,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
       >
         <li className="flex">
           <div className="flex items-center">
-            <a href={homeRef} className="text-gray-400 hover:text-gray-500">
+            <Link to={homeRef} className="text-gray-400 hover:text-gray-500">
               {homeIcon ? (
                 <>
                   {homeIcon}
@@ -104,7 +112,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                   </span>
                 </>
               )}
-            </a>
+            </Link>
           </div>
         </li>
         {pages.map((page) => (
@@ -120,13 +128,18 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
               >
                 <path d="M.293 0l22 22-22 22h1.414l22-22-22-22H.293z" />
               </svg>
-              <a
-                href={page.href}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+              <Link
+                to={page.href}
+                className={classNames(
+                  page.current
+                    ? 'text-primary-500 hover:text-primary-700'
+                    : 'text-gray-500 hover:text-gray-700',
+                  'ml-4 text-sm font-medium',
+                )}
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </a>
+              </Link>
             </div>
           </li>
         ))}
@@ -139,7 +152,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
       <ol role="list" className="flex items-center space-x-4">
         <li>
           <div>
-            <a href={homeRef} className="text-gray-400 hover:text-gray-500">
+            <Link to={homeRef} className="text-gray-400 hover:text-gray-500">
               {homeIcon ? (
                 <>
                   {homeIcon}
@@ -152,7 +165,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                   </span>
                 </>
               )}
-            </a>
+            </Link>
           </div>
         </li>
         {pages.map((page) => (
@@ -162,13 +175,18 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                 className="flex-shrink-0 h-5 w-5 text-gray-400"
                 aria-hidden="true"
               />
-              <a
-                href={page.href}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+              <Link
+                to={page.href}
+                className={classNames(
+                  page.current
+                    ? 'text-primary-500 hover:text-primary-700'
+                    : 'text-gray-500 hover:text-gray-700',
+                  'ml-4 text-sm font-medium',
+                )}
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </a>
+              </Link>
             </div>
           </li>
         ))}
@@ -181,7 +199,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
       <ol role="list" className="flex items-center space-x-4">
         <li>
           <div>
-            <a href={homeRef} className="text-gray-400 hover:text-gray-500">
+            <Link to={homeRef} className="text-gray-400 hover:text-gray-500">
               {homeIcon ? (
                 <>
                   {homeIcon}
@@ -194,7 +212,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                   </span>
                 </>
               )}
-            </a>
+            </Link>
           </div>
         </li>
         {pages.map((page) => (
@@ -209,13 +227,18 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
               >
                 <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
               </svg>
-              <a
-                href={page.href}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+              <Link
+                to={page.href}
+                className={classNames(
+                  page.current
+                    ? 'text-primary-500 hover:text-primary-700'
+                    : 'text-gray-500 hover:text-gray-700',
+                  'ml-4 text-sm font-medium',
+                )}
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </a>
+              </Link>
             </div>
           </li>
         ))}

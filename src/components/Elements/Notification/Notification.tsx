@@ -118,16 +118,18 @@ const NotificationComponent: React.FC<NotificationProps> = ({
                   )}
                   {/* close button */}
                   <div className="ml-4 flex-shrink-0 flex">
-                    <button
-                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-                      onClick={() => {
-                        setShow(false)
-                        onClose()
-                      }}
-                    >
-                      <span className="sr-only">Close</span>
-                      <XIcon className="h-5 w-5" aria-hidden="true" />
-                    </button>
+                    <div>
+                      <button
+                        className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                        onClick={() => {
+                          setShow(false)
+                          onClose()
+                        }}
+                      >
+                        <span className="sr-only">Close</span>
+                        <XIcon className="h-5 w-5" aria-hidden="true" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -142,8 +144,6 @@ const NotificationComponent: React.FC<NotificationProps> = ({
 export const Notification = Object.assign(NotificationComponent, {
   SuccessIcon: NotificationSuccessIcon,
   FailureIcon: NotificationFailureIcon,
-  // Button: Button,
-  // Avatar: Avatar,
   alignment: NotificationContentAlignment,
 })
 

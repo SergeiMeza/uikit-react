@@ -75,7 +75,7 @@ const VerticalNavigationComponent: React.FC<VerticalNavigationProps> = ({
             key={item.name}
             className={classNames(
               item.current
-                ? 'bg-gray-100 text-gray-900'
+                ? 'bg-primary-100 text-primary-900'
                 : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
               'w-full group flex items-center px-3 py-2 text-sm font-medium rounded-md',
             )}
@@ -90,7 +90,7 @@ const VerticalNavigationComponent: React.FC<VerticalNavigationProps> = ({
               <item.icon
                 className={classNames(
                   item.current
-                    ? 'text-gray-500'
+                    ? 'text-primary-500'
                     : 'text-gray-400 group-hover:text-gray-500',
                   'flex-shrink-0 -ml-1 mr-3 h-6 w-6',
                 )}

@@ -62,8 +62,8 @@ export type TableColumnData = {
 }
 
 export type TableProps = {
-  data: any[]
-  columns: TableColumnData[]
+  data?: any[]
+  columns?: TableColumnData[]
 }
 
 export type TableColumnProps = {
