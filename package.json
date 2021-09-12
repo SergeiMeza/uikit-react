@@ -1,7 +1,16 @@
 {
-  "name": "tailwindcss-training",
+  "name": "@sergeimeza/uikit-react",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build:css": "postcss src/index.css -o src/components/styles.css",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@headlessui/react": "^1.4.1",
@@ -21,13 +30,20 @@
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/node-logger": "^6.3.8",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.8",
+    "@tailwindcss/forms": "^0.3.3",
+    "@types/react-router-dom": "^5.1.8",
+    "autoprefixer": "^9",
+    "babel-loader": "8.1.0",
+    "postcss": "^7",
+    "postcss-cli": "7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "eslintConfig": {
     "extends": [
@@ -56,20 +72,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^6.3.8",
-    "@storybook/addon-essentials": "^6.3.8",
-    "@storybook/addon-links": "^6.3.8",
-    "@storybook/node-logger": "^6.3.8",
-    "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.8",
-    "@tailwindcss/forms": "^0.3.3",
-    "@types/react-router-dom": "^5.1.8",
-    "autoprefixer": "^9",
-    "babel-loader": "8.1.0",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "prettier": {
     "singleQuote": true,
