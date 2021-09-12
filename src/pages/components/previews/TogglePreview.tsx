@@ -8,7 +8,7 @@ export const TogglePreview = () => {
     <ComponentWrapper
       component={{
         name: 'Toggle',
-        href: '/components/toggle',
+        to: '/components/toggle',
         current: true,
       }}
     >

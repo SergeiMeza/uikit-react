@@ -6,7 +6,7 @@ export const InputPreview = () => {
     <ComponentWrapper
       component={{
         name: 'Input',
-        href: '/components/input',
+        to: '/components/input',
         current: true,
       }}
     >

@@ -41,12 +41,14 @@ const defaultFocus =
   ' focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500'
 
 export type InlineButtonProps = {
+  className?: string
   title?: string
   href?: string
   to?: string
 }
 
 const InlineButton: React.FC<InlineButtonProps> = ({
+  className = '',
   title = 'start your 14-day free trial',
   href = null,
   to = null,
@@ -57,7 +59,10 @@ const InlineButton: React.FC<InlineButtonProps> = ({
     button = (
       <a
         href={href}
-        className="font-medium text-primary-600 hover:text-primary-500"
+        className={classNames(
+          className,
+          'font-medium text-primary-600 hover:text-primary-500',
+        )}
       >
         {children ?? title}
       </a>
@@ -66,7 +71,10 @@ const InlineButton: React.FC<InlineButtonProps> = ({
     button = (
       <Link
         to={to}
-        className="font-medium text-primary-600 hover:text-primary-500"
+        className={classNames(
+          className,
+          'font-medium text-primary-600 hover:text-primary-500',
+        )}
       >
         {children ?? title}
       </Link>

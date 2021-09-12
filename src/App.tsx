@@ -23,15 +23,21 @@ import {
 } from './components'
 import ButtonGroup from './components/Elements/ButtonGroup/ButtonGroup'
 import { ComponentWrapper } from './pages/components/wrappers/ComponentWrapper'
+import { LayoutWrapper } from './pages/components/wrappers/LayoutWrapper'
+
 import { ModalPreview } from './pages/components/previews/ModalPreview'
 import { NotificationPreview } from './pages/components/previews/NotificationPreview'
 import { SlideOverPreview } from './pages/components/previews/SlideOverPreview'
 import { TogglePreview } from './pages/components/previews/TogglePreview'
+
 import LayoutsPage from './pages/LayoutsPage'
-import SignInLayout from './components/layouts/SignInLayout/SignInLayout'
+import SignInLayout from './pages/layouts/SignInLayout/SignInLayout'
 import Anchor from './components/Elements/Anchor/Anchor'
 import ButtonsPreview from './pages/components/previews/ButtonsPreview'
 import InputPreview from './pages/components/previews/InputsPreview'
+
+import StackedFormLayout from './pages/layouts/StackedFormLayout/StackedFormLayout'
+import TwoColumnsCardsFormLayout from './pages/layouts/TwoColumnsCardsFormLayout/TwoColumnsCardsFormLayout'
 
 const App = () => {
   return (
@@ -41,7 +47,37 @@ const App = () => {
           <Route path="/layouts">
             <Switch>
               <Route path="/layouts/sign-in">
-                <SignInLayout />
+                <LayoutWrapper
+                  layout={{
+                    name: 'Sign In',
+                    to: '/layouts/sign-in',
+                    current: true,
+                  }}
+                >
+                  <SignInLayout />
+                </LayoutWrapper>
+              </Route>
+              <Route path="/layouts/stacked-form">
+                <LayoutWrapper
+                  layout={{
+                    name: 'Stacked Form',
+                    to: '/layouts/stacked-form',
+                    current: true,
+                  }}
+                >
+                  <StackedFormLayout />
+                </LayoutWrapper>
+              </Route>
+              <Route path="/layouts/two-columns-cards-form">
+                <LayoutWrapper
+                  layout={{
+                    name: 'Two Column Cards Form',
+                    to: '/layouts/two-columns-cards-form',
+                    current: true,
+                  }}
+                >
+                  <TwoColumnsCardsFormLayout />
+                </LayoutWrapper>
               </Route>
               <Route exact path="/layouts">
                 <LayoutsPage />

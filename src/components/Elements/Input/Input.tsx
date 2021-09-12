@@ -1,9 +1,14 @@
-import { ExclamationCircleIcon } from '@heroicons/react/solid'
 import React, { ChangeEvent, useRef, useState } from 'react'
-import { classNames } from '../../helpers/methods'
+
+import { UseFormRegisterReturn } from 'react-hook-form'
+
+import { ExclamationCircleIcon } from '@heroicons/react/solid'
+
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup'
 import EmptyState, { EmptyStateProps } from '../EmptyState/EmptyState'
-import { FilePreview } from '../FIlePreview/FilePreview'
+import { FilePreview } from '../FilePreview/FilePreview'
+
+import { classNames } from '../../helpers/methods'
 
 export type InputProps = {
   inputType?: string
@@ -12,13 +17,14 @@ export type InputProps = {
   name?: string
   placeholder?: string
   description?: string
-  value?: string
   trimmed?: boolean
   prefix?: string
   cornerHint?: string | JSX.Element
+  error?: string
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
+  register?: UseFormRegisterReturn
 }
 
 enum InputType {
@@ -38,18 +44,18 @@ const InputComponent: React.FC<
   label = 'Email',
   placeholder = 'you@example.com',
   description = "We'll only use this for spam.",
-  value = '',
   prefix = '',
   trimmed = false,
-  cornerHint = null,
+  cornerHint = 'required',
+  error = undefined,
   onChange = (value: any) => console.log(`${name}: ${value}`),
   onFocus = () => console.log('input focus'),
   onBlur = () => console.log('input blur'),
+  register = undefined,
   ...props
 }) => {
   const inputRef = useRef<any>(null)
-  const [currentValue, setCurrentValue] = useState<string>(value)
-  const [error, setError] = useState<string | null>('')
+  const [currentValue, setCurrentValue] = useState<string>('')
 
   function handleChange(element: ChangeEvent<HTMLInputElement>) {
     if (trimmed) {
@@ -65,10 +71,8 @@ const InputComponent: React.FC<
 
   function handleBlur() {
     console.log('input', name, 'blur', currentValue)
-    if (currentValue !== value) {
-      onChange(currentValue.trim())
-      inputRef.current.value = currentValue.trim()
-    }
+    onChange(currentValue.trim())
+    inputRef.current.value = currentValue.trim()
   }
 
   const themeInputComponentWrapperClassNames = classNames(
@@ -125,12 +129,12 @@ const InputComponent: React.FC<
             className={themeInputClassNames}
             placeholder={placeholder}
             aria-describedby={error ? `${name}-error` : `${name}-description`}
-            value={currentValue}
             onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
             autoComplete={error ? undefined : props.autoComplete}
             {...props}
+            {...register}
           />
         </div>
 
@@ -183,20 +187,20 @@ export type CheckboxInputProps = {
   label?: string
   name?: string
   description?: string
-  value?: boolean
   onChange?: (value: boolean) => void
   onFocus?: () => void
   onBlur?: () => void
+  register?: UseFormRegisterReturn
 }
 
 const CheckboxInput: React.FC<CheckboxInputProps> = ({
   label = 'Remember me',
   name = 'rememberMe',
   description,
-  value,
   onChange = (checked) => console.log(name, checked),
   onFocus,
   onBlur,
+  register = undefined,
 }) => {
   function handleItemChange(element: ChangeEvent<HTMLInputElement>) {
     onChange(element.target.checked)
@@ -210,10 +214,10 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({
         name={name}
         type="checkbox"
         className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-        defaultChecked={value}
         onChange={handleItemChange}
         onFocus={onFocus}
         onBlur={onBlur}
+        {...register}
       />
       <label htmlFor={name} className="ml-2 block text-sm text-gray-900">
         {label}
@@ -231,6 +235,7 @@ export type TextAreaInputProps = {
   description?: string
   rows?: number
   defaultValue?: string
+  register?: UseFormRegisterReturn
 }
 
 const TextAreaInput: React.FC<
@@ -241,6 +246,7 @@ const TextAreaInput: React.FC<
   description = 'Write a few sentences about yourself.',
   rows = 3,
   defaultValue = '',
+  register = undefined,
   ...props
 }) => {
   return (
@@ -256,6 +262,7 @@ const TextAreaInput: React.FC<
           className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border border-gray-300 rounded-md"
           defaultValue={defaultValue}
           {...props}
+          {...register}
         />
       </div>
       <p className="mt-2 text-sm text-gray-500">{description}</p>
@@ -268,9 +275,10 @@ export type RadioGroupInputProps = {
   description?: string
   hiddenLabel?: boolean
   items?: any[]
+  register?: UseFormRegisterReturn
 }
 
-const RadioGroupInput: React.FC<any> = ({
+const RadioGroupInput: React.FC<RadioGroupInputProps> = ({
   label = 'Push Notifications',
   description = 'These are delivered via SMS to your mobile phone.',
   hiddenLabel = false,
@@ -283,6 +291,7 @@ const RadioGroupInput: React.FC<any> = ({
       label: 'No push notifications',
     },
   ],
+  register = undefined,
 }) => {
   let formRadioGroup = (
     <fieldset className="mt-6">
@@ -301,9 +310,11 @@ const RadioGroupInput: React.FC<any> = ({
           <div key={item.value} className="flex items-center">
             <input
               id={item.value}
+              value={item.value}
               name={item.name}
               type="radio"
               className="focus:ring-primary-500 h-4 w-4 text-primary-600 border-gray-300"
+              {...register}
             />
             <label
               htmlFor={item.value}

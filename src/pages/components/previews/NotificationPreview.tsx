@@ -8,7 +8,7 @@ export const NotificationPreview = () => {
     <ComponentWrapper
       component={{
         name: 'Notification',
-        href: '/components/notification',
+        to: '/components/notification',
         current: true,
       }}
     >

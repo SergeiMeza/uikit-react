@@ -1,12 +1,10 @@
+import React, { ChangeEvent, Fragment, useEffect, useState } from 'react'
+
+import { UseFormRegisterReturn } from 'react-hook-form'
+
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/outline'
-import React, {
-  ChangeEvent,
-  ChangeEventHandler,
-  Fragment,
-  useEffect,
-  useState,
-} from 'react'
+
 import { classNames } from '../../helpers/methods'
 
 const sampleOptions = [
@@ -22,6 +20,7 @@ export type SelectMenuProps = {
   options?: any[]
   selectedItem?: any
   onItemSelected?: (item: any) => void
+  register?: UseFormRegisterReturn
 }
 
 enum SelectMenuType {
@@ -38,6 +37,7 @@ const SelectMenuComponent: React.FC<
   options = sampleOptions,
   selectedItem = options[0],
   onItemSelected = (item: any) => console.log('item selected', item.name),
+  register = undefined,
   ...props
 }) => {
   const [selected, setSelected] = useState(selectedItem)
@@ -62,11 +62,11 @@ const SelectMenuComponent: React.FC<
       </label>
       <select
         id={name}
-        name={name}
         className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md"
-        defaultValue={selectedItem?.value}
-        onChange={handleNativeChange}
+        // defaultValue={selectedItem?.value}
+        // onChange={handleNativeChange}
         {...props}
+        {...(register ?? {})}
       >
         {options.map((item) => (
           <option key={item.name} value={item.value}>

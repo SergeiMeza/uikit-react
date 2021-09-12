@@ -4,7 +4,7 @@ import { Breadcrumb, Divider } from '../components'
 import Container from '../components/layouts/Container/Container'
 import { SampleLayoutsSection } from './sections/SampleLayoutsSection'
 
-const ComponentsPage: React.FC<any> = () => {
+const LayoutsPage: React.FC<any> = () => {
   return (
     <Container className="py-10">
       <Breadcrumb
@@ -18,4 +18,4 @@ const ComponentsPage: React.FC<any> = () => {
   )
 }
 
-export default ComponentsPage
+export default LayoutsPage

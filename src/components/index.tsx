@@ -1,5 +1,6 @@
 import './styles.css'
 import ActionPanel from './Elements/ActionPanel/ActionPanel'
+import Anchor from './Elements/Anchor/Anchor'
 import Avatar from './Elements/Avatar/Avatar'
 import Badge from './Elements/Badge/Badge'
 import Breadcrumb from './Elements/Breadcrumb/Breadcrumb'
@@ -9,7 +10,7 @@ import Container from './layouts/Container/Container'
 import Divider from './Elements/Divider/Divider'
 import Dropdown from './Elements/Dropdown/Dropdown'
 import EmptyState from './Elements/EmptyState/EmptyState'
-import FilePreview from './Elements/FIlePreview/FilePreview'
+import FilePreview from './Elements/FilePreview/FilePreview'
 import Input from './Elements/Input/Input'
 import Modal from './Elements/Modal/Modal'
 import TabNavigation from './Elements/Navigation/TabNavigation/TabNavigation'
@@ -24,6 +25,7 @@ import { classNames } from './helpers/methods'
 
 export {
   ActionPanel,
+  Anchor,
   Avatar,
   Badge,
   Breadcrumb,

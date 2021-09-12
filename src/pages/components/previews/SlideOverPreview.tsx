@@ -9,7 +9,7 @@ export const SlideOverPreview = () => {
     <ComponentWrapper
       component={{
         name: 'SlideOver',
-        href: '/components/slide-over',
+        to: '/components/slide-over',
         current: true,
       }}
     >

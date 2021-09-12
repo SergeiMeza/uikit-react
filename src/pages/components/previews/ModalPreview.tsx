@@ -8,7 +8,7 @@ export const ModalPreview = () => {
     <ComponentWrapper
       component={{
         name: 'Modal',
-        href: '/components/modal',
+        to: '/components/modal',
         current: true,
       }}
     >

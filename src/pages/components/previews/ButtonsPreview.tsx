@@ -160,7 +160,7 @@ export const ButtonsPreview = () => {
     <ComponentWrapper
       component={{
         name: 'Button',
-        href: '/components/button',
+        to: '/components/button',
         current: true,
       }}
     >

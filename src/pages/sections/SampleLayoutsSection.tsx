@@ -1,14 +1,47 @@
 import { classNames } from '../../components'
-import { Link } from 'react-router-dom'
+
+import { Anchor } from '../../components'
+
+let colors = [
+  'bg-rose-600',
+  'bg-pink-600',
+  'bg-fuchsia-500',
+  'bg-purple-500',
+  'bg-violet-500',
+  'bg-indigo-500',
+  'bg-blue-500',
+  'bg-lightBlue-500',
+  'bg-sky-500',
+  'bg-cyan-500',
+  'bg-teal-500',
+  'bg-emerald-500',
+  'bg-green-500',
+  'bg-lime-500',
+  'bg-yellow-500',
+  'bg-amber-500',
+  'bg-orange-500',
+  'bg-red-500',
+  // 'bg-warmGray-500',
+  // 'bg-trueGray-500',
+]
 
 const layouts = [
   {
     name: 'Sign In',
     initials: 'SI',
-    href: '/layouts/sign-in',
-    bgColor: 'bg-rose-600',
+    to: '/layouts/sign-in',
   },
-]
+  {
+    name: 'Stacked Form',
+    initials: 'SF',
+    to: '/layouts/stacked-form',
+  },
+  {
+    name: 'Two Column Cards Form',
+    initials: 'SF',
+    to: '/layouts/two-columns-cards-form',
+  },
+].map((item, index) => ({ ...item, bgColor: colors[index % colors.length] }))
 
 export const SampleLayoutsSection = () => {
   return (
@@ -35,12 +68,12 @@ export const SampleLayoutsSection = () => {
             </div>
             <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
               <div className="flex-1 px-4 py-2 text-sm truncate">
-                <Link
-                  to={layout.href}
+                <Anchor
+                  to={layout.to}
                   className="text-gray-900 font-medium hover:text-gray-600"
                 >
                   {layout.name}
-                </Link>
+                </Anchor>
               </div>
             </div>
           </li>

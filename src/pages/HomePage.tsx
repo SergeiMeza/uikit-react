@@ -8,7 +8,7 @@ import { LightNavGrayBackground } from '../components/stacked-layouts/LightNavGr
 import { TwoRowNavOverlap } from '../components/stacked-layouts/TwoRowNavOverlap'
 import { FullWidthThreeColumn } from '../components/multi-column-layouts/FullWidthThreeColumn'
 import { FullWidthSecondaryColumnRight } from '../components/multi-column-layouts/FullWidthSecondaryColumnRight'
-import TwoColumnsCardsFormLayout from '../components/layouts/TwoColumnsCardsFormLayout/TwoColumnsCardsFormLayout'
+import TwoColumnsCardsFormLayout from './layouts/TwoColumnsCardsFormLayout/TwoColumnsCardsFormLayout'
 import { useEffect } from 'react'
 import { useHistory } from 'react-router'
 import Container from '../components/layouts/Container/Container'
