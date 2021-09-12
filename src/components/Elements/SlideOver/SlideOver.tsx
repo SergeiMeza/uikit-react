@@ -100,13 +100,16 @@ const SlideOverStickyFooter: React.FC<SlideOverStickyFooterProps> = ({
       {children ?? (
         <>
           <Button
+            type="button"
             className="py-2 px-4"
             buttonType={Button.buttonType.outline}
             onClick={() => setShow(false)}
           >
             Cancel
           </Button>
-          <Button className="ml-4 py-2 px-4">Save</Button>
+          <Button type="button" className="ml-4 py-2 px-4">
+            Save
+          </Button>
         </>
       )}
     </div>

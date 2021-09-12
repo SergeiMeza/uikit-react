@@ -1,11 +1,5 @@
 import { ExclamationCircleIcon } from '@heroicons/react/solid'
-import React, {
-  ButtonHTMLAttributes,
-  ChangeEvent,
-  HTMLAttributes,
-  useRef,
-  useState,
-} from 'react'
+import React, { ChangeEvent, useRef, useState } from 'react'
 import { classNames } from '../../helpers/methods'
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup'
 import EmptyState, { EmptyStateProps } from '../EmptyState/EmptyState'

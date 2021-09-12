@@ -21,32 +21,32 @@ export type VerticalNavigationProps = {
 }
 
 /* This example requires Tailwind CSS v2.0+ */
-const sampleNavigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true, count: '5' },
-  { name: 'Team', href: '#', icon: UsersIcon, current: false },
+const sampleNavigation: NavigationItem[] = [
+  { name: 'Dashboard', to: '/', icon: HomeIcon, current: true, count: '5' },
+  { name: 'Team', to: '/', icon: UsersIcon, current: false },
   {
     name: 'Projects',
-    href: '#',
+    to: '/',
     icon: FolderIcon,
     current: false,
     count: '19',
   },
   {
     name: 'Calendar',
-    href: '#',
+    to: '/',
     icon: CalendarIcon,
     current: false,
     count: '20+',
   },
-  { name: 'Documents', href: '#', icon: InboxIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
+  { name: 'Documents', to: '/', icon: InboxIcon, current: false },
+  { name: 'Reports', to: '/', icon: ChartBarIcon, current: false },
 ]
 
-const sampleSecondaryNavigation = [
-  { name: 'Website redesign', href: '#', current: false },
-  { name: 'GraphQL API', href: '#', current: false },
-  { name: 'Customer migration guides', href: '#', current: false },
-  { name: 'Profit sharing program', href: '#', current: false },
+const sampleSecondaryNavigation: NavigationItem[] = [
+  { name: 'Website redesign', to: '/', current: false },
+  { name: 'GraphQL API', to: '/', current: false },
+  { name: 'Customer migration guides', to: '/', current: false },
+  { name: 'Profit sharing program', to: '/', current: false },
 ]
 
 const VerticalNavigationComponent: React.FC<VerticalNavigationProps> = ({

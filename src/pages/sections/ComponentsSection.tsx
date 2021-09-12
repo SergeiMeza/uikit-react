@@ -1,4 +1,3 @@
-import React from 'react'
 import { classNames } from '../../components'
 import { Link } from 'react-router-dom'
 
@@ -7,6 +6,12 @@ const components = [
     name: 'Action Panel',
     initials: 'AP',
     href: '/components/action-panel',
+    bgColor: 'bg-red-600',
+  },
+  {
+    name: 'Anchor',
+    initials: 'A',
+    href: '/components/avatar',
     bgColor: 'bg-rose-600',
   },
   {
@@ -127,7 +132,7 @@ const components = [
 ]
 export const ComponentsSection = () => {
   return (
-    <div className="my-10">
+    <div>
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
         Components
       </h2>

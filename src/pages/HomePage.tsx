@@ -13,6 +13,8 @@ import { useEffect } from 'react'
 import { useHistory } from 'react-router'
 import Container from '../components/layouts/Container/Container'
 import { ComponentsSection } from './sections/ComponentsSection'
+import { Divider } from '../components'
+import { SampleLayoutsSection } from './sections/SampleLayoutsSection'
 
 // const StackedLayouts = () => {
 //   return (
@@ -69,6 +71,8 @@ const HomePage = () => {
   return (
     <Container className="py-10">
       <ComponentsSection />
+      <Divider className="my-10" />
+      <SampleLayoutsSection />
     </Container>
   )
 }

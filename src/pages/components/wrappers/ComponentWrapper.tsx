@@ -4,7 +4,7 @@ import Container from '../../../components/layouts/Container/Container'
 export const ComponentWrapper: React.FC<any> = ({
   component = {
     name: 'ActionPanel',
-    href: '/components/action-panel',
+    to: '/components/action-panel',
     current: true,
   },
   children,
@@ -14,10 +14,10 @@ export const ComponentWrapper: React.FC<any> = ({
       <Breadcrumb
         type={Breadcrumb.type.fullWidthBar}
         pages={[
-          { name: 'Components', href: '/components', current: false },
+          { name: 'Components', to: '/components', current: false },
           component,
         ]}
-        homeRef="/"
+        homeTo="/"
       />
       {children}
     </Container>

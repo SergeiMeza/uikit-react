@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Button, Buttons } from './Button'
+import { Button } from './Button'
 
 export default {
   title: 'Elements/Button',
@@ -11,11 +11,6 @@ export default {
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
-
-const GroupTemplate: ComponentStory<typeof Buttons> = () => <Buttons />
-
-export const ThemeButtons = GroupTemplate.bind({})
-ThemeButtons.args = {}
 
 export const ThemeButton = Template.bind({})
 ThemeButton.args = {

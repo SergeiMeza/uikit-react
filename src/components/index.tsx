@@ -5,6 +5,7 @@ import Badge from './Elements/Badge/Badge'
 import Breadcrumb from './Elements/Breadcrumb/Breadcrumb'
 import Button from './Elements/Button/Button'
 import CheckboxGroup from './Elements/CheckboxGroup/CheckboxGroup'
+import Container from './layouts/Container/Container'
 import Divider from './Elements/Divider/Divider'
 import Dropdown from './Elements/Dropdown/Dropdown'
 import EmptyState from './Elements/EmptyState/EmptyState'
@@ -28,6 +29,7 @@ export {
   Breadcrumb,
   Button,
   CheckboxGroup,
+  Container,
   Divider,
   Dropdown,
   EmptyState,

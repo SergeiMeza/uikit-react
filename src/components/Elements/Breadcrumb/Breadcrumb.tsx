@@ -1,19 +1,26 @@
-import { Link } from 'react-router-dom'
-
 import { ChevronRightIcon, HomeIcon } from '@heroicons/react/solid'
 import React from 'react'
 import { classNames } from '../..'
+import Anchor from '../Anchor/Anchor'
 
-const samplePages = [
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Project Nero', href: '#', current: true },
+const samplePages: BreadcrumbPage[] = [
+  { name: 'Projects', to: '/', current: false },
+  { name: 'Project Nero', to: '/', current: true },
 ]
+
+export type BreadcrumbPage = {
+  name: string
+  current: boolean
+  to?: string
+  href?: string
+}
 
 export type BreadcrumbProps = {
   type?: BreadcrumbType
-  pages?: any[]
+  pages?: (BreadcrumbPage & any)[]
   homeName?: string
   homeRef?: string
+  homeTo?: string
   homeIcon?: JSX.Element
 }
 
@@ -28,8 +35,8 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
   type = BreadcrumbType.fullWidthBar,
   pages = samplePages,
   homeName = 'Home',
-  homeRef = '#',
-  // homeIcon = null,
+  homeRef = undefined,
+  homeTo = '/',
   homeIcon = <HomeIcon className="flex-shrink-0 h-5 w-5" aria-hidden="true" />,
 }) => {
   let containedBar = (
@@ -40,7 +47,11 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
       >
         <li className="flex">
           <div className="flex items-center">
-            <Link to={homeRef} className="text-gray-400 hover:text-gray-500">
+            <Anchor
+              to={homeTo}
+              href={homeRef}
+              className="text-gray-400 hover:text-gray-500"
+            >
               {homeIcon ? (
                 <>
                   {homeIcon}
@@ -53,7 +64,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                   </span>
                 </>
               )}
-            </Link>
+            </Anchor>
           </div>
         </li>
         {pages.map((page) => (
@@ -69,8 +80,9 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
               >
                 <path d="M.293 0l22 22-22 22h1.414l22-22-22-22H.293z" />
               </svg>
-              <Link
-                to={page.href}
+              <Anchor
+                href={page.href}
+                to={page.to}
                 className={classNames(
                   page.current
                     ? 'text-primary-500 hover:text-primary-700'
@@ -80,7 +92,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </Link>
+              </Anchor>
             </div>
           </li>
         ))}
@@ -99,7 +111,11 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
       >
         <li className="flex">
           <div className="flex items-center">
-            <Link to={homeRef} className="text-gray-400 hover:text-gray-500">
+            <Anchor
+              to={homeTo}
+              href={homeRef}
+              className="text-gray-400 hover:text-gray-500"
+            >
               {homeIcon ? (
                 <>
                   {homeIcon}
@@ -112,7 +128,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                   </span>
                 </>
               )}
-            </Link>
+            </Anchor>
           </div>
         </li>
         {pages.map((page) => (
@@ -128,8 +144,9 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
               >
                 <path d="M.293 0l22 22-22 22h1.414l22-22-22-22H.293z" />
               </svg>
-              <Link
-                to={page.href}
+              <Anchor
+                href={page.href}
+                to={page.to}
                 className={classNames(
                   page.current
                     ? 'text-primary-500 hover:text-primary-700'
@@ -139,7 +156,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </Link>
+              </Anchor>
             </div>
           </li>
         ))}
@@ -152,7 +169,11 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
       <ol role="list" className="flex items-center space-x-4">
         <li>
           <div>
-            <Link to={homeRef} className="text-gray-400 hover:text-gray-500">
+            <Anchor
+              to={homeTo}
+              href={homeRef}
+              className="text-gray-400 hover:text-gray-500"
+            >
               {homeIcon ? (
                 <>
                   {homeIcon}
@@ -165,7 +186,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                   </span>
                 </>
               )}
-            </Link>
+            </Anchor>
           </div>
         </li>
         {pages.map((page) => (
@@ -175,8 +196,9 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                 className="flex-shrink-0 h-5 w-5 text-gray-400"
                 aria-hidden="true"
               />
-              <Link
-                to={page.href}
+              <Anchor
+                href={page.href}
+                to={page.to}
                 className={classNames(
                   page.current
                     ? 'text-primary-500 hover:text-primary-700'
@@ -186,7 +208,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </Link>
+              </Anchor>
             </div>
           </li>
         ))}
@@ -199,7 +221,11 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
       <ol role="list" className="flex items-center space-x-4">
         <li>
           <div>
-            <Link to={homeRef} className="text-gray-400 hover:text-gray-500">
+            <Anchor
+              to={homeTo}
+              href={homeRef}
+              className="text-gray-400 hover:text-gray-500"
+            >
               {homeIcon ? (
                 <>
                   {homeIcon}
@@ -212,7 +238,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                   </span>
                 </>
               )}
-            </Link>
+            </Anchor>
           </div>
         </li>
         {pages.map((page) => (
@@ -227,8 +253,9 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
               >
                 <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
               </svg>
-              <Link
-                to={page.href}
+              <Anchor
+                href={page.href}
+                to={page.to}
                 className={classNames(
                   page.current
                     ? 'text-primary-500 hover:text-primary-700'
@@ -238,7 +265,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
                 aria-current={page.current ? 'page' : undefined}
               >
                 {page.name}
-              </Link>
+              </Anchor>
             </div>
           </li>
         ))}

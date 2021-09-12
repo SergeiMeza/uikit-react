@@ -4,6 +4,7 @@ import { classNames } from '../../helpers/methods'
 import Button, { ButtonProps } from '../Button/Button'
 
 export type DividerProps = {
+  className?: string
   title?: string
   titleSize?: DividerTitleSize
   contentPosition?: DividerContentPosition
@@ -48,13 +49,14 @@ const DividerButton: React.FC<ButtonProps> = ({ children, ...props }) => {
 }
 
 const DividerComponent: React.FC<DividerProps> = ({
+  className = '',
   title,
   titleSize = DividerTitleSize.small,
   contentPosition = DividerContentPosition.center,
   children,
 }) => {
   return (
-    <div className="relative">
+    <div className={classNames(className, 'relative')}>
       <div className="absolute inset-0 flex items-center" aria-hidden="true">
         <div className="w-full border-t border-gray-300" />
       </div>

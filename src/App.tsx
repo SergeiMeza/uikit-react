@@ -27,30 +27,56 @@ import { ModalPreview } from './pages/components/previews/ModalPreview'
 import { NotificationPreview } from './pages/components/previews/NotificationPreview'
 import { SlideOverPreview } from './pages/components/previews/SlideOverPreview'
 import { TogglePreview } from './pages/components/previews/TogglePreview'
+import LayoutsPage from './pages/LayoutsPage'
+import SignInLayout from './components/layouts/SignInLayout/SignInLayout'
+import Anchor from './components/Elements/Anchor/Anchor'
+import ButtonsPreview from './pages/components/previews/ButtonsPreview'
+import InputPreview from './pages/components/previews/InputsPreview'
 
 const App = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <Router>
         <Switch>
+          <Route path="/layouts">
+            <Switch>
+              <Route path="/layouts/sign-in">
+                <SignInLayout />
+              </Route>
+              <Route exact path="/layouts">
+                <LayoutsPage />
+              </Route>
+            </Switch>
+          </Route>
           <Route path="/components">
             <Switch>
               <Route path="/components/action-panel">
                 <ComponentWrapper
                   component={{
                     name: 'ActionPanel',
-                    href: '/components/action-panel',
+                    to: '/components/action-panel',
                     current: true,
                   }}
                 >
                   <ActionPanel />
                 </ComponentWrapper>
               </Route>
+              <Route path="/components/anchor">
+                <ComponentWrapper
+                  component={{
+                    name: 'Anchor',
+                    to: '/components/anchor',
+                    current: true,
+                  }}
+                >
+                  <Anchor to="/components">Go back</Anchor>
+                </ComponentWrapper>
+              </Route>
               <Route path="/components/avatar">
                 <ComponentWrapper
                   component={{
                     name: 'Avatar',
-                    href: '/components/avatar',
+                    to: '/components/avatar',
                     current: true,
                   }}
                 >
@@ -61,7 +87,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'Badge',
-                    href: '/components/badge',
+                    to: '/components/badge',
                     current: true,
                   }}
                 >
@@ -72,7 +98,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'Breadcrumb',
-                    href: '/components/breadcrumb',
+                    to: '/components/breadcrumb',
                     current: true,
                   }}
                 >
@@ -80,21 +106,13 @@ const App = () => {
                 </ComponentWrapper>
               </Route>
               <Route path="/components/button">
-                <ComponentWrapper
-                  component={{
-                    name: 'Button',
-                    href: '/components/button',
-                    current: true,
-                  }}
-                >
-                  <Button>Hello world</Button>
-                </ComponentWrapper>
+                <ButtonsPreview />
               </Route>
               <Route path="/components/button-group">
                 <ComponentWrapper
                   component={{
                     name: 'ButtonGroup',
-                    href: '/components/button-group',
+                    to: '/components/button-group',
                     current: true,
                   }}
                 >
@@ -105,7 +123,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'CheckboxGroup',
-                    href: '/components/checkbox-group',
+                    to: '/components/checkbox-group',
                     current: true,
                   }}
                 >
@@ -116,7 +134,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'Divider',
-                    href: '/components/divider',
+                    to: '/components/divider',
                     current: true,
                   }}
                 >
@@ -127,7 +145,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'Dropdown',
-                    href: '/components/dropdown',
+                    to: '/components/dropdown',
                     current: true,
                   }}
                 >
@@ -138,7 +156,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'EmptyState',
-                    href: '/components/empty-state',
+                    to: '/components/empty-state',
                     current: true,
                   }}
                 >
@@ -149,7 +167,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'FilePreview',
-                    href: '/components/file-preview',
+                    to: '/components/file-preview',
                     current: true,
                   }}
                 >
@@ -157,15 +175,7 @@ const App = () => {
                 </ComponentWrapper>
               </Route>
               <Route path="/components/input">
-                <ComponentWrapper
-                  component={{
-                    name: 'Input',
-                    href: '/components/input',
-                    current: true,
-                  }}
-                >
-                  <Input />
-                </ComponentWrapper>
+                <InputPreview />
               </Route>
               <Route path="/components/modal">
                 <ModalPreview />
@@ -174,7 +184,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'Navigation',
-                    href: '/components/navigation',
+                    to: '/components/navigation',
                     current: true,
                   }}
                 >
@@ -193,7 +203,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'RadioGroup',
-                    href: '/components/radio-group',
+                    to: '/components/radio-group',
                     current: true,
                   }}
                 >
@@ -204,7 +214,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'SelectMenu',
-                    href: '/components/select-menu',
+                    to: '/components/select-menu',
                     current: true,
                   }}
                 >
@@ -218,7 +228,7 @@ const App = () => {
                 <ComponentWrapper
                   component={{
                     name: 'Table',
-                    href: '/components/table',
+                    to: '/components/table',
                     current: true,
                   }}
                 >

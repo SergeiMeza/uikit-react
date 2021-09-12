@@ -15,7 +15,8 @@ export const SignInLayout: React.FC<any> = ({}) => {
           Sign in to your account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Or <Button.Inline title="start your 14-day free trial" />
+          Or{' '}
+          <Button.Inline title="start your 14-day free trial" to="/layouts" />
         </p>
       </div>
 
