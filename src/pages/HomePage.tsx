@@ -16,30 +16,30 @@ import { ComponentsSection } from './sections/ComponentsSection'
 import { Divider } from '../components'
 import { SampleLayoutsSection } from './sections/SampleLayoutsSection'
 
-// const StackedLayouts = () => {
-//   return (
-//     <div>
-//       <div className="border-b border-gray-400">
-//         <LightNavBottomBorder />
-//       </div>
-//       <div className="border-b border-gray-400">
-//         <LightNavGrayBackground />
-//       </div>
-//       <div className="border-b border-gray-400">
-//         <DarkNavWhitePageHeader />
-//       </div>
-//       <div className="border-b border-gray-400">
-//         <BrandedNavCompactWhitePageHeader />
-//       </div>
-//       <div className="border-b border-gray-400">
-//         <DarkNavOverlap />
-//       </div>
-//       <div className="border-b border-gray-400">
-//         <TwoRowNavOverlap />
-//       </div>
-//     </div>
-//   )
-// }
+const StackedLayouts = () => {
+  return (
+    <div className="space-y-4">
+      <div className="border-b border-gray-400">
+        <LightNavBottomBorder />
+      </div>
+      <div className="border-b border-gray-400">
+        <LightNavGrayBackground />
+      </div>
+      <div className="border-b border-gray-400">
+        <DarkNavWhitePageHeader />
+      </div>
+      <div className="border-b border-gray-400">
+        <BrandedNavCompactWhitePageHeader />
+      </div>
+      <div className="border-b border-gray-400">
+        <DarkNavOverlap />
+      </div>
+      <div className="border-b border-gray-400">
+        <TwoRowNavOverlap />
+      </div>
+    </div>
+  )
+}
 
 // const SidebarLayouts = () => {
 //   return (
@@ -73,6 +73,8 @@ const HomePage = () => {
       <ComponentsSection />
       <Divider className="my-10" />
       <SampleLayoutsSection />
+      <Divider className="my-10" />
+      <StackedLayouts />
     </Container>
   )
 }
