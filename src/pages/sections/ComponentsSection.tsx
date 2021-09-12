@@ -117,6 +117,11 @@ const components = [
     href: '/components/radio-group',
   },
   {
+    name: 'SectionHeading',
+    initials: 'SH',
+    href: '/components/section-heading',
+  },
+  {
     name: 'SelectMenu',
     initials: 'SM',
     href: '/components/select-menu',

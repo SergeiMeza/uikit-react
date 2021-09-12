@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Anchor, Breadcrumb, Button, classNames } from '../..'
+import { classNames } from '../..'
 
 export type PageHeadingProps = {
   className?: string

@@ -38,8 +38,9 @@ import InputPreview from './pages/components/previews/InputsPreview'
 
 import StackedFormLayout from './pages/layouts/StackedFormLayout/StackedFormLayout'
 import TwoColumnsCardsFormLayout from './pages/layouts/TwoColumnsCardsFormLayout/TwoColumnsCardsFormLayout'
-import PageHeading from './components/Elements/PageHeading/PageHeading'
+
 import PageHeadingPreview from './pages/components/previews/PageHeadingPreview'
+import SectionHeadingPreview from './pages/components/previews/SectionHeadingPreview'
 
 const App = () => {
   return (
@@ -239,6 +240,9 @@ const App = () => {
               </Route>
               <Route path="/components/page-heading">
                 <PageHeadingPreview />
+              </Route>
+              <Route path="/components/section-heading">
+                <SectionHeadingPreview />
               </Route>
               <Route path="/components/radio-group">
                 <ComponentWrapper
