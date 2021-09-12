@@ -38,6 +38,8 @@ import InputPreview from './pages/components/previews/InputsPreview'
 
 import StackedFormLayout from './pages/layouts/StackedFormLayout/StackedFormLayout'
 import TwoColumnsCardsFormLayout from './pages/layouts/TwoColumnsCardsFormLayout/TwoColumnsCardsFormLayout'
+import PageHeading from './components/Elements/PageHeading/PageHeading'
+import PageHeadingPreview from './pages/components/previews/PageHeadingPreview'
 
 const App = () => {
   return (
@@ -138,7 +140,7 @@ const App = () => {
                     current: true,
                   }}
                 >
-                  <Breadcrumb />
+                  <Breadcrumb type={Breadcrumb.type.simpleWithChevrons} />
                 </ComponentWrapper>
               </Route>
               <Route path="/components/button">
@@ -234,6 +236,9 @@ const App = () => {
               </Route>
               <Route path="/components/notification">
                 <NotificationPreview />
+              </Route>
+              <Route path="/components/page-heading">
+                <PageHeadingPreview />
               </Route>
               <Route path="/components/radio-group">
                 <ComponentWrapper

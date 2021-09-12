@@ -107,6 +107,11 @@ const components = [
     href: '/components/notification',
   },
   {
+    name: 'PageHeading',
+    initials: 'PH',
+    href: '/components/page-heading',
+  },
+  {
     name: 'RadioGroup',
     initials: 'RG',
     href: '/components/radio-group',

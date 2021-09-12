@@ -16,6 +16,7 @@ export type BreadcrumbPage = {
 }
 
 export type BreadcrumbProps = {
+  className?: string
   type?: BreadcrumbType
   pages?: (BreadcrumbPage & any)[]
   homeName?: string
@@ -32,6 +33,7 @@ enum BreadcrumbType {
 }
 
 const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
+  className = '',
   type = BreadcrumbType.fullWidthBar,
   pages = samplePages,
   homeName = 'Home',
@@ -40,7 +42,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
   homeIcon = <HomeIcon className="flex-shrink-0 h-5 w-5" aria-hidden="true" />,
 }) => {
   let containedBar = (
-    <nav className="flex" aria-label="Breadcrumb">
+    <nav className={classNames(className, 'flex')} aria-label="Breadcrumb">
       <ol
         role="list"
         className="bg-white rounded-md shadow px-6 flex space-x-4"
@@ -102,7 +104,10 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
 
   let fullWidthBar = (
     <nav
-      className="bg-white border-b border-gray-200 flex"
+      className={classNames(
+        className,
+        'bg-white border-b border-gray-200 flex',
+      )}
       aria-label="Breadcrumb"
     >
       <ol
@@ -165,7 +170,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
   )
 
   let simpleWithChevrons = (
-    <nav className="flex" aria-label="Breadcrumb">
+    <nav className={classNames(className, 'flex')} aria-label="Breadcrumb">
       <ol role="list" className="flex items-center space-x-4">
         <li>
           <div>
@@ -217,7 +222,7 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
   )
 
   let simpleWithSlashes = (
-    <nav className="flex" aria-label="Breadcrumb">
+    <nav className={classNames(className, 'flex')} aria-label="Breadcrumb">
       <ol role="list" className="flex items-center space-x-4">
         <li>
           <div>

@@ -16,6 +16,7 @@ import Modal from './Elements/Modal/Modal'
 import TabNavigation from './Elements/Navigation/TabNavigation/TabNavigation'
 import VerticalNavigation from './Elements/Navigation/VerticalNavigation/VerticalNavigation'
 import Notification from './Elements/Notification/Notification'
+import PageHeading from './Elements/PageHeading/PageHeading'
 import RadioGroup from './Elements/RadioGroup/RadioGroup'
 import SelectMenu from './Elements/SelectMenu/SelectMenu'
 import SlideOver from './Elements/SlideOver/SlideOver'
@@ -41,6 +42,7 @@ export {
   TabNavigation,
   VerticalNavigation,
   Notification,
+  PageHeading,
   RadioGroup,
   SelectMenu,
   SlideOver,
