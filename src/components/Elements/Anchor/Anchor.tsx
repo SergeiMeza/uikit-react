@@ -10,7 +10,13 @@ export type AnchorProps = {
 
 const AnchorComponent: React.FC<
   AnchorProps & AnchorHTMLAttributes<HTMLAnchorElement>
-> = ({ className = '', to = null, href = null, children, ...props }) => {
+> = ({
+  className = '',
+  to = undefined,
+  href = undefined,
+  children,
+  ...props
+}) => {
   let anchor: any = null
 
   let baseClassName =

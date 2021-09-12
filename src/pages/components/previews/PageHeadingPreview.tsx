@@ -1,5 +1,99 @@
-import { classNames, PageHeading } from '../../../components'
+import {
+  BriefcaseIcon,
+  CalendarIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CurrencyDollarIcon,
+  LocationMarkerIcon,
+} from '@heroicons/react/solid'
+
 import { ComponentWrapper } from '../wrappers/ComponentWrapper'
+
+import {
+  Anchor,
+  Breadcrumb,
+  Button,
+  classNames,
+  PageHeading,
+} from '../../../components'
+
+const Back = () => {
+  return (
+    <nav className="sm:hidden" aria-label="Back">
+      <Anchor
+        to="/"
+        className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700"
+      >
+        <ChevronLeftIcon
+          className="flex-shrink-0 -ml-1 mr-1 h-5 w-5 text-gray-400"
+          aria-hidden="true"
+        />
+        Back
+      </Anchor>
+    </nav>
+  )
+}
+
+const SampleBreadcrumb = () => {
+  return (
+    <Breadcrumb
+      className="hidden sm:flex"
+      type={Breadcrumb.type.simpleWithChevrons}
+    />
+  )
+}
+
+const SampleActions = () => {
+  return (
+    <>
+      <Button type="button" buttonType={Button.buttonType.outline}>
+        Edit
+      </Button>
+      <Button
+        className="ml-3"
+        type="button"
+        buttonType={Button.buttonType.primary}
+      >
+        Publish
+      </Button>
+    </>
+  )
+}
+
+const SampleMeta = () => {
+  return (
+    <>
+      <div className="mt-2 flex items-center text-sm text-gray-500">
+        <BriefcaseIcon
+          className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+          aria-hidden="true"
+        />
+        Full-time
+      </div>
+      <div className="mt-2 flex items-center text-sm text-gray-500">
+        <LocationMarkerIcon
+          className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+          aria-hidden="true"
+        />
+        Remote
+      </div>
+      <div className="mt-2 flex items-center text-sm text-gray-500">
+        <CurrencyDollarIcon
+          className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+          aria-hidden="true"
+        />
+        $120k &ndash; $140k
+      </div>
+      <div className="mt-2 flex items-center text-sm text-gray-500">
+        <CalendarIcon
+          className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+          aria-hidden="true"
+        />
+        Closing on January 9, 2020
+      </div>
+    </>
+  )
+}
 
 const SampleHeadingTitle = () => {
   return (
@@ -48,32 +142,22 @@ export const PageHeadingPreview = () => {
     >
       <PageHeading
         title={<SampleHeadingTitle />}
-        // breadcrumb={<></>}
-        // back={<></>}
-        // actions={<></>}
-        meta={<></>}
+        breadcrumb={<SampleBreadcrumb />}
+        back={<Back />}
+        actions={<SampleActions />}
       />
       <PageHeading
         title="Front End Developer"
-        // breadcrumb={<></>}
-        // back={<></>}
-        // actions={<></>}
-        meta={<></>}
+        breadcrumb={<SampleBreadcrumb />}
+        back={<Back />}
+        actions={<SampleActions />}
       />
       <PageHeading
         title="Front End Developer"
-        breadcrumb={<></>}
-        back={<></>}
-        // actions={<></>}
-        // meta={<></>}
+        actions={<SampleActions />}
+        meta={<SampleMeta />}
       />
-      <PageHeading
-        title="Front End Developer"
-        breadcrumb={<></>}
-        back={<></>}
-        actions={<></>}
-        meta={<></>}
-      />
+      <PageHeading title="Front End Developer" />
     </ComponentWrapper>
   )
 }

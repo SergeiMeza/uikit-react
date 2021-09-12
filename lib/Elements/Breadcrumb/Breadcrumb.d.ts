@@ -6,6 +6,7 @@ export declare type BreadcrumbPage = {
     href?: string;
 };
 export declare type BreadcrumbProps = {
+    className?: string;
     type?: BreadcrumbType;
     pages?: (BreadcrumbPage & any)[];
     homeName?: string;

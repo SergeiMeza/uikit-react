@@ -37,8 +37,8 @@ const BreadcrumbComponent: React.FC<BreadcrumbProps> = ({
   type = BreadcrumbType.fullWidthBar,
   pages = samplePages,
   homeName = 'Home',
-  homeRef = undefined,
   homeTo = '/',
+  homeRef = undefined,
   homeIcon = <HomeIcon className="flex-shrink-0 h-5 w-5" aria-hidden="true" />,
 }) => {
   let containedBar = (

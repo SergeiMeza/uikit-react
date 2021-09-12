@@ -1,14 +1,5 @@
 import React from 'react'
 
-import {
-  BriefcaseIcon,
-  CalendarIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CurrencyDollarIcon,
-  LocationMarkerIcon,
-} from '@heroicons/react/solid'
-
 import { Anchor, Breadcrumb, Button, classNames } from '../..'
 
 export type PageHeadingProps = {
@@ -23,83 +14,15 @@ export type PageHeadingProps = {
 const PageHeadingComponent: React.FC<PageHeadingProps> = ({
   className = 'bg-white px-8 py-8',
   title = 'Back End Developer',
-  back = (
-    <nav className="sm:hidden" aria-label="Back">
-      <Anchor
-        to="/"
-        className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700"
-      >
-        <ChevronLeftIcon
-          className="flex-shrink-0 -ml-1 mr-1 h-5 w-5 text-gray-400"
-          aria-hidden="true"
-        />
-        Back
-      </Anchor>
-    </nav>
-  ),
-  breadcrumb = (
-    <Breadcrumb
-      className="hidden sm:flex"
-      type={Breadcrumb.type.simpleWithChevrons}
-    />
-  ),
-  actions = (
-    <>
-      <Button type="button" buttonType={Button.buttonType.outline}>
-        Edit
-      </Button>
-      <Button
-        className="ml-3"
-        type="button"
-        buttonType={Button.buttonType.primary}
-      >
-        Publish
-      </Button>
-    </>
-  ),
-  meta = (
-    <>
-      <div className="mt-2 flex items-center text-sm text-gray-500">
-        <BriefcaseIcon
-          className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-          aria-hidden="true"
-        />
-        Full-time
-      </div>
-      <div className="mt-2 flex items-center text-sm text-gray-500">
-        <LocationMarkerIcon
-          className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-          aria-hidden="true"
-        />
-        Remote
-      </div>
-      <div className="mt-2 flex items-center text-sm text-gray-500">
-        <CurrencyDollarIcon
-          className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-          aria-hidden="true"
-        />
-        $120k &ndash; $140k
-      </div>
-      <div className="mt-2 flex items-center text-sm text-gray-500">
-        <CalendarIcon
-          className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-          aria-hidden="true"
-        />
-        Closing on January 9, 2020
-      </div>
-    </>
-  ),
+  meta = undefined,
+  back = undefined,
+  breadcrumb = undefined,
+  actions = undefined,
 }) => {
   return (
     <div className={classNames(className)}>
-      {back ? (
-        <>
-          {back}
-          {breadcrumb}
-        </>
-      ) : (
-        { breadcrumb }
-      )}
+      {back}
+      {breadcrumb}
       <div
         className={classNames(
           breadcrumb ? 'mt-2' : '',
