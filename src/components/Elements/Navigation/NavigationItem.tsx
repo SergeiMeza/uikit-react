@@ -5,6 +5,7 @@ export type NavigationItem = {
   href?: string
   to?: string
   icon?: React.FC<any>
-  count?: string
+  count?: string | number
+  children?: { name: string; href?: string; to?: string }[]
   current: boolean
 }

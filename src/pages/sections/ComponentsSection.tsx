@@ -136,6 +136,11 @@ const components = [
     href: '/components/select-menu',
   },
   {
+    name: 'SidebarNavigation',
+    initials: 'SN',
+    href: '/components/sidebar-navigation',
+  },
+  {
     name: 'SlideOver',
     initials: 'SO',
     href: '/components/slide-over',

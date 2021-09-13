@@ -23,6 +23,7 @@ import PageHeading from './Elements/PageHeading/PageHeading'
 import RadioGroup from './Elements/RadioGroup/RadioGroup'
 import SectionHeading from './Elements/SectionHeading/SectionHeading'
 import SelectMenu from './Elements/SelectMenu/SelectMenu'
+import SidebarNavigation from './Elements/SidebarNavigation/SidebarNavigation'
 import SlideOver from './Elements/SlideOver/SlideOver'
 import Table from './Elements/Table/Table'
 import Toggle from './Elements/Toggle/Toggle'
@@ -53,6 +54,7 @@ export {
   RadioGroup,
   SectionHeading,
   SelectMenu,
+  SidebarNavigation,
   SlideOver,
   Table,
   Toggle,

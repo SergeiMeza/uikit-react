@@ -17,9 +17,8 @@ import {
   Input,
   RadioGroup,
   SelectMenu,
+  SidebarNavigation,
   Table,
-  TabNavigation,
-  VerticalNavigation,
 } from './components'
 
 import { ComponentWrapper } from './pages/components/wrappers/ComponentWrapper'
@@ -43,6 +42,8 @@ import PageHeadingPreview from './pages/components/previews/PageHeadingPreview'
 import SectionHeadingPreview from './pages/components/previews/SectionHeadingPreview'
 import CardHeadingPreview from './pages/components/previews/CardHeadingPreview'
 import NavBarPreview from './pages/components/previews/NavBarPreview'
+import NavigationPreview from './pages/components/previews/NavigationPreview'
+import SidebarNavigationPreview from './pages/components/previews/SidebarNavigationPreview'
 
 const App = () => {
   return (
@@ -228,20 +229,7 @@ const App = () => {
                 <NavBarPreview />
               </Route>
               <Route path="/components/navigation">
-                <ComponentWrapper
-                  component={{
-                    name: 'Navigation',
-                    to: '/components/navigation',
-                    current: true,
-                  }}
-                >
-                  <TabNavigation />
-                  <div className="flex">
-                    <div className="w-72 bg-white">
-                      <VerticalNavigation />
-                    </div>
-                  </div>
-                </ComponentWrapper>
+                <NavigationPreview />
               </Route>
               <Route path="/components/notification">
                 <NotificationPreview />
@@ -273,6 +261,9 @@ const App = () => {
                 >
                   <SelectMenu />
                 </ComponentWrapper>
+              </Route>
+              <Route path="/components/sidebar-navigation">
+                <SidebarNavigationPreview />
               </Route>
               <Route path="/components/slide-over">
                 <SlideOverPreview />

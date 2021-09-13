@@ -1,13 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import { Anchor } from '../../..'
 
-// import {
-//   CreditCardIcon,
-//   OfficeBuildingIcon,
-//   UserIcon,
-//   UsersIcon,
-// } from '@heroicons/react/solid'
-
 import { classNames } from '../../../helpers/methods'
 import { NavigationItem } from '../NavigationItem'
 
@@ -20,28 +13,13 @@ export type TabNavigationProps = {
   onTabSelected?: (tab: NavigationItem) => void
 }
 
-// const sampleTabs: NavigationItem[] = [
-//   { name: 'My Account', to: '/', icon: UserIcon, current: false },
-//   { name: 'Company', to: '/', icon: OfficeBuildingIcon, current: false },
-//   { name: 'Team Members', to: '/', icon: UsersIcon, current: true },
-//   { name: 'Billing', to: '/', icon: CreditCardIcon, current: false },
-// ]
-
-const sampleTabs2: NavigationItem[] = [
-  { name: 'Applied', to: '/', count: '52', current: false },
-  { name: 'Phone Screening', to: '/', count: '6', current: false },
-  { name: 'Interview', to: '/', count: '4', current: true },
-  { name: 'Offer', to: '/', current: false },
-  { name: 'Disqualified', to: '/', current: false },
-]
-
 enum TabNavigationType {
   default = 'default',
   pills = 'pills',
 }
 
 const TabNavigationComponent: React.FC<TabNavigationProps> = ({
-  tabs = sampleTabs2,
+  tabs = [],
   type = TabNavigationType.default,
   isNavBar = false,
   showIcons = false,
