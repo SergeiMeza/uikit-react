@@ -1,7 +1,7 @@
 import { PlusSmIcon } from '@heroicons/react/solid'
 import React from 'react'
 import { classNames } from '../../helpers/methods'
-import Button, { ButtonProps } from '../Button/Button'
+import Button, { ButtonProps } from '../../Elements/Button/Button'
 
 export type DividerProps = {
   className?: string

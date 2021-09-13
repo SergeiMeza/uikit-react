@@ -1,4 +1,4 @@
-import { classNames } from '../../components'
+import { CardHeading, classNames } from '../../components'
 
 import { Anchor } from '../../components'
 
@@ -27,6 +27,11 @@ const layouts = [
     name: 'Container',
     initials: 'C',
     to: '/layouts/container',
+  },
+  {
+    name: 'Divider',
+    initials: 'D',
+    to: '/layouts/divider',
   },
   {
     name: 'Stacked Layout',
@@ -58,12 +63,10 @@ const layouts = [
 export const SampleLayoutsSection = () => {
   return (
     <div>
-      <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
-        Layouts
-      </h2>
+      <CardHeading title="Layouts" />
       <ul
         role="list"
-        className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="mt-4 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4"
       >
         {layouts.map((layout) => (
           <li

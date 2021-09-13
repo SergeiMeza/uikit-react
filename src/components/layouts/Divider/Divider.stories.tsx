@@ -1,6 +1,6 @@
 import { PlusSmIcon } from '@heroicons/react/outline'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import Button from '../Button/Button'
+import Button from '../../Elements/Button/Button'
 
 import Divider from './Divider'
 

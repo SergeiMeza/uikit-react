@@ -68,6 +68,17 @@ const App = () => {
                   </Container>
                 </LayoutWrapper>
               </Route>
+              <Route path="/layouts/divider">
+                <LayoutWrapper
+                  layout={{
+                    name: 'Divider',
+                    to: '/layouts/divider',
+                    current: true,
+                  }}
+                >
+                  <Divider />
+                </LayoutWrapper>
+              </Route>
               <Route path="/layouts/stacked-layout">
                 <StackedLayoutPreview />
               </Route>
@@ -195,17 +206,6 @@ const App = () => {
                   }}
                 >
                   <CheckboxGroup />
-                </ComponentWrapper>
-              </Route>
-              <Route path="/components/divider">
-                <ComponentWrapper
-                  component={{
-                    name: 'Divider',
-                    to: '/components/divider',
-                    current: true,
-                  }}
-                >
-                  <Divider />
                 </ComponentWrapper>
               </Route>
               <Route path="/components/dropdown">

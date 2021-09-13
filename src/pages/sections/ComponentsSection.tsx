@@ -1,5 +1,4 @@
-import { classNames } from '../../components'
-import { Link } from 'react-router-dom'
+import { Anchor, CardHeading, classNames } from '../../components'
 
 let colors = [
   'bg-rose-600',
@@ -19,158 +18,149 @@ let colors = [
   'bg-amber-500',
   'bg-orange-500',
   'bg-red-500',
-  // 'bg-warmGray-500',
-  // 'bg-trueGray-500',
 ]
 
 const components = [
   {
     name: 'Action Panel',
     initials: 'AP',
-    href: '/components/action-panel',
+    to: '/components/action-panel',
   },
   {
     name: 'Anchor',
     initials: 'A',
-    href: '/components/anchor',
+    to: '/components/anchor',
   },
   {
     name: 'Avatar',
     initials: 'A',
-    href: '/components/avatar',
+    to: '/components/avatar',
   },
   {
     name: 'Badge',
     initials: 'B',
-    href: '/components/badge',
+    to: '/components/badge',
     members: 16,
   },
   {
     name: 'Breadcrumb',
     initials: 'B',
-    href: '/components/breadcrumb',
+    to: '/components/breadcrumb',
   },
   {
     name: 'Button',
     initials: 'B',
-    href: '/components/button',
+    to: '/components/button',
   },
   {
     name: 'ButtonGroup',
     initials: 'BG',
-    href: '/components/button-group',
+    to: '/components/button-group',
   },
   {
     name: 'CardHeading',
     initials: 'CH',
-    href: '/components/card-heading',
+    to: '/components/card-heading',
   },
   {
     name: 'CheckboxGroup',
     initials: 'CG',
-    href: '/components/checkbox-group',
-  },
-  {
-    name: 'Divider',
-    initials: 'D',
-    href: '/components/divider',
+    to: '/components/checkbox-group',
   },
   {
     name: 'Dropdown',
     initials: 'D',
-    href: '/components/dropdown',
+    to: '/components/dropdown',
   },
   {
     name: 'EmptyState',
     initials: 'ES',
-    href: '/components/empty-state',
+    to: '/components/empty-state',
   },
   {
     name: 'FilePreview',
     initials: 'FP',
-    href: '/components/file-preview',
+    to: '/components/file-preview',
   },
   {
     name: 'Input',
     initials: 'I',
-    href: '/components/input',
+    to: '/components/input',
   },
   {
     name: 'Modal',
     initials: 'M',
-    href: '/components/modal',
+    to: '/components/modal',
   },
   {
     name: 'NavBar',
     initials: 'NB',
-    href: '/components/nav-bar',
+    to: '/components/nav-bar',
   },
   {
     name: 'Navigation',
     initials: 'N',
-    href: '/components/navigation',
+    to: '/components/navigation',
   },
   {
     name: 'Notification',
     initials: 'N',
-    href: '/components/notification',
+    to: '/components/notification',
   },
   {
     name: 'PageHeading',
     initials: 'PH',
-    href: '/components/page-heading',
+    to: '/components/page-heading',
   },
   {
     name: 'RadioGroup',
     initials: 'RG',
-    href: '/components/radio-group',
+    to: '/components/radio-group',
   },
   {
     name: 'SectionHeading',
     initials: 'SH',
-    href: '/components/section-heading',
+    to: '/components/section-heading',
   },
   {
     name: 'SelectMenu',
     initials: 'SM',
-    href: '/components/select-menu',
+    to: '/components/select-menu',
   },
   {
     name: 'SidebarNavigation',
     initials: 'SN',
-    href: '/components/sidebar-navigation',
+    to: '/components/sidebar-navigation',
   },
   {
     name: 'SlideOver',
     initials: 'SO',
-    href: '/components/slide-over',
+    to: '/components/slide-over',
   },
   {
     name: 'StepsNavigation',
     initials: 'SN',
-    href: '/components/steps-navigation',
+    to: '/components/steps-navigation',
   },
   {
     name: 'Table',
     initials: 'T',
-    href: '/components/table',
+    to: '/components/table',
   },
   {
     name: 'Toggle',
     initials: 'T',
-    href: '/components/toggle',
+    to: '/components/toggle',
   },
 ].map((item, index) => ({ ...item, bgColor: colors[index % colors.length] }))
 
 export const ComponentsSection = () => {
   return (
     <div>
-      <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
-        Components
-      </h2>
+      <CardHeading title="Components" />
       <ul
         role="list"
-        className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="mt-4 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4"
       >
         {components.map((component) => (
           <li
@@ -187,12 +177,12 @@ export const ComponentsSection = () => {
             </div>
             <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
               <div className="flex-1 px-4 py-2 text-sm truncate">
-                <Link
-                  to={component.href}
+                <Anchor
+                  to={component.to}
                   className="text-gray-900 font-medium hover:text-gray-600"
                 >
                   {component.name}
-                </Link>
+                </Anchor>
               </div>
             </div>
           </li>
