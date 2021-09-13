@@ -1,6 +1,5 @@
 import { ChevronLeftIcon } from '@heroicons/react/solid'
-import { Anchor, Breadcrumb, PageHeading } from '../../../components'
-import Container from '../../../components/layouts/Container/Container'
+import { Anchor, Breadcrumb, Container, PageHeading } from '../../../components'
 
 export const LayoutWrapper: React.FC<any> = ({
   layout = {

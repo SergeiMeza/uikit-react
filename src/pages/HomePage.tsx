@@ -1,7 +1,8 @@
-import Container from '../components/layouts/Container/Container'
-import { ComponentsSection } from './sections/ComponentsSection'
-import { Divider } from '../components'
-import { SampleLayoutsSection } from './sections/SampleLayoutsSection'
+import { Container, Divider } from '../components'
+
+import ComponentsSection from './sections/ComponentsSection'
+import LayoutsSection from './sections/LayoutsSection'
+import PagesSection from './sections/PagesSection'
 
 // const StackedLayouts = () => {
 //   return (
@@ -59,7 +60,9 @@ const HomePage = () => {
     <Container className="py-10">
       <ComponentsSection />
       <Divider className="my-10" />
-      <SampleLayoutsSection />
+      <LayoutsSection />
+      <Divider className="my-10" />
+      <PagesSection />
     </Container>
   )
 }

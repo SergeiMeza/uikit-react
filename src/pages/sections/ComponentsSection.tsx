@@ -191,3 +191,5 @@ export const ComponentsSection = () => {
     </div>
   )
 }
+
+export default ComponentsSection

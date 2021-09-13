@@ -60,7 +60,7 @@ const layouts = [
   },
 ].map((item, index) => ({ ...item, bgColor: colors[index % colors.length] }))
 
-export const SampleLayoutsSection = () => {
+export const LayoutsSection = () => {
   return (
     <div>
       <CardHeading title="Layouts" />
@@ -97,3 +97,5 @@ export const SampleLayoutsSection = () => {
     </div>
   )
 }
+
+export default LayoutsSection

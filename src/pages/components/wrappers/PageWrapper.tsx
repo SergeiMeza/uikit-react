@@ -1,10 +1,10 @@
 import { ChevronLeftIcon } from '@heroicons/react/solid'
 import { Anchor, Breadcrumb, Container, PageHeading } from '../../../components'
 
-export const ComponentWrapper: React.FC<any> = ({
-  component = {
-    name: 'ActionPanel',
-    to: '/components/action-panel',
+export const PageWrapper: React.FC<any> = ({
+  page = {
+    name: 'Container',
+    to: '/pages/container',
     current: true,
   },
   children,
@@ -12,11 +12,11 @@ export const ComponentWrapper: React.FC<any> = ({
   return (
     <Container className="space-y-10 py-10">
       <PageHeading
-        title={component.name}
+        title={page.name}
         back={
           <nav className="sm:hidden" aria-label="Back">
             <Anchor
-              to="/components"
+              to="/pages"
               className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700"
             >
               <ChevronLeftIcon
@@ -31,10 +31,7 @@ export const ComponentWrapper: React.FC<any> = ({
           <Breadcrumb
             className="hidden sm:flex"
             type={Breadcrumb.type.simpleWithChevrons}
-            pages={[
-              { name: 'Components', to: '/components', current: false },
-              component,
-            ]}
+            pages={[{ name: 'Pages', to: '/pages', current: false }, page]}
             homeTo="/"
           />
         }

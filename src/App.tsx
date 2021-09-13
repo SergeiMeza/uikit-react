@@ -23,6 +23,7 @@ import {
 
 import { ComponentWrapper } from './pages/components/wrappers/ComponentWrapper'
 import { LayoutWrapper } from './pages/components/wrappers/LayoutWrapper'
+import { PageWrapper } from './pages/components/wrappers/PageWrapper'
 
 import ModalPreview from './pages/components/previews/ModalPreview'
 import NotificationPreview from './pages/components/previews/NotificationPreview'
@@ -47,12 +48,42 @@ import SidebarNavigationPreview from './pages/components/previews/SidebarNavigat
 import StepsNavigationPreview from './pages/components/previews/StepsNavigationPreview'
 import StackedLayoutPreview from './pages/components/previews/StackedLayoutPreview'
 import SidebarLayoutPreview from './pages/components/previews/SidebarLayoutPreview'
+import PagesPage from './pages/PagesPage'
 
 const App = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <Router>
         <Switch>
+          <Route path="/pages">
+            <Switch>
+              <Route path="/pages/landing-page">
+                <PageWrapper
+                  page={{
+                    name: 'Landing Page',
+                    to: '/pages/landing-page',
+                    current: true,
+                  }}
+                >
+                  <LandingPage />
+                </PageWrapper>
+              </Route>
+              <Route path="/pages/pricing-page">
+                <PageWrapper
+                  page={{
+                    name: 'Pricing Page',
+                    to: '/pages/pricing-page',
+                    current: true,
+                  }}
+                >
+                  <PricingPage />
+                </PageWrapper>
+              </Route>
+              <Route exact path="/pages">
+                <PagesPage />
+              </Route>
+            </Switch>
+          </Route>
           <Route path="/layouts">
             <Switch>
               <Route path="/layouts/container">

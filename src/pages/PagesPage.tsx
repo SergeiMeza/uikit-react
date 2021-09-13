@@ -1,20 +1,20 @@
 import React from 'react'
 import { Breadcrumb, Container } from '../components'
 
-import LayoutsSection from './sections/LayoutsSection'
+import PagesSection from './sections/PagesSection'
 
-const LayoutsPage: React.FC<any> = () => {
+const PagesPage: React.FC<any> = () => {
   return (
     <Container className="py-10">
       <Breadcrumb
         homeTo="/"
-        pages={[{ name: 'Sample Layouts', to: '/layouts', current: true }]}
+        pages={[{ name: 'Sample Pages', to: '/pages', current: true }]}
       />
       <div className="my-10">
-        <LayoutsSection />
+        <PagesSection />
       </div>
     </Container>
   )
 }
 
-export default LayoutsPage
+export default PagesPage
