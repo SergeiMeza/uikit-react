@@ -20,11 +20,19 @@ let colors = [
   'bg-amber-500',
   'bg-orange-500',
   'bg-red-500',
-  // 'bg-warmGray-500',
-  // 'bg-trueGray-500',
 ]
 
 const layouts = [
+  {
+    name: 'Container',
+    initials: 'C',
+    to: '/layouts/container',
+  },
+  {
+    name: 'Stacked Layout',
+    initials: 'SL',
+    to: '/layouts/stacked-layout',
+  },
   {
     name: 'Sign In',
     initials: 'SI',
@@ -46,7 +54,7 @@ export const SampleLayoutsSection = () => {
   return (
     <div>
       <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">
-        Sample Layouts
+        Layouts
       </h2>
       <ul
         role="list"

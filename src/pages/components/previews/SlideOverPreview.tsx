@@ -26,3 +26,5 @@ export const SlideOverPreview = () => {
     </ComponentWrapper>
   )
 }
+
+export default SlideOverPreview

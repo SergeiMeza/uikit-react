@@ -25,3 +25,5 @@ export const NotificationPreview = () => {
     </ComponentWrapper>
   )
 }
+
+export default NotificationPreview

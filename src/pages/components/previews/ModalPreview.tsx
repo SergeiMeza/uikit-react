@@ -25,3 +25,5 @@ export const ModalPreview = () => {
     </ComponentWrapper>
   )
 }
+
+export default ModalPreview

@@ -16,3 +16,5 @@ export const TogglePreview = () => {
     </ComponentWrapper>
   )
 }
+
+export default TogglePreview

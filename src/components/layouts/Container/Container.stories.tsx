@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Container from './Container'
 
 export default {
-  title: 'Elements/ Container',
+  title: 'Layouts/ Container',
   component: Container,
   argTypes: {
     backgroundColor: { control: 'color' },

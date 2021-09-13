@@ -11,23 +11,23 @@ import {
   Breadcrumb,
   ButtonGroup,
   CheckboxGroup,
+  Container,
   Divider,
   Dropdown,
   EmptyState,
   Input,
   RadioGroup,
   SelectMenu,
-  SidebarNavigation,
   Table,
 } from './components'
 
 import { ComponentWrapper } from './pages/components/wrappers/ComponentWrapper'
 import { LayoutWrapper } from './pages/components/wrappers/LayoutWrapper'
 
-import { ModalPreview } from './pages/components/previews/ModalPreview'
-import { NotificationPreview } from './pages/components/previews/NotificationPreview'
-import { SlideOverPreview } from './pages/components/previews/SlideOverPreview'
-import { TogglePreview } from './pages/components/previews/TogglePreview'
+import ModalPreview from './pages/components/previews/ModalPreview'
+import NotificationPreview from './pages/components/previews/NotificationPreview'
+import SlideOverPreview from './pages/components/previews/SlideOverPreview'
+import TogglePreview from './pages/components/previews/TogglePreview'
 
 import LayoutsPage from './pages/LayoutsPage'
 import SignInLayout from './pages/layouts/SignInLayout/SignInLayout'
@@ -45,6 +45,7 @@ import NavBarPreview from './pages/components/previews/NavBarPreview'
 import NavigationPreview from './pages/components/previews/NavigationPreview'
 import SidebarNavigationPreview from './pages/components/previews/SidebarNavigationPreview'
 import StepsNavigationPreview from './pages/components/previews/StepsNavigationPreview'
+import StackedLayoutPreview from './pages/components/previews/StackedLayoutPreview'
 
 const App = () => {
   return (
@@ -53,6 +54,22 @@ const App = () => {
         <Switch>
           <Route path="/layouts">
             <Switch>
+              <Route path="/layouts/container">
+                <LayoutWrapper
+                  layout={{
+                    name: 'Container',
+                    to: '/layouts/container',
+                    current: true,
+                  }}
+                >
+                  <Container className="bg-gray-200 h-96 py-10">
+                    Hello World
+                  </Container>
+                </LayoutWrapper>
+              </Route>
+              <Route path="/layouts/stacked-layout">
+                <StackedLayoutPreview />
+              </Route>
               <Route path="/layouts/sign-in">
                 <LayoutWrapper
                   layout={{
