@@ -1,13 +1,12 @@
 import React from 'react'
 
 import { classNames } from '../..'
-import { NavBarProps } from '../../Elements/NavBar/NavBar'
 
 export type StackedLayoutProps = {
   className?: string
   navBar?: JSX.Element
   title?: string | JSX.Element
-  stackedLayoutType?: StackedLayoutType
+  type?: StackedLayoutType
 }
 
 enum StackedLayoutType {
@@ -18,7 +17,7 @@ const StackedLayoutComponent: React.FC<StackedLayoutProps> = ({
   className = 'min-h-1/4 bg-gray-100',
   navBar = undefined,
   title = undefined,
-  stackedLayoutType = StackedLayoutType.simple,
+  type = StackedLayoutType.simple,
   children,
 }) => {
   return (

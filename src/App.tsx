@@ -46,6 +46,7 @@ import NavigationPreview from './pages/components/previews/NavigationPreview'
 import SidebarNavigationPreview from './pages/components/previews/SidebarNavigationPreview'
 import StepsNavigationPreview from './pages/components/previews/StepsNavigationPreview'
 import StackedLayoutPreview from './pages/components/previews/StackedLayoutPreview'
+import SidebarLayoutPreview from './pages/components/previews/SidebarLayoutPreview'
 
 const App = () => {
   return (
@@ -69,6 +70,9 @@ const App = () => {
               </Route>
               <Route path="/layouts/stacked-layout">
                 <StackedLayoutPreview />
+              </Route>
+              <Route path="/layouts/sidebar-layout">
+                <SidebarLayoutPreview />
               </Route>
               <Route path="/layouts/sign-in">
                 <LayoutWrapper

@@ -20,7 +20,7 @@ export const SlideOverPreview = () => {
           setShowSlideOver(true)
         }}
       >
-        Show Notification
+        Show Slideover
       </Button>
       <SlideOver show={showSlideOver} setShow={setShowSlideOver} />
     </ComponentWrapper>

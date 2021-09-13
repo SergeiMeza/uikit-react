@@ -34,6 +34,11 @@ const layouts = [
     to: '/layouts/stacked-layout',
   },
   {
+    name: 'Sidebar Layout',
+    initials: 'SL',
+    to: '/layouts/sidebar-layout',
+  },
+  {
     name: 'Sign In',
     initials: 'SI',
     to: '/layouts/sign-in',

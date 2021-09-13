@@ -7,7 +7,6 @@ import Button from './Elements/Button/Button'
 import ButtonGroup from './Elements/ButtonGroup/ButtonGroup'
 import CardHeading from './Elements/CardHeading/CardHeading'
 import CheckboxGroup from './Elements/CheckboxGroup/CheckboxGroup'
-import Container from './layouts/Container/Container'
 import Divider from './Elements/Divider/Divider'
 import Dropdown from './Elements/Dropdown/Dropdown'
 import EmptyState from './Elements/EmptyState/EmptyState'
@@ -27,6 +26,11 @@ import SlideOver from './Elements/SlideOver/SlideOver'
 import StepsNavigation from './Elements/StepsNavigation/StepsNavigation'
 import Table from './Elements/Table/Table'
 import Toggle from './Elements/Toggle/Toggle'
+
+import Container from './layouts/Container/Container'
+import StackedLayout from './layouts/StackedLayout/StackedLayout'
+import SidebarLayout from './layouts/SidebarLayout/SidebarLayout'
+
 import { classNames } from './helpers/methods'
 
 export {
@@ -55,7 +59,9 @@ export {
   SectionHeading,
   SelectMenu,
   SidebarNavigation,
+  SidebarLayout,
   SlideOver,
+  StackedLayout,
   StepsNavigation,
   Table,
   Toggle,

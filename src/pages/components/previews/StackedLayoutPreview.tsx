@@ -212,7 +212,7 @@ const SampleNavBar = () => (
 export const StackedLayoutPreview = () => {
   return (
     <LayoutWrapper
-      component={{
+      layout={{
         name: 'Stacked Layout',
         to: '/layouts/stacked-layout',
         current: true,
