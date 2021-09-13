@@ -97,9 +97,11 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
             aria-label="Tabs"
           >
             {tabItems.map((tab) => (
-              <button
+              <Anchor
                 type="button"
                 key={tab.name}
+                to={tab.to}
+                href={tab.href}
                 className={
                   type === TabNavigationType.default
                     ? classNames(
@@ -117,10 +119,6 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                       )
                 }
                 aria-current={tab.current ? 'page' : undefined}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleItemChange(tab.name)
-                }}
               >
                 {showIcons && tab.icon && (
                   <tab.icon
@@ -146,7 +144,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                     {tab.count}
                   </span>
                 ) : null}
-              </button>
+              </Anchor>
             ))}
           </nav>
         </div>
