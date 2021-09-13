@@ -44,6 +44,7 @@ import CardHeadingPreview from './pages/components/previews/CardHeadingPreview'
 import NavBarPreview from './pages/components/previews/NavBarPreview'
 import NavigationPreview from './pages/components/previews/NavigationPreview'
 import SidebarNavigationPreview from './pages/components/previews/SidebarNavigationPreview'
+import StepsNavigationPreview from './pages/components/previews/StepsNavigationPreview'
 
 const App = () => {
   return (
@@ -267,6 +268,9 @@ const App = () => {
               </Route>
               <Route path="/components/slide-over">
                 <SlideOverPreview />
+              </Route>
+              <Route path="/components/steps-navigation">
+                <StepsNavigationPreview />
               </Route>
               <Route path="/components/table">
                 <ComponentWrapper

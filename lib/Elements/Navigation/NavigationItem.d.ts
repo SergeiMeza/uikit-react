@@ -12,3 +12,16 @@ export declare type NavigationItem = {
     }[];
     current: boolean;
 };
+export declare type StepsNavigationItem = {
+    id?: string;
+    name: string;
+    description?: string;
+    href?: string;
+    to?: string;
+    status: StepNavigationStatus;
+};
+export declare enum StepNavigationStatus {
+    complete = "COMPLETE",
+    current = "CURRENT",
+    upcoming = "UPCOMING"
+}

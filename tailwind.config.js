@@ -9,8 +9,8 @@ module.exports = {
     extend: {
       colors: {
         ...colors,
-        primary: colors.rose,
-        secondary: colors.red,
+        primary: colors.blue,
+        secondary: colors.sky,
       },
       minHeight: {
         '1/4': '25%',

@@ -146,6 +146,11 @@ const components = [
     href: '/components/slide-over',
   },
   {
+    name: 'StepsNavigation',
+    initials: 'SN',
+    href: '/components/steps-navigation',
+  },
+  {
     name: 'Table',
     initials: 'T',
     href: '/components/table',

@@ -1,4 +1,3 @@
-import './styles.css'
 import ActionPanel from './Elements/ActionPanel/ActionPanel'
 import Anchor from './Elements/Anchor/Anchor'
 import Avatar from './Elements/Avatar/Avatar'
@@ -25,6 +24,7 @@ import SectionHeading from './Elements/SectionHeading/SectionHeading'
 import SelectMenu from './Elements/SelectMenu/SelectMenu'
 import SidebarNavigation from './Elements/SidebarNavigation/SidebarNavigation'
 import SlideOver from './Elements/SlideOver/SlideOver'
+import StepsNavigation from './Elements/StepsNavigation/StepsNavigation'
 import Table from './Elements/Table/Table'
 import Toggle from './Elements/Toggle/Toggle'
 import { classNames } from './helpers/methods'
@@ -56,6 +56,7 @@ export {
   SelectMenu,
   SidebarNavigation,
   SlideOver,
+  StepsNavigation,
   Table,
   Toggle,
   classNames,

@@ -7,7 +7,7 @@
     "build:clean": "rimraf lib",
     "build:css": "postcss src/index.css -o src/components/styles.css",
     "build:copy-css": "cp src/components/styles.css lib/styles.css",
-    "compile": "yarn build:clean && yarn build:css && tsc --project tsconfig.compile.json && yarn build:copy-css",
+    "compile": "yarn build:clean && tsc --project tsconfig.compile.json",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",

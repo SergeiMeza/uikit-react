@@ -9,3 +9,18 @@ export type NavigationItem = {
   children?: { name: string; href?: string; to?: string }[]
   current: boolean
 }
+
+export type StepsNavigationItem = {
+  id?: string
+  name: string
+  description?: string
+  href?: string
+  to?: string
+  status: StepNavigationStatus
+}
+
+export enum StepNavigationStatus {
+  complete = 'COMPLETE',
+  current = 'CURRENT',
+  upcoming = 'UPCOMING',
+}
