@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonProps } from '../Button/Button';
+import { ButtonProps } from '../../Elements/Button/Button';
 export declare type DividerProps = {
     className?: string;
     title?: string;
