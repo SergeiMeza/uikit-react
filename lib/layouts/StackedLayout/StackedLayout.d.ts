@@ -3,7 +3,7 @@ export declare type StackedLayoutProps = {
     className?: string;
     navBar?: JSX.Element;
     title?: string | JSX.Element;
-    stackedLayoutType?: StackedLayoutType;
+    type?: StackedLayoutType;
 };
 declare enum StackedLayoutType {
     simple = "simple"
