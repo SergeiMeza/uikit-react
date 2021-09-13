@@ -32,7 +32,7 @@ const components = [
   {
     name: 'Anchor',
     initials: 'A',
-    href: '/components/avatar',
+    href: '/components/anchor',
   },
   {
     name: 'Avatar',
