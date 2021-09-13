@@ -16,6 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 
 ReactDOM.render(
   <React.StrictMode>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <App />
   </React.StrictMode>,
   document.getElementById('root'),

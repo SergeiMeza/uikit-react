@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 let colors = require('tailwindcss/colors')
 
 delete colors.lightBlue
@@ -7,6 +9,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         ...colors,
         primary: colors.blue,
