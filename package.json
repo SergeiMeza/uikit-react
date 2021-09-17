@@ -1,6 +1,6 @@
 {
   "name": "@sergeimeza/uikit-react",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "private": false,
   "scripts": {
     "start": "craco start",
@@ -54,6 +54,7 @@
     "react-hook-form": "^7.15.3",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "rimraf": "^3.0.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
@@ -94,6 +95,7 @@
   },
   "description": "Personal react components library",
   "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "repository": "https://github.com/SergeiMeza/uikit-react.git",
   "author": "SergeiMeza <sergeimeza@gmail.com>",
   "license": "MIT"
