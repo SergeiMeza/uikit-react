@@ -77,7 +77,7 @@ const TableColumn: React.FC<TableColumnProps> = ({ label, labelHidden }) => (
     className={
       labelHidden
         ? 'relative px-6 py-3'
-        : 'px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+        : 'px-6 py-3 text-left text-xs font-medium text-primary-500 uppercase tracking-wider'
     }
   >
     {labelHidden ? <span className="sr-only">{label}</span> : label}
@@ -104,7 +104,7 @@ const TableComponent: React.FC<TableProps> = ({
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+              <thead className="bg-primary-50">
                 <tr>
                   {columns.map((column) => (
                     <TableColumn
