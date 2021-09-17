@@ -19,6 +19,7 @@ export type SelectMenuProps = {
   label?: string
   options?: any[]
   selectedItem?: any
+  cornerHint?: string | JSX.Element
   onItemSelected?: (item: any) => void
   register?: UseFormRegisterReturn
 }
@@ -36,6 +37,7 @@ const SelectMenuComponent: React.FC<
   label = 'Location',
   options = sampleOptions,
   selectedItem = options[0],
+  cornerHint = '',
   onItemSelected = (item: any) => console.log('item selected', item.name),
   register = undefined,
   ...props
@@ -57,9 +59,21 @@ const SelectMenuComponent: React.FC<
 
   let nativeSelectMenu = (
     <div>
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700">
-        {label}
-      </label>
+      <div className="flex justify-between">
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium text-gray-700"
+        >
+          {label}
+        </label>
+        {typeof cornerHint === 'string' ? (
+          <span className="text-sm text-gray-500" id={`${name}-optional`}>
+            {cornerHint}
+          </span>
+        ) : (
+          cornerHint
+        )}
+      </div>
       <select
         id={name}
         className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md"

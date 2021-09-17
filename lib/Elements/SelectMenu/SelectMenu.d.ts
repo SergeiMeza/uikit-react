@@ -6,6 +6,7 @@ export declare type SelectMenuProps = {
     label?: string;
     options?: any[];
     selectedItem?: any;
+    cornerHint?: string | JSX.Element;
     onItemSelected?: (item: any) => void;
     register?: UseFormRegisterReturn;
 };

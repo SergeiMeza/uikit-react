@@ -39,14 +39,14 @@ const InputComponent: React.FC<
   InputProps & React.InputHTMLAttributes<HTMLInputElement>
 > = ({
   inputType = InputType.text,
-  name = 'email',
+  name = '',
   hiddenLabel = false,
-  label = 'Email',
-  placeholder = 'you@example.com',
-  description = "We'll only use this for spam.",
+  label = '',
+  placeholder = '',
+  description = '',
   prefix = '',
   trimmed = false,
-  cornerHint = 'required',
+  cornerHint = '',
   error = undefined,
   onChange = (value: any) => console.log(`${name}: ${value}`),
   onFocus = () => console.log('input focus'),
@@ -111,7 +111,7 @@ const InputComponent: React.FC<
           {label}
         </label>
         {typeof cornerHint === 'string' ? (
-          <span className="text-sm text-gray-500" id="email-optional">
+          <span className="text-sm text-gray-500" id={`${name}-optional`}>
             {cornerHint}
           </span>
         ) : (

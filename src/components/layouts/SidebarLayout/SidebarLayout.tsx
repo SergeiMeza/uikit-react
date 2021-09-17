@@ -18,7 +18,7 @@ enum SidebarLayoutType {
 }
 
 const SidebarLayoutComponent: React.FC<SidebarLayoutProps> = ({
-  className = 'min-h-1/4 flex overflow-hidden bg-gray-100',
+  className = 'min-h-screen flex overflow-hidden bg-gray-100',
   header = undefined,
   sidebarNavigation = undefined,
   title = undefined,
