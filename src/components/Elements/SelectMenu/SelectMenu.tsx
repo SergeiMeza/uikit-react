@@ -95,9 +95,18 @@ const SelectMenuComponent: React.FC<
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <Listbox.Label className="block text-sm font-medium text-gray-700">
-            {label}
-          </Listbox.Label>
+          <div className="flex justify-between">
+            <Listbox.Label className="block text-sm font-medium text-gray-700">
+              {label}
+            </Listbox.Label>
+            {typeof cornerHint === 'string' ? (
+              <span className="text-sm text-gray-500" id={`${name}-optional`}>
+                {cornerHint}
+              </span>
+            ) : (
+              cornerHint
+            )}
+          </div>
           <div className="mt-1 relative">
             <Listbox.Button className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500 sm:text-sm">
               <span className="block truncate">{selected.name}</span>
