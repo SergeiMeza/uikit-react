@@ -1,3 +1,4 @@
+import { useArray } from '@sergeimeza/foundation-react'
 import React, { ChangeEvent, useState } from 'react'
 import { Anchor } from '../../..'
 
@@ -28,7 +29,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
     console.log('tab selected:', tab.name)
   },
 }) => {
-  const [tabItems, setTabItems] = useState<any[]>(tabs.slice())
+  const { array: tabItems, set: setTabItems } = useArray(tabs)
 
   function handleChange(e: ChangeEvent<HTMLSelectElement>) {
     handleItemChange(e.target.value)
@@ -45,7 +46,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
 
   let navBarTabNavigation = (
     <>
-      {tabs.map((tab) => (
+      {tabItems.map((tab) => (
         <Anchor
           key={tab.name}
           to={tab.to}
@@ -80,6 +81,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
           ))}
         </select>
       </div>
+      <pre>{JSON.stringify(tabItems, null, 2)}</pre>
       <div className="hidden sm:block">
         <div
           className={classNames(
@@ -102,6 +104,9 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                 key={tab.name}
                 to={tab.to}
                 href={tab.href}
+                onClick={() => {
+                  handleItemChange(tab.name)
+                }}
                 className={
                   type === TabNavigationType.default
                     ? classNames(

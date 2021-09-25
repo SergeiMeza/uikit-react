@@ -106,11 +106,11 @@ const sampleTabs: NavigationItem[] = [
 ]
 
 const sampleTabs2: NavigationItem[] = [
-  { name: 'Applied', to: '/', count: '52', current: false },
-  { name: 'Phone Screening', to: '/', count: '6', current: false },
-  { name: 'Interview', to: '/', count: '4', current: true },
-  { name: 'Offer', to: '/', current: false },
-  { name: 'Disqualified', to: '/', current: false },
+  { name: 'Applied', to: '#', count: '52', current: false },
+  { name: 'Phone Screening', to: '#', count: '6', current: false },
+  { name: 'Interview', to: '#', count: '4', current: true },
+  { name: 'Offer', to: '#', current: false },
+  { name: 'Disqualified', to: '#', current: false },
 ]
 
 export const NavigationPreview = () => {

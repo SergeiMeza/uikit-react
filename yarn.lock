@@ -1887,6 +1887,15 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
+"@sergeimeza/foundation-react@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@sergeimeza/foundation-react/-/foundation-react-1.0.1.tgz#9f977ce8da9798829825a0a5ffc4cb9b98af7c22"
+  integrity sha512-fZb3r1RFr9rh/IBDYLM38dpr1l68l3IYy0bSoroUSPqjsrV3cCn5NEwWOXPOMAPvk/+6NpBXSuKTUAzjKdSY4w==
+  dependencies:
+    dayjs "^1.10.7"
+    lodash.debounce "^4.0.8"
+    screenfull "^5.1.0"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
@@ -5635,6 +5644,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+dayjs@^1.10.7:
+  version "1.10.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
+  integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
@@ -12794,6 +12808,11 @@ schema-utils@^3.0.0:
     "@types/json-schema" "^7.0.8"
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
+
+screenfull@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/screenfull/-/screenfull-5.1.0.tgz#85c13c70f4ead4c1b8a935c70010dfdcd2c0e5c8"
+  integrity sha512-dYaNuOdzr+kc6J6CFcBrzkLCfyGcMg+gWkJ8us93IQ7y1cevhQAugFsaCdMHb6lw8KV3xPzSxzH7zM1dQap9mA==
 
 select-hose@^2.0.0:
   version "2.0.0"
