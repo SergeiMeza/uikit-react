@@ -107,7 +107,7 @@ const TableComponent: React.FC<TableProps> = ({
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 align-middle inline-block min-w-full px-2 sm:px-6 lg:px-8">
-          <div className="sm:shadow overflow-hidden border sm:border-b border-gray-100 sm:border-gray-200 rounded-md sm:rounded-lg">
+          <div className="sm:shadow overflow-hidden border sm:border-none sm:border-b border-gray-100 sm:border-gray-200 rounded-md sm:rounded-lg">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-primary-50">
                 <tr>
