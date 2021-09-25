@@ -76,8 +76,8 @@ const TableColumn: React.FC<TableColumnProps> = ({ label, labelHidden }) => (
     scope="col"
     className={
       labelHidden
-        ? 'relative px-2 sm:px-6 py-2 sm:py-3'
-        : 'px-2 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-primary-600 uppercase tracking-wider'
+        ? 'relative px-2 sm:px-4 py-2 sm:py-3'
+        : 'px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-primary-600 uppercase tracking-wider'
     }
   >
     {labelHidden ? <span className="sr-only">{label}</span> : label}
@@ -92,7 +92,7 @@ const TableCell: React.FC<any> = ({
   <td
     className={classNames(
       className,
-      'px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm',
+      'px-2 sm:px-4 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm',
     )}
   >
     {children ?? value}
@@ -106,8 +106,8 @@ const TableComponent: React.FC<TableProps> = ({
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-          <div className="shadow-sm sm:shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <div className="py-2 align-middle inline-block min-w-full px-2 sm:px-6 lg:px-8">
+          <div className="sm:shadow overflow-hidden border sm:border-b border-gray-100 sm:border-gray-200 rounded-md sm:rounded-lg">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-primary-50">
                 <tr>
