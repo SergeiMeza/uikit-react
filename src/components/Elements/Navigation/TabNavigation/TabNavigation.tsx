@@ -81,7 +81,6 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
           ))}
         </select>
       </div>
-      <pre>{JSON.stringify(tabItems, null, 2)}</pre>
       <div className="hidden sm:block">
         <div
           className={classNames(
