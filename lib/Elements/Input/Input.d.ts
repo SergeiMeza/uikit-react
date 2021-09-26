@@ -55,6 +55,7 @@ export declare type FileInputProps = {
     multiple?: boolean;
     accept?: string;
     renderFiles?: (file: File) => JSX.Element;
+    onFilesSelected?: (files: File[]) => void;
 };
 export declare const FileInput: React.FC<FileInputProps & EmptyStateProps & React.DOMAttributes<HTMLDivElement>>;
 export declare const Input: React.FC<InputProps & React.InputHTMLAttributes<HTMLInputElement>> & {

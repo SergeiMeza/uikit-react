@@ -338,6 +338,7 @@ export type FileInputProps = {
   multiple?: boolean
   accept?: string
   renderFiles?: (file: File) => JSX.Element
+  onFilesSelected?: (files: File[]) => void
 }
 
 export const FileInput: React.FC<
@@ -348,6 +349,7 @@ export const FileInput: React.FC<
   name = '',
   multiple = false,
   accept = undefined,
+  onFilesSelected = () => {},
   ...props
 }) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
@@ -358,6 +360,7 @@ export const FileInput: React.FC<
     let files = Array.from(e.target.files ?? [])
     if (files.length) {
       setSelectedFiles(files ?? selectedFiles)
+      onFilesSelected(files)
     }
   }
 
