@@ -14,8 +14,8 @@ module.exports = {
       },
       colors: {
         ...colors,
-        primary: colors.blue,
-        secondary: colors.sky,
+        primary: colors.yellow,
+        secondary: colors.orange,
       },
       minHeight: {
         '1/4': '25%',

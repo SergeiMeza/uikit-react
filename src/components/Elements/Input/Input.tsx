@@ -12,15 +12,16 @@ import { classNames } from '../../helpers/methods'
 
 export type InputProps = {
   inputType?: string
+  inputClassNames?: string
   hiddenLabel?: boolean
-  label?: string
+  label?: string | JSX.Element
   name?: string
   placeholder?: string
-  description?: string
+  description?: string | JSX.Element
   trimmed?: boolean
   prefix?: string
   cornerHint?: string | JSX.Element
-  error?: string
+  error?: string | JSX.Element
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -48,6 +49,7 @@ const InputComponent: React.FC<
   trimmed = false,
   cornerHint = '',
   error = undefined,
+  inputClassNames = '',
   onChange = (value: any) => console.log(`${name}: ${value}`),
   onFocus = () => console.log('input focus'),
   onBlur = () => console.log('input blur'),
@@ -89,7 +91,8 @@ const InputComponent: React.FC<
       ? 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none pr-10 focus:ring-red-500 focus:border-red-500'
       : 'focus:ring-primary-500 focus:border-primary-500',
     prefix ? 'rounded-r-md' : 'rounded-md',
-    ' block w-full sm:text-sm border-gray-300',
+    'block w-full sm:text-sm border-gray-300',
+    inputClassNames,
   )
 
   const prefixInputClassNames = classNames(
