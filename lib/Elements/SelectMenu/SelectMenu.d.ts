@@ -3,10 +3,11 @@ import { UseFormRegisterReturn } from 'react-hook-form';
 export declare type SelectMenuProps = {
     type?: SelectMenuType;
     name?: string;
-    label?: string;
+    label?: string | JSX.Element;
     options?: any[];
     selectedItem?: any;
     cornerHint?: string | JSX.Element;
+    selectClassNames?: string;
     onItemSelected?: (item: any) => void;
     register?: UseFormRegisterReturn;
 };

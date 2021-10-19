@@ -16,10 +16,11 @@ const sampleOptions = [
 export type SelectMenuProps = {
   type?: SelectMenuType
   name?: string
-  label?: string
+  label?: string | JSX.Element
   options?: any[]
   selectedItem?: any
   cornerHint?: string | JSX.Element
+  selectClassNames?: string
   onItemSelected?: (item: any) => void
   register?: UseFormRegisterReturn
 }
@@ -38,6 +39,7 @@ const SelectMenuComponent: React.FC<
   options = sampleOptions,
   selectedItem = options[0],
   cornerHint = '',
+  selectClassNames = '',
   onItemSelected = (item: any) => console.log('item selected', item.name),
   register = undefined,
   ...props
@@ -76,7 +78,10 @@ const SelectMenuComponent: React.FC<
       </div>
       <select
         id={name}
-        className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md"
+        className={classNames(
+          'mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md',
+          selectClassNames,
+        )}
         // defaultValue={selectedItem?.value}
         // onChange={handleNativeChange}
         {...props}
