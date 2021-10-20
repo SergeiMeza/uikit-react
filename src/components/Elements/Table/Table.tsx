@@ -77,7 +77,7 @@ const TableColumn: React.FC<TableColumnProps> = ({ label, labelHidden }) => (
     className={
       labelHidden
         ? 'relative px-2 sm:px-4 py-2 sm:py-3'
-        : 'px-2 sm:px-4 py-2 sm:py-3 text-left text-sm md:text-base font-bold text-white uppercase tracking-wider'
+        : 'px-2 sm:px-4 py-2 sm:py-3 text-left text-xs md:text-base font-bold text-white uppercase tracking-wider'
     }
   >
     {labelHidden ? <span className="sr-only">{label}</span> : label}
