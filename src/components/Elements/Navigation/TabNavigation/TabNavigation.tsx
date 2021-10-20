@@ -8,6 +8,8 @@ import { NavigationItem } from '../NavigationItem'
 export type TabNavigationProps = {
   tabs?: NavigationItem[]
   type?: TabNavigationType
+  tabItemClassNames?: string
+  tabItemSelectedClassNames?: string
   showBadge?: boolean
   showIcons?: boolean
   isNavBar?: boolean
@@ -22,6 +24,8 @@ enum TabNavigationType {
 const TabNavigationComponent: React.FC<TabNavigationProps> = ({
   tabs = [],
   type = TabNavigationType.default,
+  tabItemClassNames = '',
+  tabItemSelectedClassNames = '',
   isNavBar = false,
   showIcons = false,
   showBadge = true,
@@ -114,12 +118,14 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                           : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
                         'group inline-flex items-center',
                         'py-4 px-1 border-b-2 font-medium text-sm',
+                        tabItemSelectedClassNames,
                       )
                     : classNames(
                         tab.current
                           ? 'bg-primary-100 text-primary-700'
                           : 'text-gray-500 hover:text-gray-700',
                         'px-3 py-2 font-medium text-sm rounded-md',
+                        tabItemClassNames,
                       )
                 }
                 aria-current={tab.current ? 'page' : undefined}

@@ -3,6 +3,8 @@ import { NavigationItem } from '../NavigationItem';
 export declare type TabNavigationProps = {
     tabs?: NavigationItem[];
     type?: TabNavigationType;
+    tabItemClassNames?: string;
+    tabItemSelectedClassNames?: string;
     showBadge?: boolean;
     showIcons?: boolean;
     isNavBar?: boolean;
