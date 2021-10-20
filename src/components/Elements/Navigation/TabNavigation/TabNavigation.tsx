@@ -114,18 +114,20 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                   type === TabNavigationType.default
                     ? classNames(
                         tab.current
-                          ? 'border-primary-500 text-primary-600'
-                          : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
+                          ? 'border-primary-500 text-primary-600 ' +
+                              tabItemSelectedClassNames
+                          : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 ' +
+                              tabItemClassNames,
                         'group inline-flex items-center',
                         'py-4 px-1 border-b-2 font-medium text-sm',
-                        tabItemSelectedClassNames,
                       )
                     : classNames(
                         tab.current
-                          ? 'bg-primary-100 text-primary-700'
-                          : 'text-gray-500 hover:text-gray-700',
+                          ? 'bg-primary-100 text-primary-700 ' +
+                              tabItemSelectedClassNames
+                          : 'text-gray-500 hover:text-gray-700 ' +
+                              tabItemClassNames,
                         'px-3 py-2 font-medium text-sm rounded-md',
-                        tabItemClassNames,
                       )
                 }
                 aria-current={tab.current ? 'page' : undefined}
