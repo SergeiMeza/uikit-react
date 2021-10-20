@@ -55,7 +55,7 @@ const sampleColumns: TableColumnData[] = [
 
 export type TableColumnData = {
   key: string
-  label: string
+  label: string | JSX.Element
   render: (value: any, item: any) => JSX.Element | null
   labelHidden?: boolean
   value?: string[]
@@ -67,7 +67,7 @@ export type TableProps = {
 }
 
 export type TableColumnProps = {
-  label: string
+  label: string | JSX.Element
   labelHidden?: boolean
 }
 
@@ -77,7 +77,7 @@ const TableColumn: React.FC<TableColumnProps> = ({ label, labelHidden }) => (
     className={
       labelHidden
         ? 'relative px-2 sm:px-4 py-2 sm:py-3'
-        : 'px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-primary-600 uppercase tracking-wider'
+        : 'px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-white uppercase tracking-wider'
     }
   >
     {labelHidden ? <span className="sr-only">{label}</span> : label}
@@ -109,7 +109,7 @@ const TableComponent: React.FC<TableProps> = ({
         <div className="py-2 align-middle inline-block min-w-full px-2 sm:px-6 lg:px-8">
           <div className="sm:shadow overflow-hidden border sm:border-none sm:border-b border-gray-100 sm:border-gray-200 rounded-md sm:rounded-lg">
             <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-primary-50">
+              <thead className="bg-primary-400">
                 <tr>
                   {columns.map((column) => (
                     <TableColumn
