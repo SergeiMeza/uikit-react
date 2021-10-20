@@ -123,7 +123,7 @@ const TabNavigationComponent: React.FC<TabNavigationProps> = ({
                       )
                     : classNames(
                         tab.current
-                          ? 'bg-primary-100 text-primary-700 ' +
+                          ? 'bg-primary-400 text-white ' +
                               tabItemSelectedClassNames
                           : 'text-gray-500 hover:text-gray-700 ' +
                               tabItemClassNames,
