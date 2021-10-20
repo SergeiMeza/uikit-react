@@ -1,7 +1,7 @@
 import React from 'react';
 export declare type TableColumnData = {
     key: string;
-    label: string;
+    label: string | JSX.Element;
     render: (value: any, item: any) => JSX.Element | null;
     labelHidden?: boolean;
     value?: string[];
@@ -11,7 +11,7 @@ export declare type TableProps = {
     columns?: TableColumnData[];
 };
 export declare type TableColumnProps = {
-    label: string;
+    label: string | JSX.Element;
     labelHidden?: boolean;
 };
 export declare const Table: React.FC<TableProps> & {
