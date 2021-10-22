@@ -11,6 +11,7 @@ export declare type ModalIconProps = {
     iconSize?: string;
 };
 declare type ModalCardProps = {
+    icon?: JSX.Element;
     title?: string | JSX.Element;
     body?: string | JSX.Element;
     setShow: (show: boolean) => void;

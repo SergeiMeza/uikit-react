@@ -390,6 +390,7 @@ const ModalTrendingDownIcon: React.FC<ModalIconProps> = ({
 )
 
 type ModalCardProps = {
+  icon?: JSX.Element
   title?: string | JSX.Element
   body?: string | JSX.Element
   setShow: (show: boolean) => void
@@ -412,6 +413,7 @@ const ModalCardButton: React.FC<ButtonProps> = ({
 )
 
 const ModalCard: React.FC<ModalCardProps> = ({
+  icon = <ModalTrendingUpIcon />,
   title = 'Your company products are trending right now',
   body = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius aliquam laudantium explicabo pariatur iste dolorem animi vitae error totam. At sapiente aliquam accusamus facere veritatis.',
   setShow = () => {},
@@ -420,7 +422,7 @@ const ModalCard: React.FC<ModalCardProps> = ({
   return (
     <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
       <div>
-        <ModalTrendingUpIcon />
+        {icon}
         <div className="mt-3 text-center sm:mt-5">
           <Dialog.Title
             as="h3"
