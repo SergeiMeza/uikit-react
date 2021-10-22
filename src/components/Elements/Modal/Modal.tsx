@@ -486,7 +486,7 @@ const ModalComponent: React.FC<ModalProps> = ({ show, setShow, children }) => {
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <div className="inline-block align-bottom overflow-hidden transform transition-all sm:align-middle sm:max-w-sm sm:w-full">
-              <ModalCard setShow={setShow} />
+              {children ?? <ModalCard setShow={setShow} />}
             </div>
           </Transition.Child>
         </div>
