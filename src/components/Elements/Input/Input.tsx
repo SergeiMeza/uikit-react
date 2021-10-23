@@ -233,6 +233,7 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({
 }
 
 export type TextAreaInputProps = {
+  textAreaClassNames?: string
   name?: string
   label?: string
   description?: string
@@ -244,6 +245,7 @@ export type TextAreaInputProps = {
 const TextAreaInput: React.FC<
   TextAreaInputProps & React.TextareaHTMLAttributes<HTMLTextAreaElement>
 > = ({
+  textAreaClassNames = '',
   name = 'about',
   label = 'About',
   description = 'Write a few sentences about yourself.',
@@ -262,7 +264,10 @@ const TextAreaInput: React.FC<
           id={name}
           name={name}
           rows={rows}
-          className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border border-gray-300 rounded-md"
+          className={classNames(
+            'shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border border-gray-300 rounded-md',
+            textAreaClassNames,
+          )}
           defaultValue={defaultValue}
           {...props}
           {...register}

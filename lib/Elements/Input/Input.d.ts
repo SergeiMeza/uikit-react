@@ -35,6 +35,7 @@ export declare type CheckboxInputProps = {
     register?: UseFormRegisterReturn;
 };
 export declare type TextAreaInputProps = {
+    textAreaClassNames?: string;
     name?: string;
     label?: string;
     description?: string;
