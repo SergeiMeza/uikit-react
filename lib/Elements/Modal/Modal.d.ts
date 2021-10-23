@@ -1,4 +1,5 @@
 import React from 'react';
+import { ButtonProps } from '../Button/Button';
 export declare type ModalProps = {
     show: boolean;
     setShow: (show: boolean) => void;
@@ -19,6 +20,7 @@ declare type ModalCardProps = {
 };
 export declare const Modal: React.FC<ModalProps> & {
     Card: React.FC<ModalCardProps>;
+    Button: React.FC<ButtonProps>;
     SuccessIcon: React.FC<ModalIconProps>;
     FailureIcon: React.FC<ModalIconProps>;
     QuestionMarkIcon: React.FC<ModalIconProps>;

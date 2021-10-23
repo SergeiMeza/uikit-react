@@ -18,6 +18,7 @@ import Notification from './Elements/Notification/Notification'
 import TabNavigation from './Elements/Navigation/TabNavigation/TabNavigation'
 import VerticalNavigation from './Elements/Navigation/VerticalNavigation/VerticalNavigation'
 import PageHeading from './Elements/PageHeading/PageHeading'
+import Pagination from './Elements/Pagination/Pagination'
 import RadioGroup from './Elements/RadioGroup/RadioGroup'
 import SectionHeading from './Elements/SectionHeading/SectionHeading'
 import SelectMenu from './Elements/SelectMenu/SelectMenu'
@@ -55,6 +56,7 @@ export {
   NavBar,
   Notification,
   PageHeading,
+  Pagination,
   RadioGroup,
   SectionHeading,
   SelectMenu,

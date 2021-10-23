@@ -40,6 +40,7 @@ import StackedFormLayout from './pages/layouts/StackedFormLayout/StackedFormLayo
 import TwoColumnsCardsFormLayout from './pages/layouts/TwoColumnsCardsFormLayout/TwoColumnsCardsFormLayout'
 
 import PageHeadingPreview from './pages/components/previews/PageHeadingPreview'
+import PaginationPreview from './pages/components/previews/PaginationPreview'
 import SectionHeadingPreview from './pages/components/previews/SectionHeadingPreview'
 import CardHeadingPreview from './pages/components/previews/CardHeadingPreview'
 import NavBarPreview from './pages/components/previews/NavBarPreview'
@@ -289,6 +290,9 @@ const App = () => {
               </Route>
               <Route path="/components/page-heading">
                 <PageHeadingPreview />
+              </Route>
+              <Route path="/components/pagination">
+                <PaginationPreview />
               </Route>
               <Route path="/components/section-heading">
                 <SectionHeadingPreview />

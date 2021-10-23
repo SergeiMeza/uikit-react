@@ -113,6 +113,11 @@ const components = [
     to: '/components/page-heading',
   },
   {
+    name: 'Pagination',
+    initials: 'P',
+    to: '/components/pagination',
+  },
+  {
     name: 'RadioGroup',
     initials: 'RG',
     to: '/components/radio-group',
