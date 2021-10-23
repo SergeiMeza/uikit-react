@@ -499,6 +499,7 @@ const ModalComponent: React.FC<ModalProps> = ({ show, setShow, children }) => {
 
 export const Modal = Object.assign(ModalComponent, {
   Card: ModalCard,
+  Button: ModalCardButton,
   SuccessIcon: ModalSuccessIcon,
   FailureIcon: ModalFailureIcon,
   QuestionMarkIcon: ModalQuestionMarkIcon,
