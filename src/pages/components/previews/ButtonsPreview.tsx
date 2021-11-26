@@ -1,4 +1,4 @@
-import { Button } from '../../../components'
+import { Button, Code } from '../../../components'
 
 import { PlusIcon as PlusIconSolid } from '@heroicons/react/solid'
 import { ComponentWrapper } from '../wrappers/ComponentWrapper'
@@ -156,6 +156,60 @@ const Buttons = () => {
 }
 
 export const ButtonsPreview = () => {
+  const previewCode1 = `import { Button } from "@sergeimeza/uikit-react"
+import { PlusIcon as PlusIconSolid } from '@heroicons/react/solid'
+function Example() {
+  
+  return (
+    <div className="flex items-end space-x-2">
+      <Button size={Button.size.large}>Button</Button>
+
+      <Button
+        buttonType={Button.buttonType.secondary}
+        size={Button.size.large}
+      >
+        Button
+      </Button>
+
+      <Button shape={Button.shape.circular}>
+        <PlusIconSolid className="h-6 w-6" aria-hidden="true" />
+      </Button>
+    </div>
+  )
+}
+
+export default Example`
+
+  const previewCode2 = `export type ButtonProps = {
+  className?: string
+  title?: string
+  size?: ButtonSize
+  shape?: ButtonShape
+  buttonType?: ButtonType
+  onClick?: () => void
+}
+
+enum ButtonSize {
+  small = 'px-2.5 py-1.5 text-xs',
+  medium = 'px-3 py-2 text-sm leading-4',
+  large = 'px-4 py-2 text-sm',
+  xl = 'px-4 py-2 text-base',
+  xxl = 'px-6 py-3 text-base',
+}
+
+enum ButtonType {
+  primary = 'border border-transparent shadow-sm text-white bg-primary-600 hover:bg-primary-700',
+  secondary = 'border border-transparent text-primary-700 bg-primary-100 hover:bg-primary-200',
+  outline = 'border border-gray-300 text-gray-700 bg-white hover:bg-gray-50',
+  transparent = 'text-gray-700',
+}
+
+enum ButtonShape {
+  default = 'rounded rounded-md',
+  round = 'rounded-full',
+  circular = 'rounded-full p-2',
+}`
+
   return (
     <ComponentWrapper
       component={{
@@ -165,6 +219,13 @@ export const ButtonsPreview = () => {
       }}
     >
       <Buttons />
+
+      <div>
+        <Code>{previewCode1}</Code>
+      </div>
+      <div>
+        <Code>{previewCode2}</Code>
+      </div>
     </ComponentWrapper>
   )
 }

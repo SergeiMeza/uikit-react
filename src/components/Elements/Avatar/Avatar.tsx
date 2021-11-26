@@ -9,9 +9,9 @@ export type AvatarProps = {
   notificationBadgeColor?: NotificationBadgeColor
   notificationBadgePosition?: NotificationBadgePosition
   src?: string
-  onClick?: () => void
-  onMouseEnter?: () => void
-  onMouseLeave?: () => void
+  onClick?: () => void // TODO: Deprecate
+  onMouseEnter?: () => void // TODO: Deprecate
+  onMouseLeave?: () => void // TODO: Deprecate
 }
 
 enum AvatarShape {
@@ -77,7 +77,11 @@ const AvatarComponent: React.FC<AvatarProps> = ({
       onMouseLeave={onMouseLeave}
     >
       {src ? (
-        <img className={classNames(size, shape)} src={src} alt="" />
+        <img
+          className={classNames(size, shape, 'content-center object-cover')}
+          src={src}
+          alt=""
+        />
       ) : (
         <span
           className={classNames(

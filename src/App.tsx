@@ -5,10 +5,6 @@ import LandingPage from './pages/LandingPage'
 import PricingPage from './pages/PricingPage'
 import ComponentsPage from './pages/ComponentsPage'
 import {
-  ActionPanel,
-  Avatar,
-  Badge,
-  Breadcrumb,
   ButtonGroup,
   CheckboxGroup,
   Container,
@@ -39,17 +35,25 @@ import InputPreview from './pages/components/previews/InputsPreview'
 import StackedFormLayout from './pages/layouts/StackedFormLayout/StackedFormLayout'
 import TwoColumnsCardsFormLayout from './pages/layouts/TwoColumnsCardsFormLayout/TwoColumnsCardsFormLayout'
 
+import AnimatedBlobBackgroundPreview from './pages/components/previews/AnimatedBlobBackgroundPreview'
+import CardHeadingPreview from './pages/components/previews/CardHeadingPreview'
+import CodePreview from './pages/components/previews/CodePreview'
+import NavBarPreview from './pages/components/previews/NavBarPreview'
+import NavigationPreview from './pages/components/previews/NavigationPreview'
 import PageHeadingPreview from './pages/components/previews/PageHeadingPreview'
 import PaginationPreview from './pages/components/previews/PaginationPreview'
 import SectionHeadingPreview from './pages/components/previews/SectionHeadingPreview'
-import CardHeadingPreview from './pages/components/previews/CardHeadingPreview'
-import NavBarPreview from './pages/components/previews/NavBarPreview'
-import NavigationPreview from './pages/components/previews/NavigationPreview'
 import SidebarNavigationPreview from './pages/components/previews/SidebarNavigationPreview'
 import StepsNavigationPreview from './pages/components/previews/StepsNavigationPreview'
 import StackedLayoutPreview from './pages/components/previews/StackedLayoutPreview'
 import SidebarLayoutPreview from './pages/components/previews/SidebarLayoutPreview'
+
 import PagesPage from './pages/PagesPage'
+import { ActionPanelPreview } from './pages/components/previews/ActionPanelPreview'
+import AnchorPreview from './pages/components/previews/AnchorPreview'
+import { AvatarPreview } from './pages/components/previews/AvatarPreview'
+import { BadgePreview } from './pages/components/previews/BadgePreview'
+import { BreadcrumbPreview } from './pages/components/previews/BreadcrumbPreview'
 
 const App = () => {
   return (
@@ -158,59 +162,22 @@ const App = () => {
           <Route path="/components">
             <Switch>
               <Route path="/components/action-panel">
-                <ComponentWrapper
-                  component={{
-                    name: 'ActionPanel',
-                    to: '/components/action-panel',
-                    current: true,
-                  }}
-                >
-                  <ActionPanel />
-                </ComponentWrapper>
+                <ActionPanelPreview />
               </Route>
               <Route path="/components/anchor">
-                <ComponentWrapper
-                  component={{
-                    name: 'Anchor',
-                    to: '/components/anchor',
-                    current: true,
-                  }}
-                >
-                  <Anchor to="/components">Go back</Anchor>
-                </ComponentWrapper>
+                <AnchorPreview />
+              </Route>
+              <Route path="/components/animated-blob-background">
+                <AnimatedBlobBackgroundPreview />
               </Route>
               <Route path="/components/avatar">
-                <ComponentWrapper
-                  component={{
-                    name: 'Avatar',
-                    to: '/components/avatar',
-                    current: true,
-                  }}
-                >
-                  <Avatar />
-                </ComponentWrapper>
+                <AvatarPreview />
               </Route>
               <Route path="/components/badge">
-                <ComponentWrapper
-                  component={{
-                    name: 'Badge',
-                    to: '/components/badge',
-                    current: true,
-                  }}
-                >
-                  <Badge />
-                </ComponentWrapper>
+                <BadgePreview />
               </Route>
               <Route path="/components/breadcrumb">
-                <ComponentWrapper
-                  component={{
-                    name: 'Breadcrumb',
-                    to: '/components/breadcrumb',
-                    current: true,
-                  }}
-                >
-                  <Breadcrumb type={Breadcrumb.type.simpleWithChevrons} />
-                </ComponentWrapper>
+                <BreadcrumbPreview />
               </Route>
               <Route path="/components/button">
                 <ButtonsPreview />
@@ -239,6 +206,9 @@ const App = () => {
                 >
                   <CheckboxGroup />
                 </ComponentWrapper>
+              </Route>
+              <Route path="/components/code">
+                <CodePreview />
               </Route>
               <Route path="/components/dropdown">
                 <ComponentWrapper

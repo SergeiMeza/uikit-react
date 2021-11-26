@@ -137,7 +137,7 @@ export const Badge = Object.assign(BadgeComponent, {
   size: BadgeSize,
   shape: BadgeShape,
   color: BadgeColor,
-  dotColot: DotColor,
+  dotColor: DotColor,
   RemoveButton: BadgeRemoveButton,
 })
 

@@ -32,6 +32,11 @@ const components = [
     to: '/components/anchor',
   },
   {
+    name: 'AnimatedBlobBackground',
+    initials: 'ABB',
+    to: '/components/animated-blob-background',
+  },
+  {
     name: 'Avatar',
     initials: 'A',
     to: '/components/avatar',
@@ -66,6 +71,11 @@ const components = [
     name: 'CheckboxGroup',
     initials: 'CG',
     to: '/components/checkbox-group',
+  },
+  {
+    name: 'Code',
+    initials: 'C',
+    to: '/components/code',
   },
   {
     name: 'Dropdown',

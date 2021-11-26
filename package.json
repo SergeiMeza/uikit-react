@@ -15,7 +15,9 @@
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
-    "@sergeimeza/foundation-react": "^1.0.1"
+    "@sergeimeza/foundation-react": "^1.0.1",
+    "@tailwindcss/typography": "^0.4.1",
+    "react-syntax-highlighter": "^15.4.5"
   },
   "peerDependencies": {
     "@headlessui/react": "^1.4.1",

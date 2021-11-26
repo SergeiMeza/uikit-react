@@ -1,5 +1,6 @@
 import ActionPanel from './Elements/ActionPanel/ActionPanel'
 import Anchor from './Elements/Anchor/Anchor'
+import AnimatedBlobBackground from './Elements/AnimatedBlobBackground/AnimatedBlobBackground'
 import Avatar from './Elements/Avatar/Avatar'
 import Badge from './Elements/Badge/Badge'
 import Breadcrumb from './Elements/Breadcrumb/Breadcrumb'
@@ -7,6 +8,7 @@ import Button from './Elements/Button/Button'
 import ButtonGroup from './Elements/ButtonGroup/ButtonGroup'
 import CardHeading from './Elements/CardHeading/CardHeading'
 import CheckboxGroup from './Elements/CheckboxGroup/CheckboxGroup'
+import Code from './Elements/Code/Code'
 import Divider from './layouts/Divider/Divider'
 import Dropdown from './Elements/Dropdown/Dropdown'
 import EmptyState from './Elements/EmptyState/EmptyState'
@@ -37,6 +39,7 @@ import { classNames } from './helpers/methods'
 export {
   ActionPanel,
   Anchor,
+  AnimatedBlobBackground,
   Avatar,
   Badge,
   Breadcrumb,
@@ -44,6 +47,7 @@ export {
   ButtonGroup,
   CardHeading,
   CheckboxGroup,
+  Code,
   Container,
   Divider,
   Dropdown,
