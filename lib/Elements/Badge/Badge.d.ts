@@ -59,7 +59,7 @@ export declare const Badge: React.FC<BadgeProps> & {
     size: typeof BadgeSize;
     shape: typeof BadgeShape;
     color: typeof BadgeColor;
-    dotColot: typeof DotColor;
+    dotColor: typeof DotColor;
     RemoveButton: React.FC<BadgeRemoveButtonProps> & {
         color: typeof RemoveButtonColor;
     };
