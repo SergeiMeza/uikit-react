@@ -6,7 +6,7 @@ import { ExclamationCircleIcon } from '@heroicons/react/solid'
 
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup'
 import EmptyState, { EmptyStateProps } from '../EmptyState/EmptyState'
-import { FilePreview } from '../FilePreview/FilePreview'
+import { FilePreview } from '../Preview/FilePreview'
 
 import { classNames } from '../../helpers/methods'
 

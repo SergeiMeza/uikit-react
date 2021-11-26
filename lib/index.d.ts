@@ -12,7 +12,7 @@ import Code from './Elements/Code/Code';
 import Divider from './layouts/Divider/Divider';
 import Dropdown from './Elements/Dropdown/Dropdown';
 import EmptyState from './Elements/EmptyState/EmptyState';
-import FilePreview from './Elements/FilePreview/FilePreview';
+import FilePreview from './Elements/Preview/FilePreview';
 import Input from './Elements/Input/Input';
 import Modal from './Elements/Modal/Modal';
 import NavBar from './Elements/NavBar/NavBar';
